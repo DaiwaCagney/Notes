@@ -1,2 +1,2 @@
-# VIM
-VIM Notes
+# Notes
+Different Nodes
