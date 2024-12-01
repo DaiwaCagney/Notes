@@ -32,6 +32,7 @@ https://www.hkcert.org/
 https://www.ithome.com.tw/security
 https://www.cybersechub.hk/tc/home/dailyNews
 https://www.securityweek.com/
+https://www.darkreading.com/
 https://socradar.io/blog/
 https://www.helpnetsecurity.com/
 https://www.infosecurity-magazine.com/
@@ -42,3 +43,4 @@ Other:
 https://caniuse.com/
 https://domsignal.com/secure-header-test
 https://pages.cs.wisc.edu/~remzi/OSTEP/
+https://www.whiterabbitneo.com/sign-in?callbackUrl=/
