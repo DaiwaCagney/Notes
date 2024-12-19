@@ -8,6 +8,8 @@ https://command-not-found.com/
 RegEx
 https://refrf.dev/
 https://regexgpt.app/
+https://regexper.com/
+https://regexr.com/
 
 Cryptography
 https://eprint.iacr.org/
