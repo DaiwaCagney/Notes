@@ -42,8 +42,17 @@ https://www.infosecurity-magazine.com/
 https://hackread.com/
 https://cyware.com/cyber-security-news-articles
 
-Other:
-https://caniuse.com/
-https://domsignal.com/secure-header-test
+Security AI
+https://www.whiterabbitneo.com/
+
+Reading
 https://pages.cs.wisc.edu/~remzi/OSTEP/
-https://www.whiterabbitneo.com/sign-in?callbackUrl=/
+https://university.apisec.ai/
+https://linux-kernel-labs.github.io/refs/heads/master/index.html
+
+SecLists
+https://github.com/danielmiessler/SecLists
+
+Other
+https://domsignal.com/secure-header-test
+
