@@ -29,6 +29,8 @@ OS
 https://pages.cs.wisc.edu/~remzi/OSTEP/
 https://linux-kernel-labs.github.io/refs/heads/master/index.html
 https://www.ultimatewindowssecurity.com/securitylog/book/default.aspx
+https://linux.vbird.org/
+https://www.youtube.com/watch?v=sWbUDq4S6Y8
 
 Hack
 https://book.hacktricks.xyz/
@@ -37,9 +39,19 @@ https://offensive-panda.github.io/ProcessInjectionTechniques/
 SecLists
 https://github.com/danielmiessler/SecLists
 
-Other
+Header Test
 https://domsignal.com/secure-header-test
 https://securityheaders.com/
+
+Youtube
+https://www.youtube.com/HackerSploit
+https://www.youtube.com/@_JohnHammond
+https://www.youtube.com/@davidbombal
+
+Other
+https://www.guru99.com/
+https://www.codelivly.com/
+https://feifei.tw/security-getting-started/
 
 TI
 https://www.virustotal.com/gui/home/upload
