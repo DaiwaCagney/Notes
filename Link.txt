@@ -32,12 +32,14 @@ https://www.ultimatewindowssecurity.com/securitylog/book/default.aspx
 
 Hack
 https://book.hacktricks.xyz/
+https://offensive-panda.github.io/ProcessInjectionTechniques/
 
 SecLists
 https://github.com/danielmiessler/SecLists
 
 Other
 https://domsignal.com/secure-header-test
+https://securityheaders.com/
 
 TI
 https://www.virustotal.com/gui/home/upload
