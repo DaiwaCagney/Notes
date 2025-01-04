@@ -18,6 +18,15 @@ KVRT
 System Auditing:
 https://github.com/CISOfy/lynis
 
+NetLog Dump
+chrome://net-export/
+edge://net-export/
+https://netlog-viewer.appspot.com/#events
+
+Autocomplete Action Predictor
+chrome://predictors/
+edge://predictors/
+
 Other:
 GPG
 MISP
