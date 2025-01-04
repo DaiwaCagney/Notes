@@ -54,3 +54,4 @@ BrowsingHistoryView
 Last Activity View
 ZenMap
 USB Detective
+NetExec : https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
