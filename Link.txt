@@ -36,6 +36,7 @@ Hack
 https://book.hacktricks.xyz/
 https://offensive-panda.github.io/ProcessInjectionTechniques/
 https://github.com/PacktPublishing/Malware-Development-for-Ethical-Hackers
+https://github.com/becomingahacker
 
 SecLists
 https://github.com/danielmiessler/SecLists
