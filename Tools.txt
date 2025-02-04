@@ -18,16 +18,29 @@ KVRT
 System Auditing:
 https://github.com/CISOfy/lynis
 
-NetLog Dump
+NetLog Dump:
 chrome://net-export/
 edge://net-export/
 https://netlog-viewer.appspot.com/#events
 
-Autocomplete Action Predictor
+Autocomplete Action Predictor:
 chrome://predictors/
 edge://predictors/
 
-Other:
+Digital Forensics:
+Autopsy
+NetworkMiner
+FTK Imager
+Magnet RAM Capture
+Magnet ACQUIRE
+Andriller
+BrowsingHistoryView
+Last Activity View
+ZenMap
+USB Detective
+
+
+Pending:
 GPG
 MISP
 GNS3
@@ -44,14 +57,4 @@ Impacket
 John the Ripper
 NinjaCopy
 UPX
-Autopsy
-NetworkMiner
-FTK Imager
-Magnet RAM Capture
-Magnet ACQUIRE
-Andriller
-BrowsingHistoryView
-Last Activity View
-ZenMap
-USB Detective
-NetExec : https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
+https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
