@@ -58,3 +58,4 @@ John the Ripper
 NinjaCopy
 UPX
 https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
+https://github.com/blacklanternsecurity/baddns
