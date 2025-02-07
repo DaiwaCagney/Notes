@@ -28,6 +28,8 @@ chrome://predictors/
 edge://predictors/
 
 Digital Forensics:
+ParrotOS + https://etcher.balena.io/
+Caine
 Autopsy
 NetworkMiner
 FTK Imager
