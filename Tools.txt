@@ -39,7 +39,6 @@ Last Activity View
 ZenMap
 USB Detective
 
-
 Pending:
 GPG
 MISP
@@ -60,3 +59,4 @@ UPX
 https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
 https://github.com/blacklanternsecurity/baddns
 https://github.com/zodiacon/PEExplorerV2
+https://ghidra-sre.org/
