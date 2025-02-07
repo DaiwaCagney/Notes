@@ -62,3 +62,5 @@ https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
 https://github.com/blacklanternsecurity/baddns
 https://github.com/zodiacon/PEExplorerV2
 https://ghidra-sre.org/
+https://github.com/ION28/BLUESPAWN
+https://github.com/redcanaryco/atomic-red-team
