@@ -40,6 +40,8 @@ BrowsingHistoryView
 Last Activity View
 ZenMap
 USB Detective
+The Sleuth Kit
+Xplico
 
 Pending:
 GPG
