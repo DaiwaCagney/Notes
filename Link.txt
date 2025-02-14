@@ -11,7 +11,8 @@ https://regexgpt.app/
 https://regexper.com/
 https://regexr.com/
 
-API
+Web
+https://portswigger.net/web-security
 https://university.apisec.ai/
 https://github.com/arainho/awesome-api-security
 
