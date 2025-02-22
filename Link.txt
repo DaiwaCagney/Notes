@@ -4,6 +4,7 @@ https://explainshell.com/
 https://www.gnu.org/software/bash/manual/html_node/index.html
 https://www.codelivly.com/bash-quick-guide/
 https://command-not-found.com/
+https://guide.bash.academy/
 
 RegEx
 https://refrf.dev/
@@ -28,10 +29,15 @@ https://www.whiterabbitneo.com/
 
 OS
 https://pages.cs.wisc.edu/~remzi/OSTEP/
+
+Linux:
 https://linux-kernel-labs.github.io/refs/heads/master/index.html
-https://www.ultimatewindowssecurity.com/securitylog/book/default.aspx
 https://linux.vbird.org/
+https://linuxjourney.com/
 https://www.youtube.com/watch?v=sWbUDq4S6Y8
+
+Windows:
+https://www.ultimatewindowssecurity.com/securitylog/book/default.aspx
 https://github.com/reactos/reactos/tree/2752c42f0b472f2db873308787a8b474c4738393
 
 Hack
