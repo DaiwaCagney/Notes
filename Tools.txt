@@ -7,7 +7,7 @@ Snort
 TI:
 https://github.com/xaitax/SploitScan
 
-Web & API Scan:
+Web Scan:
 https://github.com/OWASP/OFFAT
 Burp
 ZAP
@@ -28,7 +28,8 @@ chrome://predictors/
 edge://predictors/
 
 Digital Forensics:
-ParrotOS + https://etcher.balena.io/
+ParrotOS
+https://etcher.balena.io/
 Caine
 Autopsy
 NetworkMiner
@@ -67,3 +68,4 @@ https://ghidra-sre.org/
 https://github.com/ION28/BLUESPAWN
 https://github.com/redcanaryco/atomic-red-team
 https://github.com/sans-blue-team/DeepBlueCLI
+https://github.com/kunai-project/kunai
