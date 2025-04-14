@@ -35,7 +35,9 @@ Token Analysis
 
 JWT Attacks
 echo eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9|base64 -d
+date --date=@'{timestamp}'
 The None Attack
+eyJhbGciOiJub25lIn0
 The Algorithm Switch Attack --> RS256 to HS256
 JWT Crack Attack
 
