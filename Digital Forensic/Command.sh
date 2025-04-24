@@ -1,0 +1,45 @@
+strings # Display printable strings in files
+
+file # Determine type of file
+
+xxd # Make a hexdump
+xxd -r # Reverse
+
+objdump # Display information from object file
+objdump -d -S # Display assembler contents
+
+nm # List symbols in file
+
+gdb # GNU debugger
+
+tar -cvf archive.tar file1 file2 directory # Create a tarball
+tar -xvf archive.tar # Extract a tarball
+tar -czvf archive.tar.gz directory # Create a tarball with gzip compression
+tar -xzvf archive.tar.gz # Extract a tarball with gzip compression
+
+unzip file −d destination # Extract a zip file
+
+losetup # Set up and control loop devices
+losetup /dev/loop0 example.img # Set up a loop device
+mount /dev/loop0 /home/you/dir # Mount the loop device
+
+FUSE/AFFuse # Filesystem in Userspace
+
+dd # Convert and copy a file
+dd if=/dev/sda of=./diskimage.img # Create an image of a disk
+dd if=/dev/sdb of=forensic.img
+
+grep # Search file(s) for lines that match a given pattern
+
+find # Search for files in a directory hierarchy
+find /path/to/search -type f -name "*.txt" # Find all .txt files in a directory
+
+lsblk # List block devices
+
+fdisk # Partition table manipulator
+fdisk -l
+
+cut -d ‘ ‘ -f 1,3,5 file.txt # Cut out fields from a file
+
+ls /dev/sda* # List all hard drives
+ls /dev/sd*

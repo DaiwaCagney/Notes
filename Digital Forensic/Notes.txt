@@ -1,0 +1,7 @@
+Check if VM exist in a host:
+Check HKEY_CLASSES_ROOT for file extension
+Check network adapters
+
+Check Registry --> OSForensic
+
+Metasploitable --> vulnerable Ubuntu for practice
