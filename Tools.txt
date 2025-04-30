@@ -28,21 +28,11 @@ chrome://predictors/
 edge://predictors/
 
 Digital Forensics:
-ParrotOS
-https://etcher.balena.io/
-Caine
 Autopsy
-NetworkMiner
 FTK Imager
-Magnet RAM Capture
-Magnet ACQUIRE
-Andriller
-BrowsingHistoryView
-Last Activity View
-ZenMap
-USB Detective
-The Sleuth Kit
-Xplico
+OSForensic
+Forensic Registry EDitor (fred)
+Metasploitable --> vulnerable Ubuntu for practice
 
 Pending:
 GPG
@@ -69,3 +59,16 @@ https://github.com/ION28/BLUESPAWN
 https://github.com/redcanaryco/atomic-red-team
 https://github.com/sans-blue-team/DeepBlueCLI
 https://github.com/kunai-project/kunai
+ParrotOS
+https://etcher.balena.io/
+Caine
+NetworkMiner
+Magnet RAM Capture
+Magnet ACQUIRE
+Andriller
+BrowsingHistoryView
+Last Activity View
+ZenMap
+USB Detective
+The Sleuth Kit
+Xplico
