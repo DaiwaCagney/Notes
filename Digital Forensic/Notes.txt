@@ -5,3 +5,21 @@ Check network adapters
 Dumping Wi-Fi Credentials Using netsh:
 netsh wlan show profiles
 netsh wlan show profile name={name} key=clear
+
+Volatility: 
+sudo snap install volatility-phocean --> install
+volatility -f {image.vmem} imageinfo
+volatility -f {image.vmem} --profile={profile} pslist
+volatility -f {image.vmem} --profile={profile} pstree --> parent & child
+volatility -f {image.vmem} --profile={profile} psxview --> process trying to hide
+volatility -f {image.vmem} --profile={profile} connscan
+volatility -f {image.vmem} --profile={profile} sockets
+volatility -f {image.vmem} --profile={profile} netscan
+volatility -f {image.vmem} --profile={profile} cmdline
+volatility -f {image.vmem} --profile={profile} procdump -p {PID} --dump-dir . --> dump the executable
+volatility -f {image.vmem} --profile={profile} memdump -p {PID} --dump-dir . --> dump the dmp file
+strings {PID.dmp} | grep -Fi "IP" -C 5
+strings {PID.dmp} | less
+volatility -f {image.vmem} --profile={profile} hivelist
+volatility -f {image.vmem} --profile={profile} printkey -K "Software\Microsoft\Windows|CurrentVersion\Run" --> check what process run at start-up
+strings {PID.dmp} | grep -Fi "executable.exe"
