@@ -33,6 +33,7 @@ FTK Imager
 OSForensic
 Forensic Registry EDitor (fred)
 Volatility Framework
+Steghide
 Metasploitable --> vulnerable Ubuntu for practice
 
 Pending:
