@@ -8,3 +8,21 @@ ifconfig
 
 Gateway:
 netstat -rnv
+
+Process:
+ps -ef | grep {process}
+ps -ef | more
+
+SSH:
+cat /etc/ssh/sshd_conf
+
+Access Log:
+cd /var/log
+more secure
+tail -f secure
+
+ls -ltr
+
+User:
+id {username}
+vi /etc/passwd
