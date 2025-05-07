@@ -1,0 +1,10 @@
+DNS:
+cat /etc/hosts
+cat /etc/resolv.conf
+cat /etc/nsswitch.conf
+
+IP address:
+ifconfig
+
+Gateway:
+netstat -rnv
