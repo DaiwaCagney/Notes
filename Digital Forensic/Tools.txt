@@ -1,9 +1,11 @@
 Autopsy
-FTK Imager
-Magnet RAM Capture
 OSForensic
 Forensic Registry EDitor (fred)
 Volatility Framework
 Steghide
 EXIFtool
 Metasploitable --> vulnerable Ubuntu for practice
+
+FTK Imager
+Magnet RAM Capture
+Dumpit
