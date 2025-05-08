@@ -26,3 +26,9 @@ ls -ltr
 User:
 id {username}
 vi /etc/passwd
+
+Firewall:
+systemctl status iptables.service
+systemctl status firewalld
+systemctl stop firewalld
+systemctl disable firewalld
