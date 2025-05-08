@@ -27,16 +27,6 @@ Autocomplete Action Predictor:
 chrome://predictors/
 edge://predictors/
 
-Digital Forensics:
-Autopsy
-FTK Imager
-OSForensic
-Forensic Registry EDitor (fred)
-Volatility Framework
-Steghide
-EXIFtool
-Metasploitable --> vulnerable Ubuntu for practice
-
 Pending:
 GPG
 MISP
