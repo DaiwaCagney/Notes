@@ -15,6 +15,7 @@ ps -ef | more
 
 SSH:
 cat /etc/ssh/sshd_conf
+ssh -l {user} {ip}
 
 Access Log:
 cd /var/log
