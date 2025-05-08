@@ -56,7 +56,6 @@ ParrotOS
 https://etcher.balena.io/
 Caine
 NetworkMiner
-Magnet RAM Capture
 Magnet ACQUIRE
 Andriller
 BrowsingHistoryView
