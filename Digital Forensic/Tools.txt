@@ -1,0 +1,8 @@
+Autopsy
+FTK Imager
+OSForensic
+Forensic Registry EDitor (fred)
+Volatility Framework
+Steghide
+EXIFtool
+Metasploitable --> vulnerable Ubuntu for practice
