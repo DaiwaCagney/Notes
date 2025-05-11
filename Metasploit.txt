@@ -1,0 +1,6 @@
+msfconsole
+search {Product} {Version}
+use {Modules Name}
+options
+set rhost {IP}
+execute
