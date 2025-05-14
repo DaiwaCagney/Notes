@@ -1,3 +1,4 @@
+Web crawlers:
 /robots.txt
 /sitemap.xml
 
@@ -13,3 +14,14 @@ View page source
 Comment
 /cgi-bin/phpinfo.php
 
+Backup files:
+/backup
+ProductTemplate.java.bak
+
+HTTP TRACE method:
+Web server echoing in the response the exact request that was received
+occasionally leads to information disclosure, such as the name of internal authentication headers that may be appended to requests by reverse proxies
+
+Version control history:
+/.git
+comparing the diff
