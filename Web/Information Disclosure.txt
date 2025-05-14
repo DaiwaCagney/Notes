@@ -1,0 +1,15 @@
+/robots.txt
+/sitemap.xml
+
+Directory listings:
+Web servers can be configured to automatically list the contents of directories that do not have an index page present
+
+Error messages:
+/product?productId=1
+/product?productId="example"
+
+Debug page:
+View page source
+Comment
+/cgi-bin/phpinfo.php
+
