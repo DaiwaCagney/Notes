@@ -52,9 +52,7 @@ https://github.com/ION28/BLUESPAWN
 https://github.com/redcanaryco/atomic-red-team
 https://github.com/sans-blue-team/DeepBlueCLI
 https://github.com/kunai-project/kunai
-ParrotOS
 https://etcher.balena.io/
-Caine
 NetworkMiner
 Magnet ACQUIRE
 Andriller
@@ -62,5 +60,4 @@ BrowsingHistoryView
 Last Activity View
 ZenMap
 USB Detective
-The Sleuth Kit
 Xplico
