@@ -1,11 +1,23 @@
 Autopsy
+The Sleuth Kit
+
 OSForensic
 Forensic Registry EDitor (fred)
 Volatility Framework
 Steghide
 EXIFtool
+
+ParrotOS
+Caine
 Metasploitable --> vulnerable Ubuntu for practice
 
 FTK Imager
 Magnet RAM Capture
 Dumpit
+LiME --> Linux Memory Extractor
+
+Wireshark
+Tcpdump
+
+CyberChef
+HxD --> Hex Editor
