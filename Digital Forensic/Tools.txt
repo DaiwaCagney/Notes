@@ -21,3 +21,5 @@ DCode
 
 Steghide
 EXIFtool
+
+Get-ZimmermanTools
