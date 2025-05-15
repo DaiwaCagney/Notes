@@ -1,11 +1,7 @@
-Autopsy
-The Sleuth Kit
-
+Autopsy & The Sleuth Kit
 OSForensic
 Forensic Registry EDitor (fred)
 Volatility Framework
-Steghide
-EXIFtool
 
 ParrotOS
 Caine
@@ -21,3 +17,7 @@ Tcpdump
 
 CyberChef
 HxD --> Hex Editor
+DCode
+
+Steghide
+EXIFtool
