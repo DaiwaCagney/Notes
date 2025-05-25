@@ -2,6 +2,7 @@
 
 Proof:
 alert()
+alert(document.domain)
 print()
 
 Reflected cross-site scripting:
