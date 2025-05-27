@@ -1,0 +1,30 @@
+date &  time
+echo | date >> file.txt
+
+Net Statistics Workstation
+
+echo %path%
+
+systeminfo
+ver
+
+tasklist
+tasklist /v
+tasklist /svc
+net start
+
+net session
+
+vol
+
+ipconfig
+netstat -r
+net view
+
+net file
+openfiles.exe
+openfiles /local on
+
+PStools:
+psloggedon
+psfile.exe
