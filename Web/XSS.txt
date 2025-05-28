@@ -20,3 +20,7 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 
 To find DOM-based vulnerabilities in non-URL-based input (such as document.cookie) or non-HTML-based sinks (like setTimeout), there is no substitute for reviewing JavaScript code
 
+eval() or innerHTML --> enables attackers to execute malicious JavaScript
+
+DOM Invader --> Burp's built-in browser
+
