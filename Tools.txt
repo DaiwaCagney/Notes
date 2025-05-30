@@ -11,6 +11,7 @@ Web Scan:
 https://github.com/OWASP/OFFAT
 Burp
 ZAP
+https://feifei.tw/security-tool-sqlmap/
 
 Antivirus:
 KVRT
