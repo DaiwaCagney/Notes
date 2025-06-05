@@ -1,0 +1,27 @@
+Alert:
+| rest /servicesNS/-/-/saved/searches | table title, search
+
+Index:
+| eventcount summarize=false index=* index=_* | dedup index | fields index
+
+Forwarder:
+index=_internal source=*metrics.log group=tcpin_connections | dedup hostname | table hostname, sourceIp, os
+
+Error:
+index=_internal source="*/splunkd.log"
+
+| search ({ } = { } AND { } != { })
+| search NOT ({ }={ })
+| where { } > { } OR ({ } > { } AND { } > { })
+| stats values({ }) as { }, dc({ }) as { }, count as Total, by { }
+| stats Median(count) as { } by { }
+| join type=left [search ... earliest=-8h@h latest=-1h@h]
+| bucket _time span=1h
+| eval { }=if(isnotnull({ }),{ },{ })
+| rename { } as { }
+| dedup { }
+| table { },{ },{ },{ }
+| timechart span=1w count by { } limit=5
+
+/opt/splunk/etc/deployment-apps/
+/opt/splunk/bin/splunk restart
