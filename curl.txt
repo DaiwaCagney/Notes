@@ -1,0 +1,31 @@
+Version:
+curl -V
+
+Response Header:
+curl -I https://www.example.com/
+
+(301/302) Redirect:
+curl -L http://www.example.com
+
+Download:
+curl -o my-filename.zip https://www.example.com/download.zip
+curl -O https://www.example.com/download.zip
+
+POST:
+curl -X POST -d "a=1&b=2" https://www.example.com/form
+curl -X POST -H "Content-Type: application/json" -d '{"a":"1"}' https://www.example.com/api
+
+Do not check TLS:
+curl -k https://some.self-signed.web
+
+Equal /dev/null
+curl -I https://www.example.com -o NUL
+
+Record Cookie:
+curl -c cookies.txt -s http://localhost/AspNet/CookieTest/TestCookie.aspx
+
+Attach Cookie:
+curl -b cookies.txt -s http://localhost/AspNet/CookieTest/TestCookie.aspx
+curl -b "Demo=BY_PARAM" -s http://localhost/AspNet/CookieTest/TestCookie.aspx
+
+curl -b cookies.txt -c cookies.txt -s http://localhost/AspNet/CookieTest/TestCookie.aspx
