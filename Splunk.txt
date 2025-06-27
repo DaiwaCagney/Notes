@@ -5,7 +5,7 @@ Index:
 | eventcount summarize=false index=* index=_* | dedup index | fields index
 
 Forwarder:
-index=_internal source=*metrics.log group=tcpin_connections | dedup hostname | table hostname, sourceIp, os
+index=_internal source=*metrics.log group=tcpin_connections | dedup hostname | table Hostname, SourceIP, OS
 
 Error:
 index=_internal source="*/splunkd.log"
@@ -22,6 +22,7 @@ index=_internal source="*/splunkd.log"
 | dedup { }
 | table { },{ },{ },{ }
 | timechart span=1w count by { } limit=5
+| eval time=tostring(filed_with_seconds, "duration")
 
 /opt/splunk/etc/deployment-apps/
 /opt/splunk/bin/splunk restart
