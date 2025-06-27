@@ -173,3 +173,10 @@ ResultSet resultSet = statement.executeQuery();
 
 Whitelisting permitted input values
 Using different logic to deliver the required behaviour
+
+Oracle:
+'and 1=DBMS_PIPE.RECEIVE_MESSAGE(1,10)--
+value' AND (select Ascii(SUBSTR(global_name,1,1)) from global_name) <128 OR '4'='0
+
+SQLMap:
+python3 sqlmap.py -u <URL> --cookie "JSESSIONID=<ID>;" --data "<Post Data>" -p <Inject Parameter>
