@@ -235,3 +235,8 @@ Try:
 {"Account" : [3333]}
 {"Account" : {"Account" : 3333}}
 {"Account" : 2222, "Account" : 3333, "Account" : 5555}
+
+
+File Upload:
+Content-Type: text/html
+<a href="https://www.google.com/">Click Here</a>
