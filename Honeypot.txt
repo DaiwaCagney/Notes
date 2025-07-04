@@ -1,0 +1,17 @@
+Cowrie
+Dionaea
+Honeyd
+Kippo
+Glastopf
+
+Cowrie:
+sudo apt install git python3 python3-pip python3-virtualenv libssl-dev libffi-dev build-essential
+git clone https://github.com/cowrie/cowrie.git
+cd cowrie
+virtualenv cowrie-env
+source cowrie-env/bin/activate
+pip install -r requirements.txt
+cp etc/cowrie.cfg.dist etc/cowrie.cfg
+nano etc/cowrie.cfg
+bin/cowrie start
+tail -f var/log/cowrie/cowrie.log
