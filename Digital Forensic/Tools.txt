@@ -1,18 +1,25 @@
-Autopsy & The Sleuth Kit
-OSForensic
-Forensic Registry EDitor (fred)
-Volatility Framework
-Sysinternals Suite
-
+OS:
 ParrotOS
 Caine
 Metasploitable --> vulnerable Ubuntu for practice
 
+Autopsy & The Sleuth Kit
+OSForensic
+Forensic Registry EDitor (fred)
+Registry Viewer
+Volatility Framework
+Sysinternals Suite
+
+Imaging:
 FTK Imager
 Magnet RAM Capture
 Dumpit
 LiME --> Linux Memory Extractor
 dd
+
+Remote Image:
+OSForensic
+Belkasoft Remote Acquisition
 
 Wireshark
 Tcpdump
@@ -25,7 +32,3 @@ Steghide
 EXIFtool
 
 Get-ZimmermanTools
-
-Remote Image:
-OSForensic
-Belkasoft Remote Acquisition
