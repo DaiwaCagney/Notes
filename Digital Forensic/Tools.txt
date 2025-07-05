@@ -2,6 +2,7 @@ Autopsy & The Sleuth Kit
 OSForensic
 Forensic Registry EDitor (fred)
 Volatility Framework
+Sysinternals Suite
 
 ParrotOS
 Caine
@@ -11,6 +12,7 @@ FTK Imager
 Magnet RAM Capture
 Dumpit
 LiME --> Linux Memory Extractor
+dd
 
 Wireshark
 Tcpdump
@@ -24,4 +26,6 @@ EXIFtool
 
 Get-ZimmermanTools
 
+Remote Image:
+OSForensic
 Belkasoft Remote Acquisition
