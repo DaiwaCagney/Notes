@@ -43,3 +43,39 @@ cut -d ‘ ‘ -f 1,3,5 file.txt # Cut out fields from a file
 
 ls /dev/sda* # List all hard drives
 ls /dev/sd*
+
+DNS:
+cat /etc/hosts
+cat /etc/resolv.conf
+cat /etc/nsswitch.conf
+
+IP address:
+ifconfig
+
+Gateway:
+netstat -rnv
+
+Process:
+ps -ef | grep {process}
+ps -ef | more
+
+SSH:
+cat /etc/ssh/sshd_conf
+ssh -l {user} {ip}
+
+Access Log:
+cd /var/log
+more secure
+tail -f secure
+
+ls -ltr
+
+User:
+id {username}
+vi /etc/passwd
+
+Firewall:
+systemctl status iptables.service
+systemctl status firewalld
+systemctl stop firewalld
+systemctl disable firewalld
