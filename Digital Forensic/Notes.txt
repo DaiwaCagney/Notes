@@ -34,4 +34,10 @@ volatility -f {image.vmem} --profile={profile} printkey -K "Software\Microsoft\W
 strings {PID.dmp} | grep -Fi "executable.exe"
 
 volatility -f {image.vmem} kdbgscan --> look for processes & modules
-volatility -f {image.vmem} --profile={profile} consoles --> any one usinh cmd when memory dump
+volatility -f {image.vmem} --profile={profile} consoles --> any one using cmd when memory dump
+volatility -f {image.vmem} --profile={profile} timeliner --> all events by time
+volatility -f {image.vmem} --profile={profile} filescan --> all files in used when memory dump
+volatility -f {image.vmem} --profile={profile} psscan --> dead process
+volatility -f {image.vmem} --profile={profile} dlllist
+volatility -f {image.vmem} --profile={profile} dumpfiles
+volatility -f {image.vmem} --profile={profile} vboxinfo
