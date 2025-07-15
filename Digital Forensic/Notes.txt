@@ -32,3 +32,6 @@ strings {PID.dmp} | less
 volatility -f {image.vmem} --profile={profile} hivelist
 volatility -f {image.vmem} --profile={profile} printkey -K "Software\Microsoft\Windows|CurrentVersion\Run" --> check what process run at start-up
 strings {PID.dmp} | grep -Fi "executable.exe"
+
+volatility -f {image.vmem} kdbgscan --> look for processes & modules
+volatility -f {image.vmem} --profile={profile} consoles --> any one usinh cmd when memory dump
