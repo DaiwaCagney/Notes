@@ -32,3 +32,7 @@ Steghide
 EXIFtool
 
 Get-ZimmermanTools
+
+Browser History Capturer
+Browser History Examiner
+Browser History Viewer
