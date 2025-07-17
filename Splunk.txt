@@ -23,6 +23,7 @@ index=_internal source="*/splunkd.log"
 | table { },{ },{ },{ }
 | timechart span=1w count by { } limit=5
 | eval time=tostring(filed_with_seconds, "duration")
+| sort by { } -{}
 
 /opt/splunk/etc/deployment-apps/
 /opt/splunk/bin/splunk restart
