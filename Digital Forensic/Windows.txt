@@ -28,3 +28,16 @@ openfiles /local on
 PStools:
 psloggedon
 psfile.exe
+
+PowerShell:
+Get-ChildItem -Path {Path of the Directory}
+Get-Content -Path {Path to the text file}
+Get-FileHash -Algorithm MD5 -Path {Path to the file}
+Select-String -Path {Path} -Pattern "{Pattern}"
+(Get-Item {Path to the file}).CreationTime
+
+$files = Get-ChildItem -Path {Path of the Directory} -Recurse -File
+$report = foreach ($file in $files) {
+  Get-FileHash -Path $file.FullName
+}
+$report | Out-File -FilePath {Path\To\Report.txt}
