@@ -79,3 +79,5 @@ systemctl status iptables.service
 systemctl status firewalld
 systemctl stop firewalld
 systemctl disable firewalld
+
+cat /proc/partitions
