@@ -1,0 +1,19 @@
+Cross-origin resource sharing
+
+a browser mechanism which enables controlled access to resources located outside of a given domain
+
+Same-origin policy
+a restrictive cross-origin specification that limits the ability for a website to interact with resources outside of the source domain
+generally allows a domain to issue requests to other domains, but not to access the responses
+
+
+GET /sensitive-victim-data HTTP/1.1
+Host: vulnerable-website.com
+Origin: https://malicious-website.com
+Cookie: sessionid=...
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: https://malicious-website.com
+Access-Control-Allow-Credentials: true
+
+
