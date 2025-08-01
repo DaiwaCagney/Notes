@@ -43,3 +43,4 @@ $report = foreach ($file in $files) {
 $report | Out-File -FilePath {Path\To\Report.txt}
 
 Netsh firewall show opmode --> show available profiles in Microsoft Windows firewall
+netsh advfirewall firewall add rule --> add a new rule in Microsoft Windows firewall
