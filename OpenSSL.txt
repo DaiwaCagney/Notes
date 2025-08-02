@@ -1,0 +1,16 @@
+openssl list -signature-algorithms
+
+see the details of the key:
+openssl genpkey -algorithm ML-DSA-44 -text
+
+export a key:
+openssl genpkey -algorithm ml-dsa-44 > 1.key
+
+sign a message:
+openssl pkeyutl -sign -in file.txt -inkey 1.key -out signature.bin
+
+export the public key:
+openssl pkey -in 1.key -out mykey.pubkey
+
+check the signature:
+openssl pkeyutl -verify -in file.txt -sigfile signature.bin -inkey mykey.pubkey
