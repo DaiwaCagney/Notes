@@ -3,7 +3,8 @@ ParrotOS
 Caine
 Metasploitable --> vulnerable Ubuntu for practice
 
-Autopsy & The Sleuth Kit
+Autopsy
+The Sleuth Kit
 OSForensic
 Forensic Registry EDitor (fred)
 Registry Viewer
@@ -41,3 +42,6 @@ Elcomsoft Distributed Password Recovery
 Ophcrack
 Hashcat
 John the Ripper
+
+Digital Forensics Tool Testing Images:
+https://dftt.sourceforge.net/
