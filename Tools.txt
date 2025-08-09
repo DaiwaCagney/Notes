@@ -62,3 +62,5 @@ Last Activity View
 ZenMap
 USB Detective
 Xplico
+Thorium
+CRITs
