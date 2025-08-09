@@ -5,13 +5,13 @@ Network Based Intrusion Detection System:
 Snort
 
 TI:
-https://github.com/xaitax/SploitScan
+SploitScan
 
 Web Scan:
-https://github.com/OWASP/OFFAT
+OFFAT
 Burp
 ZAP
-https://feifei.tw/security-tool-sqlmap/
+SQLmap
 
 Antivirus:
 KVRT
