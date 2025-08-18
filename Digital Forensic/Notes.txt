@@ -1,7 +1,3 @@
-Check if VM exist in a host:
-Check HKEY_CLASSES_ROOT for file extension
-Check network adapters
-
 Volatility: 
 sudo snap install volatility-phocean --> install
 volatility -f {image.vmem} imageinfo
