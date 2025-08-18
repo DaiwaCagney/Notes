@@ -2,15 +2,6 @@ Check if VM exist in a host:
 Check HKEY_CLASSES_ROOT for file extension
 Check network adapters
 
-nmap -sT -A -T4 -ox /tmp/webmap/myscan.xml 10.10.10.10
-
-Shodan:
-"default password" city:tucson
-"Vsftpd 2.3.4"
-"MongoDB Server Information" port:27017 -authentication
-"Set-Cookie: mongo-express=" "200 OK"
-product:elastic port:9200
-
 Volatility: 
 sudo snap install volatility-phocean --> install
 volatility -f {image.vmem} imageinfo
