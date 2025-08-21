@@ -26,6 +26,7 @@ CSRF PoC generator - Burp Suite Professional
 Note that some simple CSRF exploits employ the GET method and can be fully self-contained with a single URL on the vulnerable website
 <img src="https://vulnerable-website.com/email/change?email=pwned@evil-user.net">
 
+How to Prevent:
 CSRF tokens
 SameSite cookies
 Referer-based validation
