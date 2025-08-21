@@ -151,7 +151,3 @@ Content-Length: 15
 
 x=1
 0
-
-
-Bypass front-end server security controls:
-
