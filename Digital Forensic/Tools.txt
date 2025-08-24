@@ -45,3 +45,6 @@ John the Ripper
 
 Digital Forensics Tool Testing Images:
 https://dftt.sourceforge.net/
+
+oletools
+olevba
