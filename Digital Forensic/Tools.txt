@@ -48,3 +48,6 @@ https://dftt.sourceforge.net/
 
 oletools
 olevba
+
+ViperMonkey
+Lazy Office Analyzer
