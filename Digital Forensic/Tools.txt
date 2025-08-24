@@ -3,13 +3,10 @@ ParrotOS
 Caine
 Metasploitable --> vulnerable Ubuntu for practice
 
+Digital Forensics Platform:
 Autopsy
 The Sleuth Kit
 OSForensic
-Forensic Registry EDitor (fred)
-Registry Viewer
-Volatility Framework
-Sysinternals Suite
 
 Imaging:
 FTK Imager
@@ -22,22 +19,39 @@ Remote Image:
 OSForensic
 Belkasoft Remote Acquisition
 
+Memory Forensics:
+Volatility Framework
+
+Registry:
+Forensic Registry EDitor (fred)
+Registry Viewer
+
+Network:
 Wireshark
 Tcpdump
 
-CyberChef
-HxD --> Hex Editor
-DCode
-
-Steghide
-EXIFtool
-
-Get-ZimmermanTools
-
+Browser:
 Browser History Capturer
 Browser History Examiner
 Browser History Viewer
 
+Data Analysis:
+CyberChef
+DCode
+HxD --> Hex Editor
+
+Steganography:
+Steghide
+
+Metadata:
+EXIFtool
+
+Analyze MS Files:
+oletools
+ViperMonkey
+Lazy Office Analyzer
+
+Password:
 Elcomsoft Distributed Password Recovery
 Ophcrack
 Hashcat
@@ -46,8 +60,14 @@ John the Ripper
 Digital Forensics Tool Testing Images:
 https://dftt.sourceforge.net/
 
-oletools
-olevba
+Tools Set:
+Sysinternals Suite
+Get-ZimmermanTools
 
-ViperMonkey
-Lazy Office Analyzer
+
+
+
+
+
+
+
