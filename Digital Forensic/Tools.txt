@@ -64,10 +64,5 @@ Tools Set:
 Sysinternals Suite
 Get-ZimmermanTools
 
-
-
-
-
-
-
-
+Reverse Engineering:
+x64dbg
