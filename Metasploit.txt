@@ -14,3 +14,10 @@ set lhost {IP}
 show payloads
 set payload {payload}
 exploit
+
+msfconsole
+search {keyword}
+use {Modules Name}
+set RHOSTS {subnet}
+set THREATS 10
+run
