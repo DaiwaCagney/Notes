@@ -4,3 +4,13 @@ use {Modules Name}
 options
 set rhost {IP}
 execute
+
+msfconsole
+search {keyword}
+use {Modules Name}
+show options
+set rhost {IP}
+set lhost {IP}
+show payloads
+set payload {payload}
+exploit
