@@ -23,3 +23,5 @@ set THREATS 10
 run
 
 info {Modules Name}
+
+meterpreter > shell
