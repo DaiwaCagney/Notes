@@ -21,3 +21,5 @@ use {Modules Name}
 set RHOSTS {subnet}
 set THREATS 10
 run
+
+info {Modules Name}
