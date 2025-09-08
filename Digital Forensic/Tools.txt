@@ -60,9 +60,12 @@ John the Ripper
 Digital Forensics Tool Testing Images:
 https://dftt.sourceforge.net/
 
+Debuggers:
+x64dbg
+Ollydbg
+Windbg
+Radare2
+
 Tools Set:
 Sysinternals Suite
 Get-ZimmermanTools
-
-Reverse Engineering:
-x64dbg
