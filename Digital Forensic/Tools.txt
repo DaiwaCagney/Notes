@@ -25,6 +25,7 @@ Volatility Framework
 Registry:
 Forensic Registry EDitor (fred)
 Registry Viewer
+Regshot
 
 Network:
 Wireshark
@@ -57,14 +58,14 @@ Ophcrack
 Hashcat
 John the Ripper
 
-Digital Forensics Tool Testing Images:
-https://dftt.sourceforge.net/
-
 Debuggers:
 x64dbg
 Ollydbg
 Windbg
 Radare2
+
+Digital Forensics Tool Testing Images:
+https://dftt.sourceforge.net/
 
 Tools Set:
 Sysinternals Suite
