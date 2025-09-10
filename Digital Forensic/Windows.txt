@@ -59,3 +59,5 @@ netsh wlan show profile name={name} key=clear
 %TEMP%
 shell:startup
 shell:common startup
+
+HKLM\Software\WOW6432Node\Microsoft\Windows\CurrrentVersion\Uninstall --> enumerate this key to detect applications installed on the system
