@@ -64,6 +64,9 @@ Ollydbg
 Windbg
 Radare2
 
+Process:
+Process Hacker
+
 Digital Forensics Tool Testing Images:
 https://dftt.sourceforge.net/
 
