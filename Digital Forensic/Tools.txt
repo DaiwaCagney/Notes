@@ -30,6 +30,7 @@ Regshot
 Network:
 Wireshark
 Tcpdump
+Fiddler
 
 Browser:
 Browser History Capturer
@@ -71,5 +72,8 @@ Digital Forensics Tool Testing Images:
 https://dftt.sourceforge.net/
 
 Tools Set:
-Sysinternals Suite
 Get-ZimmermanTools
+Sysinternals Suite
+  Process Explorer
+  Procmon - process, file, registry and network activities
+  Sysmon
