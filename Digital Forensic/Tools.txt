@@ -73,6 +73,7 @@ https://dftt.sourceforge.net/
 
 Tools Set:
 Get-ZimmermanTools
+Flare-VM
 Sysinternals Suite
   Process Explorer
   Procmon - process, file, registry and network activities
