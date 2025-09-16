@@ -25,3 +25,5 @@ run
 info {Modules Name}
 
 meterpreter > shell
+
+show exploits
