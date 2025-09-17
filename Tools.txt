@@ -28,6 +28,10 @@ Autocomplete Action Predictor:
 chrome://predictors/
 edge://predictors/
 
+Password Crack:
+John the Ripper
+Hydra
+
 Pending:
 GPG
 MISP
@@ -37,12 +41,9 @@ Siembol
 Zeek
 Sigma
 Hive Project’s Cortex
-Metasploit
 Cobalt Strike
 PowerSploit
-Mimikatz
 Impacket
-John the Ripper
 NinjaCopy
 UPX
 https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
@@ -70,4 +71,3 @@ Gobuster --> Directory Brute-force
 Kiterunner
 mitmweb
 mitmproxy2swagger
-Nikto
