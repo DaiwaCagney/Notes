@@ -30,7 +30,11 @@ edge://predictors/
 
 Password Crack:
 John the Ripper
+Hashcat
 Hydra
+
+Anonymize:
+Whonix
 
 Pending:
 GPG
