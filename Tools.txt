@@ -19,6 +19,7 @@ KVRT
 
 System Auditing:
 https://github.com/CISOfy/lynis
+OpenSCAP
 
 NetLog Dump:
 chrome://net-export/
