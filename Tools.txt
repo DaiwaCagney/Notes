@@ -8,7 +8,7 @@ TI:
 SploitScan
 Searchsploit
 
-Web Scan:
+Web:
 OFFAT
 Burp
 ZAP
@@ -38,8 +38,15 @@ Hydra
 Anonymize:
 Whonix
 
-CT:
+Domain Enumeration:
 Crt.sh
+Shodomain
+Censys
+Facebook CT
+Google CT
+Pentest-Tools
+VirusTotal
+Sublist3r
 
 Pending:
 GPG
