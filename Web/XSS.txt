@@ -45,6 +45,7 @@ print()
           })
 </script>
 
+<script>alert("message")</script>
 <img src=x onerror=alert("message")>
 <img src=x onerror=prompt(1)>
 ;</script><svg onload=alert("message")>
