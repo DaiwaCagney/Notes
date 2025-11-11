@@ -47,6 +47,7 @@ Google CT
 Pentest-Tools
 VirusTotal
 Sublist3r
+https://www.nmmapper.com/sys/tools/subdomainfinder/
 
 Pending:
 GPG
