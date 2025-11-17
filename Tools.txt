@@ -48,6 +48,8 @@ Pentest-Tools
 VirusTotal
 Sublist3r
 https://www.nmmapper.com/sys/tools/subdomainfinder/
+Wayback Machine
+ParamSpider
 
 Pending:
 GPG
@@ -83,7 +85,6 @@ Xplico
 Thorium
 CRITs
 TruffleHog
-The Wayback Machine
 Gobuster --> Directory Brute-force
 Kiterunner
 mitmweb
