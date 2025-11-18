@@ -38,7 +38,7 @@ Hydra
 Anonymize:
 Whonix
 
-Domain Enumeration:
+Reconnaissance:
 Crt.sh
 Shodomain
 Censys
@@ -47,9 +47,10 @@ Google CT
 Pentest-Tools
 VirusTotal
 Sublist3r
-https://www.nmmapper.com/sys/tools/subdomainfinder/
+Nmmapper
 Wayback Machine
 ParamSpider
+DNSDumpster
 
 Pending:
 GPG
