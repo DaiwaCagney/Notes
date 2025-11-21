@@ -52,6 +52,9 @@ Wayback Machine
 ParamSpider
 DNSDumpster
 
+Code Analysis:
+BinDiff
+
 Pending:
 GPG
 MISP
