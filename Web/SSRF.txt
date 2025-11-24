@@ -18,6 +18,7 @@ Content-Length: 118
 
 stockApi=http://192.168.0.68/admin
 
+
 blacklist-based input filters:
 Use an alternative IP representation of 127.0.0.1, such as 2130706433, 017700000001, or 127.1
 Register your own domain name that resolves to 127.0.0.1. You can use spoofed.burpcollaborator.net for this purpose
