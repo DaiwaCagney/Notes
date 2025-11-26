@@ -11,15 +11,7 @@ dns.qry.name == "www.cyberengage.org"
 dns.a != 192.168.1.1 --> dns.a && !(dns.a == 192.168.1.1)
 
 By default, Wireshark disables DNS lookups
-
 Never turn on “Use an external network name resolver” if you care about stealth
-
 Instead, use “Use captured DNS packet data for address resolution” This resolves hostnames from the DNS packets in the capture, no external traffic
 
 Timestamps in the packet metadata (in the pcap) are in UTC. But any timestamps inside the packet data (like HTTP headers or app logs) can be in any timezone
-
-Follow → TCP Stream
-Wireshark lets you follow UDP, TLS, and HTTP streams
-
-With Decode As, you can force Wireshark to analyze the traffic using the protocol you know is actually being used
-
