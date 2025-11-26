@@ -1,18 +1,12 @@
 Caches identify equivalent requests by comparing a predefined subset of the request's components, known collectively as the "cache key"
 Typically, this would contain the request line and Host header
 Components of the request that are not included in the cache key are said to be "unkeyed"
-
+Any web cache poisoning attack relies on manipulation of unkeyed inputs, such as headers
 As the poisoned cache is more a means of distribution than a standalone attack, the impact of web cache poisoning is inextricably linked to how harmful the injected payload is
 The poisoned response will only be served to users who visit the affected page while the cache is poisoned
+Whether or not a response gets cached can depend on all kinds of factors, such as the file extension, content type, route, status code, and response headers
 
-Any web cache poisoning attack relies on manipulation of unkeyed inputs, such as headers
-can automate the process of identifying unkeyed inputs by adding the Param Miner extension to Burp from the BApp store
-
-Whether or not a response gets cached can depend on all kinds of factors, such as the file extension, content type, route, status code, and response headers\
-
-How to prevent web cache poisoning vulnerabilities:
-if you do need to use caching, restricting it to purely static responses
-Don't accept fat GET requests
+Burp Param Miner extension --> automate the process of identifying unkeyed inputs
 
 Example:
 GET /en?region=uk HTTP/1.1
