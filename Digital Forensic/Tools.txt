@@ -14,10 +14,21 @@ Magnet RAM Capture
 Dumpit
 LiME --> Linux Memory Extractor
 dd
+R-Drive Image
 
 Remote Image:
 OSForensic
 Belkasoft Remote Acquisition
+
+Data Recovery:
+EaseUS Data Recovery Wizard
+
+Hash Calculations:
+HashCalc
+MD5 Calculator
+
+View Files:
+File Viewer
 
 Memory Forensics:
 Volatility Framework
@@ -75,6 +86,6 @@ Tools Set:
 Get-ZimmermanTools
 Flare-VM
 Sysinternals Suite
-  Process Explorer
-  Procmon - process, file, registry and network activities
-  Sysmon
+-Process Explorer
+-Procmon - process, file, registry and network activities
+-Sysmon
