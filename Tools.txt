@@ -13,6 +13,7 @@ OFFAT
 Burp
 ZAP
 SQLmap
+Wfuzz
 
 Antivirus:
 KVRT
