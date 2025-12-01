@@ -15,11 +15,14 @@ ZAP
 SQLmap
 Wfuzz
 
+Web Path Scanner:
+dirsearch
+
 Antivirus:
 KVRT
 
 System Auditing:
-https://github.com/CISOfy/lynis
+Lynis
 OpenSCAP
 
 NetLog Dump:
