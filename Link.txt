@@ -94,3 +94,9 @@ https://www.infosecurity-magazine.com/
 https://hackread.com/
 https://cyware.com/cyber-security-news-articles
 https://krebsonsecurity.com/category/latest-warnings/
+
+Bug Bounty
+https://www.bugcrowd.com/
+https://www.hackerone.com/
+https://www.intigriti.com/
+https://www.openbugbounty.org/
