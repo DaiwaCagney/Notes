@@ -18,6 +18,12 @@ Wfuzz
 Web Path Scanner:
 dirsearch
 
+Web Identification:
+Wappalyzer
+BuiltWith
+WhatWeb
+Retire JS
+
 Antivirus:
 KVRT
 
@@ -49,7 +55,6 @@ Censys
 Facebook CT
 Google CT
 Pentest-Tools
-VirusTotal
 Sublist3r
 Nmmapper
 Wayback Machine
