@@ -61,3 +61,5 @@ shell:startup
 shell:common startup
 
 HKLM\Software\WOW6432Node\Microsoft\Windows\CurrrentVersion\Uninstall --> enumerate this key to detect applications installed on the system
+
+chkdsk --> detect errors in file system
