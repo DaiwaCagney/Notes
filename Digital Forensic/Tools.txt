@@ -51,7 +51,10 @@ Browser History Viewer
 Data Analysis:
 CyberChef
 DCode
-HxD --> Hex Editor
+
+Hex Editor:
+HxD
+WinHex
 
 Steganography:
 Steghide
