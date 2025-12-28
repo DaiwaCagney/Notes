@@ -24,3 +24,7 @@ volatility -f {image.vmem} --profile={profile} psscan --> dead process
 volatility -f {image.vmem} --profile={profile} dlllist
 volatility -f {image.vmem} --profile={profile} dumpfiles
 volatility -f {image.vmem} --profile={profile} vboxinfo
+
+The Sleuth Kit (TSK):
+mmls "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_002.dd" --> view partition tables
+fsstat "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> view the type of file system and the OS related to the image
