@@ -55,6 +55,7 @@ DCode
 Hex Editor:
 HxD
 WinHex
+Hex Editor Neo
 
 Steganography:
 Steghide
