@@ -1,0 +1,20 @@
+docx:
+start with 50 4b 03 04 14 00 06 00 and contains 77 6f 72 64
+
+gif:
+start with 47 49 46 38
+
+jpg:
+start with ff d8 ff
+
+pdf:
+starts with 25 50 44 46
+
+png:
+starts with 89 50 4e 47
+
+rar:
+starts with 52 61 72 21 1a 07
+
+xlsx:
+starts with 50 4b 03 04 14 00 06 00 and contains 78 6c 2f
