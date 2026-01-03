@@ -41,3 +41,4 @@ fls -f ntfs "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.d
 ils -r "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> view the list of inode information
 ffind -f ntfs "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" 96 --> find the name of the file or directory in inode number 96
 tsk_recover -i raw -e "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" "C:\Users\Administrator\Desktop\Retrieved Files by SleuthKit" --> recover files
+fls -m 63 "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> gather the temporal data (-m argument displays files in a time-machine format so that a timeline can be created with mactime(1). 63 represents that the the file system starts in sector 63)
