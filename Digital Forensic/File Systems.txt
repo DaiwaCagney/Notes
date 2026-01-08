@@ -1,0 +1,7 @@
+Windows File Systems:
+File Allocation Table (FAT)
+FAT12
+FAT16
+FAT32
+extended file allocation table (exFAT)
+New Technology File System (NTFS)
