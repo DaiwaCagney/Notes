@@ -4,4 +4,8 @@ FAT12
 FAT16
 FAT32
 extended file allocation table (exFAT)
+
 New Technology File System (NTFS)
+ECHO [data] > [filename]:[streamname] --> write contents into a file’s data stream
+MORE < [filename]:[streamname] --> displays the content of the data stream
+
