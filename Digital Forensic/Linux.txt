@@ -81,3 +81,5 @@ systemctl stop firewalld
 systemctl disable firewalld
 
 cat /proc/partitions
+
+sudo systemctl list-unit-files --type=service --state=enabled # List all active services
