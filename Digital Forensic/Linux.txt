@@ -83,3 +83,8 @@ systemctl disable firewalld
 cat /proc/partitions
 
 sudo systemctl list-unit-files --type=service --state=enabled # List all active services
+
+Data Acquisition:
+dir /dev
+md5sum /dev/sdb
+dd if=/dev/sdb of=/dev/sdc
