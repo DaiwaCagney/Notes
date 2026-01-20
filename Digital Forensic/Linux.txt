@@ -1,3 +1,13 @@
+Data Acquisition:
+dir /dev
+md5sum /dev/sdb
+dd if=/dev/sdb of=/dev/sdc
+
+Acquire Volatile Date:
+dd if=/dev/fmem of=<file_name.dd> bs=1MB --> Local
+nc -l <port> > filename.dd
+dd if=/dev/fmem bs=1024 | nc <IP Address> <port>
+
 strings # Display printable strings in files
 
 file # Determine type of file
@@ -83,8 +93,3 @@ systemctl disable firewalld
 cat /proc/partitions
 
 sudo systemctl list-unit-files --type=service --state=enabled # List all active services
-
-Data Acquisition:
-dir /dev
-md5sum /dev/sdb
-dd if=/dev/sdb of=/dev/sdc
