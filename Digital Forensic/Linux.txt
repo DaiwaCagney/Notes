@@ -2,6 +2,7 @@ Data Acquisition:
 dir /dev
 md5sum /dev/sdb
 dd if=/dev/sdb of=/dev/sdc
+dcfldd
 
 Acquire Volatile Date:
 dd if=/dev/fmem of=<file_name.dd> bs=1MB --> Local
