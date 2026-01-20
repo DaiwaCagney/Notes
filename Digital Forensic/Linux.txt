@@ -8,6 +8,11 @@ dd if=/dev/fmem of=<file_name.dd> bs=1MB --> Local
 nc -l <port> > filename.dd
 dd if=/dev/fmem bs=1024 | nc <IP Address> <port>
 
+LiME:
+insmod lime-<kernel_module>.ko "path=<directory> format=lime" --> Local
+insmod lime-<kernel_module>.ko "path=tcp:<port> format=lime"
+nc <IP Address of the suspect machine>:<port> > filename.mem
+
 strings # Display printable strings in files
 
 file # Determine type of file
