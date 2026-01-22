@@ -74,3 +74,5 @@ select disk <disk number>
 detail disk
 select partition=1
 detail partition
+
+Get-FileHash 'Path' -Algorithm MD5 | Format-list
