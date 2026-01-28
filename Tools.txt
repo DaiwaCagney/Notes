@@ -64,6 +64,7 @@ DNSDumpster
 Mobile:
 DIVA Android
 MobSF
+Frida
 
 Pending:
 GPG
