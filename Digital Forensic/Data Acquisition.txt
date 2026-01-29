@@ -1,0 +1,2 @@
+E01 image file works perfectly only when the forensics workstation is Windows-based
+xmount --in ewf Windows_Evidence_001.E01 /home/jason/Documents
