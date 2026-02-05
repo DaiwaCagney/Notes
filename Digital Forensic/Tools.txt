@@ -10,6 +10,7 @@ OSForensic
 
 Imaging:
 FTK Imager
+Belkasoft RAM Capturer
 Magnet RAM Capture
 Dumpit
 LiME --> Linux Memory Extractor
