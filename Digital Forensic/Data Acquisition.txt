@@ -1,2 +1,15 @@
 E01 image file works perfectly only when the forensics workstation is Windows-based
 xmount --in ewf Windows_Evidence_001.E01 /home/jason/Documents
+
+Mounting image files on a Linux forensic workstation:
+Mount a dd image file using mount command
+Mount a dd image file using a loop device
+
+mkdir /mnt/dd
+mount -o ro /home/jason/Documents/Windows_Evidence_001.dd /mnt/dd/ --> in read-only mode
+ls -la /mnt/dd/
+
+losetup -f --> identify the first unused loop device
+losetup /dev/loop14 MAC_Evidence_001.dd
+
+images may contain hidden files and folders. To view them, press Ctrl+H on the keyboard
