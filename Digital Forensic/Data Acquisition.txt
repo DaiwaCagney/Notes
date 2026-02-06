@@ -13,3 +13,5 @@ losetup -f --> identify the first unused loop device
 losetup /dev/loop14 MAC_Evidence_001.dd
 
 images may contain hidden files and folders. To view them, press Ctrl+H on the keyboard
+
+dd if=/dev/fmem of=/home/james/ubuntu_local_ram.dd bs=1MB --> To acquire RAM locally
