@@ -8,6 +8,7 @@ Autopsy
 The Sleuth Kit
 OSForensic
 DiskExplorer for NTFS
+PyTSK
 
 Imaging:
 FTK Imager
