@@ -7,12 +7,12 @@ Digital Forensics Platform:
 Autopsy
 The Sleuth Kit
 OSForensic
+DiskExplorer for NTFS
 
 Imaging:
 FTK Imager
 Belkasoft RAM Capturer
 fmem
-DiskExplorer for NTFS
 Magnet RAM Capture
 Dumpit
 LiME --> Linux Memory Extractor
