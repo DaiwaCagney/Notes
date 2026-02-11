@@ -65,6 +65,11 @@ Mobile:
 DIVA Android
 MobSF
 Frida
+Team Win Recovery Project
+AFWall+
+AppOps
+PCAPdroid
+Logcat
 
 Pending:
 GPG
