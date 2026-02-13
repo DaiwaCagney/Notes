@@ -26,6 +26,7 @@ Retire JS
 
 Antivirus:
 KVRT
+ClamAV # Linux
 
 System Auditing:
 Lynis
