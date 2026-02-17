@@ -9,6 +9,8 @@ New Technology File System (NTFS)
 ECHO [data] > [filename]:[streamname] --> write contents into a file’s data stream
 MORE < [filename]:[streamname] --> displays the content of the data stream
 fsutil --> check USN Journal
+notepad test.txt:hidden.txt
+dir /r
 
 Resilient File System (ReFS)
 
