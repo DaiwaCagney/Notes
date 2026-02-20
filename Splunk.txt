@@ -32,3 +32,4 @@ index=_internal source="*/splunkd.log"
 
 | eval timestamp = strftime(ts_epoch, "%Y-%m-%d %H:%M:%S")
 
+| regex _raw="(?i)\b(ssh|domain|query|response|port 22)\b"
