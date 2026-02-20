@@ -27,3 +27,8 @@ index=_internal source="*/splunkd.log"
 
 /opt/splunk/etc/deployment-apps/
 /opt/splunk/bin/splunk restart
+
+| rex field=_raw "(?<ts_epoch>\d+\.\d+)\s+(?<uid>\S+)\s+(?<src_ip>\d+\.\d+\.\d+\.\d+)\s+(?<src_port>\d+)\s+(?<dst_ip>\d+\.\d+\.\d+\.\d+)\s+(?<dst_port>\d+)\s+(?<result>\S+)\s+(?<direction>\S+)\s+(?<client_version>\S+)\s+(?<server_version>\S+)" 
+
+| eval timestamp = strftime(ts_epoch, "%Y-%m-%d %H:%M:%S")
+
