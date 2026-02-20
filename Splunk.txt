@@ -35,3 +35,5 @@ index=_internal source="*/splunkd.log"
 | regex _raw="(?i)\b(ssh|domain|query|response|port 22)\b"
 
 | rex field=_raw "^(?<ts_epoch>\d+\.\d+)\\t(?<uid>\\S+)\\t(?<src_ip>[^\\t]+)\\t(?<src_port>\\d+)\\t(?<dst_ip>[^\\t]+)\\t(?<dst_port>\\d+)\\t(?<result>\\S+)"
+
+| timechart span=5m count(eval(result="failure")) AS failures
