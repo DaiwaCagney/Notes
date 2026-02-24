@@ -9,11 +9,11 @@ Try using different redirect codes, as well as different protocols for the targe
 
 ## Whitelist-based input filters:
 You can embed credentials in a URL before the hostname, using the @ character  
-https://expected-host:fakepassword@evil-host  
+`https://expected-host:fakepassword@evil-host`  
 You can use the # character to indicate a URL fragment  
-https://evil-host#expected-host  
+`https://evil-host#expected-host`  
 You can leverage the DNS naming hierarchy to place required input into a fully-qualified DNS name that you control  
-https://expected-host.evil-host  
+`https://expected-host.evil-host`  
 Can URL-encode characters to confuse the URL-parsing code  
 Can also try double-encoding characters  
 
