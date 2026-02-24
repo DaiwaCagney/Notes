@@ -1,0 +1,115 @@
+# Tools
+
+## TLS/SSL ciphers & protocols test:
+- https://github.com/drwetter/testssl.sh
+
+## Network Based Intrusion Detection System:
+- Snort
+
+## TI:
+- SploitScan
+- Searchsploit
+
+## Web:
+- OFFAT
+- Burp
+- ZAP
+- SQLmap
+- Wfuzz
+
+## Web Path Scanner:
+- dirsearch
+
+## Web Identification:
+- Wappalyzer
+- BuiltWith
+- WhatWeb
+- Retire JS
+
+## Antivirus:
+- KVRT
+- ClamAV # Linux
+
+## System Auditing:
+- Lynis
+- OpenSCAP
+
+## NetLog Dump:
+- chrome://net-export/
+- edge://net-export/
+- https://netlog-viewer.appspot.com/#events
+
+## Autocomplete Action Predictor:
+- chrome://predictors/
+- edge://predictors/
+
+## Password Crack:
+- John the Ripper
+- Hashcat
+- Hydra
+
+## Anonymize:
+- Whonix
+
+## Reconnaissance:
+- Crt.sh
+- Shodomain
+- Censys
+- Facebook CT
+- Google CT
+- Pentest-Tools
+- Sublist3r
+- Nmmapper
+- Wayback Machine
+- ParamSpider
+- DNSDumpster
+
+## Mobile:
+- DIVA Android
+- MobSF
+- Frida
+- JADX
+- Team Win Recovery Project
+- AFWall+
+- AppOps
+- PCAPdroid
+- Logcat
+
+## Pending:
+- GPG
+- MISP
+- GNS3
+- Recon-ng
+- Siembol
+- Zeek
+- Sigma
+- Hive Project’s Cortex
+- Cobalt Strike
+- PowerSploit
+- Impacket
+- NinjaCopy
+- UPX
+- https://www.netexec.wiki/ : https://github.com/Pennyw0rth/NetExec
+- https://github.com/blacklanternsecurity/baddns
+- https://github.com/zodiacon/PEExplorerV2
+- https://ghidra-sre.org/
+- https://github.com/ION28/BLUESPAWN
+- https://github.com/redcanaryco/atomic-red-team
+- https://github.com/sans-blue-team/DeepBlueCLI
+- https://github.com/kunai-project/kunai
+- https://etcher.balena.io/
+- NetworkMiner
+- Magnet ACQUIRE
+- Andriller
+- BrowsingHistoryView
+- Last Activity View
+- ZenMap
+- USB Detective
+- Xplico
+- Thorium
+- CRITs
+- TruffleHog
+- Gobuster --> Directory Brute-force
+- Kiterunner
+- mitmweb
+mitmproxy2swagger
