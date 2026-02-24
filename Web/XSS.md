@@ -6,7 +6,7 @@ var search = document.getElementById('search').value;
 var results = document.getElementById('results');
 results.innerHTML = 'You searched for: ' + search;
 ```
-You searched for: <img src=1 onerror='/* Bad stuff here... */'>
+You searched for: `<img src=1 onerror='/* Bad stuff here... */'>`
 
 To find DOM-based vulnerabilities in non-URL-based input (such as document.cookie) or non-HTML-based sinks (like setTimeout), there is no substitute for reviewing JavaScript code
 
