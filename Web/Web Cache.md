@@ -1,9 +1,8 @@
 # Web Cache
-
 Caches identify equivalent requests by comparing a predefined subset of the request's components, known collectively as the "cache key"  
 Typically, this would contain the request line and Host header  
 Components of the request that are not included in the cache key are said to be "unkeyed"  
-Whether or not a response gets cached can depend on all kinds of factors, such as the file extension, content type, route, status code, and response headers  
+Whether or not a response gets cached can depend on all kinds of factors, such as the file extension, content type, route, status code, and response headers
 
 Burp Param Miner extension --> automate the process of identifying unkeyed inputs
 
