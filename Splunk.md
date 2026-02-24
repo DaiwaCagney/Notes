@@ -1,0 +1,58 @@
+# Splunk
+
+## System Related
+Alert:  
+`| rest /servicesNS/-/-/saved/searches | table title, search`
+
+Index:  
+`| eventcount summarize=false index=* index=_* | dedup index | fields index`
+
+Forwarder:  
+`index=_internal source=*metrics.log group=tcpin_connections | dedup hostname | table Hostname, SourceIP, OS`
+
+Error:  
+`index=_internal source="*/splunkd.log"`
+
+## Query
+`| search ({ } = { } AND { } != { })`
+
+`| search NOT ({ }={ })`
+
+`| where { } > { } OR ({ } > { } AND { } > { })`
+
+`| stats values({ }) as { }, dc({ }) as { }, count as Total, by { }`
+
+`| stats Median(count) as { } by { }`
+
+`| join type=left [search ... earliest=-8h@h latest=-1h@h]`
+
+`| bucket _time span=1h`
+
+`| eval { }=if(isnotnull({ }),{ },{ })`
+
+`| rename { } as { }`
+
+`| dedup { }`
+
+`| table { },{ },{ },{ }`
+
+`| timechart span=1w count by { } limit=5`
+
+`| eval time=tostring(filed_with_seconds, "duration")`
+
+`| sort { } -{}`
+
+`| rex field=_raw "(?<ts_epoch>\d+\.\d+)\s+(?<uid>\S+)\s+(?<src_ip>\d+\.\d+\.\d+\.\d+)\s+(?<src_port>\d+)\s+(?<dst_ip>\d+\.\d+\.\d+\.\d+)\s+(?<dst_port>\d+)\s+(?<result>\S+)\s+(?<direction>\S+)\s+(?<client_version>\S+)\s+(?<server_version>\S+)"`
+
+`| eval timestamp = strftime(ts_epoch, "%Y-%m-%d %H:%M:%S")`
+
+`| regex _raw="(?i)\b(ssh|domain|query|response|port 22)\b"`
+
+`| rex field=_raw "^(?<ts_epoch>\d+\.\d+)\\t(?<uid>\\S+)\\t(?<src_ip>[^\\t]+)\\t(?<src_port>\\d+)\\t(?<dst_ip>[^\\t]+)\\t(?<dst_port>\\d+)\\t(?<result>\\S+)"`
+
+`| timechart span=5m count(eval(result="failure")) AS failures`
+
+## Path
+/opt/splunk/etc/deployment-apps/
+
+/opt/splunk/bin/splunk restart
