@@ -55,4 +55,5 @@ Error:
 ## Path
 /opt/splunk/etc/deployment-apps/
 
+## Command
 /opt/splunk/bin/splunk restart
