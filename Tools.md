@@ -75,6 +75,13 @@
 - PCAPdroid
 - Logcat
 
+## Honeypot:
+- Cowrie
+- Dionaea
+- Honeyd
+- Kippo
+- Glastopf
+
 ## Pending:
 - GPG
 - MISP
