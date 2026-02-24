@@ -1,4 +1,6 @@
-Bash
+# Link
+
+## Bash
 https://github.com/jlevy/the-art-of-command-line
 https://explainshell.com/
 https://www.gnu.org/software/bash/manual/html_node/index.html
@@ -6,41 +8,38 @@ https://www.codelivly.com/bash-quick-guide/
 https://command-not-found.com/
 https://guide.bash.academy/
 
-RegEx
+## RegEx
 https://refrf.dev/
 https://regexgpt.app/
 https://regexper.com/
 https://regexr.com/
 
-Web
+## Web
 https://portswigger.net/web-security
 https://university.apisec.ai/
 https://github.com/arainho/awesome-api-security
 
-Digital Forensics
+## Digital Forensics
 https://github.com/mikeroyal/Digital-Forensics-Guide
 https://github.com/mesquidar/ForensicsTools?tab=readme-ov-file#challenges
 
-Cryptography
+## Cryptography
 https://eprint.iacr.org/
 
-Security AI
-https://www.whiterabbitneo.com/
-
-OS
+## OS
 https://pages.cs.wisc.edu/~remzi/OSTEP/
 
-Linux:
+## Linux:
 https://linux-kernel-labs.github.io/refs/heads/master/index.html
 https://linux.vbird.org/
 https://linuxjourney.com/
 https://www.youtube.com/watch?v=sWbUDq4S6Y8
 
-Windows:
+## Windows:
 https://www.ultimatewindowssecurity.com/securitylog/book/default.aspx
 https://github.com/reactos/reactos/tree/2752c42f0b472f2db873308787a8b474c4738393
 
-Hack
+## Hack
 https://book.hacktricks.xyz/
 https://offensive-panda.github.io/ProcessInjectionTechniques/
 https://github.com/PacktPublishing/Malware-Development-for-Ethical-Hackers
@@ -48,24 +47,24 @@ https://github.com/becomingahacker
 https://htbmachines.github.io/
 https://ippsec.rocks/?#
 
-SecLists
+## SecLists
 https://github.com/danielmiessler/SecLists
 
-Header Test
+## Header Test
 https://domsignal.com/secure-header-test
 https://securityheaders.com/
 
-Youtube
+## Youtube
 https://www.youtube.com/HackerSploit
 https://www.youtube.com/@_JohnHammond
 https://www.youtube.com/@davidbombal
 
-Other
+## Other
 https://www.guru99.com/
 https://www.codelivly.com/
 https://feifei.tw/security-getting-started/
 
-TI
+## TI
 https://search.censys.io/
 https://www.virustotal.com/gui/home/upload
 https://hybrid-analysis.com/
@@ -79,7 +78,7 @@ https://www.criminalip.io/
 https://talosintelligence.com/
 https://www.shodan.io/
 
-TI News
+## TI News
 https://www.bleepingcomputer.com/
 https://thehackernews.com/
 https://www.hkcert.org/
@@ -95,7 +94,7 @@ https://hackread.com/
 https://cyware.com/cyber-security-news-articles
 https://krebsonsecurity.com/category/latest-warnings/
 
-Bug Bounty
+## Bug Bounty
 https://www.bugcrowd.com/
 https://www.hackerone.com/
 https://www.intigriti.com/
