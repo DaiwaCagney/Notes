@@ -2,14 +2,23 @@
 
 ## Display Filter:
 `http`
+
 `ip.addr == 192.168.1.1`
+
 `tcp.port == 443`
+
 `http contains "hack"`
+
 `(not tcp.port == 80 and not tcp.port == 8080) and http contains "hack"`
+
 `dns.flags.response == 1 and dns.count.answers > 5 and dns.qry.name contains "drive.io"`
+
 `http.cookie matches "(?i)dean"`
+
 `http.response.code in {200 301 302 404}`
+
 `dns.qry.name == "www.cyberengage.org"`
+
 `dns.a != 192.168.1.1 --> dns.a && !(dns.a == 192.168.1.1)`
 
 ## Notes:
