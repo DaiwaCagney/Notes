@@ -3,7 +3,7 @@
 ## SQL injection cheat sheet:
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 
-`'`
+`'` & `''`
 
 The single quote character ' and look for errors or other anomalies
 
