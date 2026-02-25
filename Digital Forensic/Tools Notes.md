@@ -1,4 +1,5 @@
-Volatility: 
+## Volatility:
+```
 sudo snap install volatility-phocean --> install
 volatility -f {image.vmem} imageinfo
 volatility -f {image.vmem} --profile={profile} pslist
@@ -15,7 +16,9 @@ strings {PID.dmp} | less
 volatility -f {image.vmem} --profile={profile} hivelist
 volatility -f {image.vmem} --profile={profile} printkey -K "Software\Microsoft\Windows|CurrentVersion\Run" --> check what process run at start-up
 strings {PID.dmp} | grep -Fi "executable.exe"
+```
 
+```
 volatility -f {image.vmem} kdbgscan --> look for processes & modules
 volatility -f {image.vmem} --profile={profile} consoles --> any one using cmd when memory dump
 volatility -f {image.vmem} --profile={profile} timeliner --> all events by time
@@ -24,8 +27,10 @@ volatility -f {image.vmem} --profile={profile} psscan --> dead process
 volatility -f {image.vmem} --profile={profile} dlllist
 volatility -f {image.vmem} --profile={profile} dumpfiles
 volatility -f {image.vmem} --profile={profile} vboxinfo
+```
 
-The Sleuth Kit (TSK):
+## The Sleuth Kit (TSK):
+```
 mmls "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_002.dd" --> view partition tables
 fsstat "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> view the type of file system and the OS related to the image
 img_stat "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> view the details of the selected image
@@ -41,4 +46,5 @@ fls -f ntfs "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.d
 ils -r "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> view the list of inode information
 ffind -f ntfs "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" 96 --> find the name of the file or directory in inode number 96
 tsk_recover -i raw -e "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" "C:\Users\Administrator\Desktop\Retrieved Files by SleuthKit" --> recover files
+```
 fls -m 63 "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> gather the temporal data (-m argument displays files in a time-machine format so that a timeline can be created with mactime(1). 63 represents that the the file system starts in sector 63)
