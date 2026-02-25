@@ -1,59 +1,66 @@
-Read:
+# Out-of-Bounds
+
+## Read:
+```
 char buffer[10];
 char user_input[20];
 int index;
 
 // Vulnerable code - no bounds checking
 printf("Data: %c\n", buffer[index]);
+```
 
-
-Write:
+## Write:
+```
 void vulnerable_function(char *input) {
     char buffer[256];
     strcpy(buffer, input);  // No bounds checking
     printf("Buffer contents: %s\n", buffer);
 }
+```
 
 
-Insufficient Input Validation:
+### Insufficient Input Validation:
+```
 char buffer;
 int index = user_input;
 return buffer[index];
+```
 
+## Improper Array Indexing:
+`for(int i = 0; i <= array_size; i++) { array[i] = value; }`
 
-Improper Array Indexing:
-for(int i = 0; i <= array_size; i++) { array[i] = value; }
-
-
-Unsafe String Functions:
+## Unsafe String Functions:
+```
 strcpy(dest, src); 
 strcat(buffer, input); 
 sprintf(buffer, format, data);
+```
 
-
-Integer Overflow/Underflow:
+## Integer Overflow/Underflow:
+```
 size_t len = strlen(input1) + strlen(input2); 
 char* buffer = malloc(len);
+```
 
+## Buffer Size Miscalculation: – Missing space for null terminator
+`char* buffer = malloc(strlen(input));`
 
-Buffer Size Miscalculation: – Missing space for null terminator
-char* buffer = malloc(strlen(input));
-
-
-Pointer Arithmetic Errors: – No validation of offset
+## Pointer Arithmetic Errors: – No validation of offset
+```
 char* ptr = buffer; 
 ptr += offset; 
 *ptr = value;
+```
 
+## Format String Vulnerabilities: – Direct use of user input as format string
+`printf(user_input);`
 
-Format String Vulnerabilities: – Direct use of user input as format string
-printf(user_input);
-
-
-Race Conditions:
+## Race Conditions:
 Thread 1 validates buffer size while Thread 2 modifies the buffer simultaneously
 
-
-Dynamic Memory Management: – Use after free
+## Dynamic Memory Management: – Use after free
+```
 free(buffer); 
 printf("%s", buffer);
+```
