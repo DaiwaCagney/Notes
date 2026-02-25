@@ -1,17 +1,23 @@
-Windows File Systems:
-File Allocation Table (FAT)
-FAT12
-FAT16
-FAT32
-extended file allocation table (exFAT)
+# File Systems.
 
-New Technology File System (NTFS)
-Alternate Data Streams (ADS)
-ECHO [data] > [filename]:[streamname] --> write contents into a file’s data stream
-MORE < [filename]:[streamname] --> displays the content of the data stream
-fsutil --> check USN Journal
-notepad test.txt:hidden.txt
-dir /r
+## Windows File Systems:
+- File Allocation Table (FAT)
+- FAT12
+- FAT16
+- FAT32
+- extended file allocation table (exFAT)
+
+## New Technology File System (NTFS)
+### Alternate Data Streams (ADS)
+`ECHO [data] > [filename]:[streamname]` --> write contents into a file’s data stream
+
+`MORE < [filename]:[streamname]` --> displays the content of the data stream
+
+`fsutil` --> check USN Journal
+
+`notepad test.txt:hidden.txt`
+
+`dir /r`
 
 Resilient File System (ReFS)
 
