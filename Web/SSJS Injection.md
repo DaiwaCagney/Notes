@@ -92,6 +92,7 @@ res.write(out); res.end()
 ```
 
 The first time may see see an “Error: ENOENT, no such file or directory ‘/tmp/sddfr.txt’” message. The reason for this is the asynchronous nature of Node.js.  
+
 An alternative approach would be to keep the file within the Node.js application directory (e.g. replace /tmp/sddfr.txt with sddfr.txt in the example below.)
 
 ## execSync in Node.js v0.12:
