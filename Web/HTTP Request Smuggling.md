@@ -1,3 +1,5 @@
+# HTTP Request Smuggling
+
 HTTP/1 specification provides two different ways to specify where a request ends: 
 `Content-Length header` / `Transfer-Encoding header`
 
