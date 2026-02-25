@@ -34,6 +34,12 @@ dd if=/dev/fmem bs=1024 | nc 10.10.1.9 1234
 ```
 
 ## Linux
+### dd
+```
+dd if=/dev/sda of=./diskimage.img # Create an image of a disk
+dd if=/dev/sdb of=forensic.img
+```
+
 ```
 dir /dev
 md5sum /dev/sdb
