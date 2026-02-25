@@ -1,21 +1,32 @@
 # SSRF
 
 ## Blacklist-based input filters:
-Use an alternative IP representation of 127.0.0.1, such as 2130706433, 017700000001, or 127.1  
-Register your own domain name that resolves to 127.0.0.1. You can use spoofed.burpcollaborator.net for this purpose  
-Obfuscate blocked strings using URL encoding or case variation  
-Provide a URL that you control, which redirects to the target URL  
-Try using different redirect codes, as well as different protocols for the target URL. For example, switching from an http: to https  
+Use an alternative IP representation of 127.0.0.1, such as 2130706433, 017700000001, or 127.1
+
+Register your own domain name that resolves to 127.0.0.1. You can use spoofed.burpcollaborator.net for this purpose
+
+Obfuscate blocked strings using URL encoding or case variation
+
+Provide a URL that you control, which redirects to the target URL
+
+Try using different redirect codes, as well as different protocols for the target URL. For example, switching from an http: to https
 
 ## Whitelist-based input filters:
-You can embed credentials in a URL before the hostname, using the @ character  
-`https://expected-host:fakepassword@evil-host`  
-You can use the # character to indicate a URL fragment  
-`https://evil-host#expected-host`  
-You can leverage the DNS naming hierarchy to place required input into a fully-qualified DNS name that you control  
-`https://expected-host.evil-host`  
-Can URL-encode characters to confuse the URL-parsing code  
-Can also try double-encoding characters  
+You can embed credentials in a URL before the hostname, using the @ character
+
+`https://expected-host:fakepassword@evil-host`
+
+You can use the # character to indicate a URL fragment
+
+`https://evil-host#expected-host`
+
+You can leverage the DNS naming hierarchy to place required input into a fully-qualified DNS name that you control
+
+`https://expected-host.evil-host`
+
+Can URL-encode characters to confuse the URL-parsing code
+
+Can also try double-encoding characters
 
 ## Bypassing SSRF filters via open redirection:
 ```
