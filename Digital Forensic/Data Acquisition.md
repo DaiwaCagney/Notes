@@ -73,3 +73,8 @@ net use Z: "\\server2022\chfi-tools"
 .\dd.exe if=\\.\physicaldrive0 of=z:\evidence\Windows_001.dd bs=512k --size --progress
 Get-Filehash 'z:\evidence\Windows_001.dd' -Algorithm md5 | format-list
 ```
+
+### Check if VM exist in a host:
+Check HKEY_CLASSES_ROOT for file extension
+
+Check network adapters
