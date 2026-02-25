@@ -6,6 +6,7 @@
 - FAT16
 - FAT32
 - extended file allocation table (exFAT)
+- Resilient File System (ReFS)
 
 ## New Technology File System (NTFS)
 ### Alternate Data Streams (ADS)
@@ -19,19 +20,21 @@
 
 `dir /r`
 
-Resilient File System (ReFS)
-
-Linux File Systems:
+## Linux File Systems:
 Filesystem Hierarchy Standard (FHS)
 
-Second Extended File System (ext2)
-Third Extended File System (ext3)
-fsck
-/sbin/tune2fs -j /dev/hda5 --> convert an ext2 file system located on the partition /dev/hda5 to an ext3 file system
-Fourth Extended File System (ext4)
-dumpe2fs <path-to-partition> | grep –i superblock --> view superblock information of a file system
-ls -il --> view the assigned inode numbers of files or directories
+- Second Extended File System (ext2)
+- Third Extended File System (ext3)
+- Fourth Extended File System (ext4)
 
-macOS File Systems:
-Hierarchical File System Plus (HFS+)
-Apple File System (APFS)
+`fsck`
+
+`/sbin/tune2fs -j /dev/hda5` --> convert an ext2 file system located on the partition /dev/hda5 to an ext3 file system
+
+`dumpe2fs <path-to-partition> | grep –i superblock` --> view superblock information of a file system
+
+`ls -il` --> view the assigned inode numbers of files or directories
+
+## macOS File Systems:
+- Hierarchical File System Plus (HFS+)
+- Apple File System (APFS)
