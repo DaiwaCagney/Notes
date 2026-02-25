@@ -7,7 +7,7 @@ a restrictive cross-origin specification that limits the ability for a website t
 
 generally allows a domain to issue requests to other domains, but not to access the responses
 
-## Examples
+## Examples:
 
 ```
 GET /sensitive-victim-data HTTP/1.1
@@ -88,7 +88,7 @@ document.location="http://stock.YOUR-LAB-ID.web-security-academy.net/?productId=
 </script>
 ```
 
-## Access-Control-Allow-Credentials
+## Access-Control-Allow-Credentials:
 `Access-Control-Allow-Credentials: true`
 
 Without that header, the victim user's browser will refuse to send their cookies, meaning the attacker will only gain access to unauthenticated content
