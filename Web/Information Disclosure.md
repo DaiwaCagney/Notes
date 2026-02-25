@@ -1,27 +1,34 @@
-Web crawlers:
-/robots.txt
-/sitemap.xml
+## Web crawlers:
+`/robots.txt`
 
-Directory listings:
+`/sitemap.xml`
+
+## Directory listings:
 Web servers can be configured to automatically list the contents of directories that do not have an index page present
 
-Error messages:
-/product?productId=1
-/product?productId="example"
+## Error messages:
+`/product?productId=1`
 
-Debug page:
+`/product?productId="example"`
+
+## Debug page:
 View page source
+
 Comment
-/cgi-bin/phpinfo.php
 
-Backup files:
-/backup
-ProductTemplate.java.bak
+`/cgi-bin/phpinfo.php`
 
-HTTP TRACE method:
+## Backup files:
+`/backup`
+
+`ProductTemplate.java.bak`
+
+## HTTP TRACE method:
 Web server echoing in the response the exact request that was received
+
 occasionally leads to information disclosure, such as the name of internal authentication headers that may be appended to requests by reverse proxies
 
-Version control history:
-/.git
+## Version control history:
+`/.git`
+
 comparing the diff
