@@ -1,15 +1,20 @@
 # Web Cache
-Caches identify equivalent requests by comparing a predefined subset of the request's components, known collectively as the "cache key"  
-Typically, this would contain the request line and Host header  
-Components of the request that are not included in the cache key are said to be "unkeyed"  
+Caches identify equivalent requests by comparing a predefined subset of the request's components, known collectively as the "cache key"
+
+Typically, this would contain the request line and Host header
+
+Components of the request that are not included in the cache key are said to be "unkeyed"
+
 Whether or not a response gets cached can depend on all kinds of factors, such as the file extension, content type, route, status code, and response headers
 
 Burp Param Miner extension --> automate the process of identifying unkeyed inputs
 
 ## Web Cache Poisoning:
-Any web cache poisoning attack relies on manipulation of unkeyed inputs, such as headers  
-As the poisoned cache is more a means of distribution than a standalone attack, the impact of web cache poisoning is inextricably linked to how harmful the injected payload is  
-The poisoned response will only be served to users who visit the affected page while the cache is poisoned  
+Any web cache poisoning attack relies on manipulation of unkeyed inputs, such as headers
+
+As the poisoned cache is more a means of distribution than a standalone attack, the impact of web cache poisoning is inextricably linked to how harmful the injected payload is
+
+The poisoned response will only be served to users who visit the affected page while the cache is poisoned
 
 ## Example:
 ```
