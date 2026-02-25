@@ -27,7 +27,7 @@ images may contain hidden files and folders. To view them, press `Ctrl+H` on the
 
 The kernel module version varies depending on the Ubuntu OS version installed on the suspect machine. In this case, it is 6.2.0-35-generic
 
-remote acquisition of RAM using dd and netcat
+### Remote acquisition of RAM using dd and netcat:
 ```
 nc -l 1234 > ubuntu_remote_ram.dd
 dd if=/dev/fmem bs=1024 | nc 10.10.1.9 1234
