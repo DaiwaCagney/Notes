@@ -65,3 +65,11 @@ insmod lime-<kernel_module>.ko "path=<directory> format=lime" --> Local
 insmod lime-<kernel_module>.ko "path=tcp:<port> format=lime"
 nc <IP Address of the suspect machine>:<port> > filename.mem
 ```
+
+## Windows
+```
+wmic diskdrive list brief /format:list #DeviceID=\\.\PHYSICALDRIVE0
+net use Z: "\\server2022\chfi-tools"
+.\dd.exe if=\\.\physicaldrive0 of=z:\evidence\Windows_001.dd bs=512k --size --progress
+Get-Filehash 'z:\evidence\Windows_001.dd' -Algorithm md5 | format-list
+```
