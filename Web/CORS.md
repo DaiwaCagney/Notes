@@ -88,6 +88,7 @@ document.location="http://stock.YOUR-LAB-ID.web-security-academy.net/?productId=
 </script>
 ```
 
+## Access-Control-Allow-Credentials
 `Access-Control-Allow-Credentials: true`
 
 Without that header, the victim user's browser will refuse to send their cookies, meaning the attacker will only gain access to unauthenticated content
