@@ -1,24 +1,3 @@
-Data Acquisition:
-dir /dev
-md5sum /dev/sdb
-dd if=/dev/sdb of=/dev/sdc
-dd if=/dev/sda of=/image_sda.dd
-dd if=/dev/hdc of=/home/sam/mycd.iso bs=2048 conv=notrunc --> create am ISO image of a CD
-dd if=/home/sam/partition.image of=/dev/sdb2 bs=4096 conv=notrunc,noerror --> restore a disk partition from an image file
-
-dcfldd
-dcfldd if=/dev/sda split=100M of=/media/image.dd hash=sha256 hashlog=/media/sha256.txt
-
-Acquire Volatile Date:
-dd if=/dev/fmem of=<file_name.dd> bs=1MB --> Local
-nc -l <port> > filename.dd
-dd if=/dev/fmem bs=1024 | nc <IP Address> <port>
-
-LiME:
-insmod lime-<kernel_module>.ko "path=<directory> format=lime" --> Local
-insmod lime-<kernel_module>.ko "path=tcp:<port> format=lime"
-nc <IP Address of the suspect machine>:<port> > filename.mem
-
 strings # Display printable strings in files
 
 file # Determine type of file
