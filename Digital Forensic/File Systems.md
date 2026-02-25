@@ -1,12 +1,31 @@
-# File Systems.
+# File Systems
 
-## Windows File Systems:
+## Windows File Systems
 - File Allocation Table (FAT)
 - FAT12
 - FAT16
 - FAT32
 - extended file allocation table (exFAT)
 - Resilient File System (ReFS)
+
+`chkdsk` --> detect errors in file system
+
+`Get-ForensicGuidPartitionTable -Path \\.\PHYSICALDRIVE0` --> get GUID Partition Table
+
+`Get-MBR`
+
+`Get-ForensicBootSector` --> analyzes the hard drive's first sector and determines if the disk is formatted using the MBR or GPT partitioning scheme then parses the GPT
+
+`Get-ForensicPartitionTable` --> determines the type of boot sector (MBR or GPT) and returns the correct partition object (PartitionEntry or GuidPartitionTableEntry)
+
+### diskpart
+```
+diskpart
+select disk <disk number>
+detail disk
+select partition=1
+detail partition
+```
 
 ## New Technology File System (NTFS)
 ### Alternate Data Streams (ADS)
@@ -20,7 +39,7 @@
 
 `dir /r`
 
-## Linux File Systems:
+## Linux File Systems
 Filesystem Hierarchy Standard (FHS)
 
 - Second Extended File System (ext2)
@@ -35,6 +54,6 @@ Filesystem Hierarchy Standard (FHS)
 
 `ls -il` --> view the assigned inode numbers of files or directories
 
-## macOS File Systems:
+## macOS File Systems
 - Hierarchical File System Plus (HFS+)
 - Apple File System (APFS)
