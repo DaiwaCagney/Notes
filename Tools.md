@@ -37,7 +37,7 @@
 ## NetLog Dump:
 - chrome://net-export/
 - edge://net-export/
-- https://netlog-viewer.appspot.com/#events
+- `https://netlog-viewer.appspot.com/#events`
 
 ## Autocomplete Action Predictor:
 - chrome://predictors/
