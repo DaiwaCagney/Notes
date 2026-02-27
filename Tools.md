@@ -95,9 +95,10 @@
 
 ## Threat Intelligence Platform:
 - MISP
+- TheHive
+- Cortex
 
 ## Pending:
-- Hive Project’s Cortex
 - Cobalt Strike
 - PowerSploit
 - Impacket
