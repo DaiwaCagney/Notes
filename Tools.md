@@ -5,6 +5,7 @@
 
 ## Network Based Intrusion Detection System:
 - Snort
+- Zeek
 
 ## TI:
 - SploitScan
@@ -89,10 +90,13 @@
 ## Threat Intelligence Platform:
 - MISP
 
-## Pending:
+## Network Simulator:
 - GNS3
-- Zeek
-- Sigma
+
+## Threat Intelligence Platform:
+- MISP
+
+## Pending:
 - Hive Project’s Cortex
 - Cobalt Strike
 - PowerSploit
