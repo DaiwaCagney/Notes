@@ -16,6 +16,7 @@
 - ZAP
 - SQLmap
 - Wfuzz
+- Recon-ng
 
 ## Web Path Scanner:
 - dirsearch
@@ -90,8 +91,6 @@
 
 ## Pending:
 - GNS3
-- Recon-ng
-- Siembol
 - Zeek
 - Sigma
 - Hive Project’s Cortex
