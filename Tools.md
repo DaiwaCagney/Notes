@@ -82,10 +82,10 @@
 - Kippo
 - Glastopf
 
-## Encryption
+## Encryption:
 - GPG
 
-## Threat Intelligence Platform
+## Threat Intelligence Platform:
 - MISP
 
 ## Pending:
