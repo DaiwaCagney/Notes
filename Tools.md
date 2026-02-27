@@ -85,8 +85,10 @@
 ## Encryption
 - GPG
 
-## Pending:
+## Threat Intelligence Platform
 - MISP
+
+## Pending:
 - GNS3
 - Recon-ng
 - Siembol
