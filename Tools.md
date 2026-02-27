@@ -82,8 +82,10 @@
 - Kippo
 - Glastopf
 
-## Pending:
+## Encryption
 - GPG
+
+## Pending:
 - MISP
 - GNS3
 - Recon-ng
