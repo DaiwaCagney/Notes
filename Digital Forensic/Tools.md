@@ -78,6 +78,7 @@
 - Passware Kit Forensic
 - Advanced Archive Password Recovery
 - Advanced PDF Password Recovery
+- Advanced Office Password Recovery
 - Elcomsoft Distributed Password Recovery
 - Ophcrack
 - Hashcat
