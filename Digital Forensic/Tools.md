@@ -64,6 +64,9 @@
 
 ## Steganography:
 - Steghide
+- StegSpy
+- OpenStego
+- DeepSound
 
 ## Metadata:
 - EXIFtool
