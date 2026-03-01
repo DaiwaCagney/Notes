@@ -77,6 +77,7 @@
 - pwdump7
 - Passware Kit Forensic
 - Advanced Archive Password Recovery
+- Advanced PDF Password Recovery
 - Elcomsoft Distributed Password Recovery
 - Ophcrack
 - Hashcat
