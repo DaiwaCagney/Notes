@@ -26,6 +26,7 @@
 
 ## Data Recovery:
 - EaseUS Data Recovery Wizard
+- R-Studio
 
 ## Memory Forensics:
 - Volatility Framework
