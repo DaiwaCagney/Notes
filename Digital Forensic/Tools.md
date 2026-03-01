@@ -74,6 +74,7 @@
 - Lazy Office Analyzer
 
 ## Password:
+- pwdump7
 - Elcomsoft Distributed Password Recovery
 - Ophcrack
 - Hashcat
