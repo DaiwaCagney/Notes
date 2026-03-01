@@ -75,6 +75,7 @@
 
 ## Password:
 - pwdump7
+- Passware Kit Forensic
 - Elcomsoft Distributed Password Recovery
 - Ophcrack
 - Hashcat
