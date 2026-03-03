@@ -1,32 +1,32 @@
 # Windows
 
 ## Collect System Time
-`date /t & time /t`
-`net statistics workstation` --> retrieve system uptime
+- `date /t & time /t`
+- `net statistics workstation` --> retrieve system uptime
 
 ## Collect Logged-on Users
-`net sessions` --> connection for remote systems
-`net use` --> mapped drives
-`psloggedon.exe` --> 3rd party
-`logonsessions.exe` --> 3rd party
+- `net sessions` --> connection for remote systems
+- `net use` --> mapped drives
+- `psloggedon.exe` --> 3rd party
+- `logonsessions.exe` --> 3rd party
 
 ## Collect Open Files
-`net file` --> files accessed
+- `net file` --> files accessed
 
 ## Collect Network Information
-`nbtstat -c` --> show contents of NetBIOS name cache, which system connected to recently
-`nbtstat -a <IP>` --> asking remote machine to list its NetBIOS Name Table
+- `nbtstat -c` --> show contents of NetBIOS name cache, which system connected to recently
+- `nbtstat -a <IP>` --> asking remote machine to list its NetBIOS Name Table
 
 ## Collect Network Connections
-`netstat -naob` --> established network connection
-`netstat -r` --> IP routing table
+- `netstat -naob` --> established network connection
+- `netstat -r` --> IP routing table
 
 ## Collect Network Status
-`ipconfig /all` --> display network configuration of NICs on the system
-`promqry` --> 3rd party, check promiscuous mode
+- `ipconfig /all` --> display network configuration of NICs on the system
+- `promqry` --> 3rd party, check promiscuous mode
 
 ## Process Information
-`tasklist`
-`Pslist` --> 3rd party
-`handle` --> 3rd party
-`listdlls` --> 3rd party
+- `tasklist`
+- `Pslist` --> 3rd party
+- `handle` --> 3rd party
+- `listdlls` --> 3rd party
