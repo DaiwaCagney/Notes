@@ -40,3 +40,18 @@
 - `.SPL` and `.SHD`
 - `C:\Windows\System32\spool\PRINTERS`
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Printers` --> location of spool folder
+
+## Clipboard
+- Free Clipboard Viewer
+- RecentX
+
+## Service & Driver
+- MSInfo32
+- `tasklist`
+- `wmic service list brief | more`
+
+## Command History
+- `doskey /history` --> history will gone after close the terminal windows
+
+## Locally Shared Resources
+- `net share`
