@@ -30,3 +30,13 @@
 - `Pslist` --> 3rd party
 - `handle` --> 3rd party
 - `listdlls` --> 3rd party
+
+## Exam Process Memory
+- Process Explorer
+- `procdump` --> monitor applications for CPU spikes
+
+## Print Spool Files
+- buffer for print job
+- `.SPL` and `.SHD`
+- `C:\Windows\System32\spool\PRINTERS`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Printers` --> location of spool folder
