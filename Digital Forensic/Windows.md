@@ -7,8 +7,8 @@
 ## Collect Logged-on Users
 - `net sessions` --> connection for remote systems
 - `net use` --> mapped drives
-- `psloggedon.exe` --> 3rd party
-- `logonsessions.exe` --> 3rd party
+- `psloggedon.exe` --> not built-in
+- `logonsessions.exe` --> not built-in
 
 ## Collect Open Files
 - `net file` --> files accessed
@@ -23,13 +23,13 @@
 
 ## Collect Network Status
 - `ipconfig /all` --> display network configuration of NICs on the system
-- `promqry` --> 3rd party, check promiscuous mode
+- `promqry` --> not built-in, check promiscuous mode
 
 ## Process Information
 - `tasklist`
-- `Pslist` --> 3rd party
-- `handle` --> 3rd party
-- `listdlls` --> 3rd party
+- `Pslist` --> not built-in
+- `handle` --> not built-in
+- `listdlls` --> not built-in
 
 ## Exam Process Memory
 - Process Explorer
@@ -55,3 +55,14 @@
 
 ## Locally Shared Resources
 - `net share`
+
+## File Systems
+- `dir /o:d` --> time and date of OS installation (in system32)
+
+## Detect Externally Connected Devices
+- DriveLetterView --> From nirsoft
+- `devcon listclass usb 1394` --> not built-in
+
+## User Account
+- `‪C:\Windows\System32\config\SAM`
+- Artifast
