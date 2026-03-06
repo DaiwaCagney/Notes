@@ -52,6 +52,8 @@ Error:
 
 `| timechart span=5m count(eval(result="failure")) AS failures`
 
+`NOT ip_address="10.10.*.*"`
+
 ## Path
 /opt/splunk/etc/deployment-apps/
 
