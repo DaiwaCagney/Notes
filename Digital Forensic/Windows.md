@@ -92,3 +92,4 @@
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management`
 - DiskExplorer
 - FTK Forensic Toolkit
+- WinHex --> Open Disk
