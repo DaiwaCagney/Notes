@@ -66,3 +66,29 @@
 ## User Account
 - `‪C:\Windows\System32\config\SAM`
 - Artifast
+
+## Crash Dump
+- DumpChk
+
+## Process Memory
+- ProcDump
+- Userdump.exe
+- adplus.vbs
+- Task Manager
+- WinDbg --> analyze dump files
+- WinHex --> analyze dump files
+
+## Memory Forensics
+- Belkasoft RAM Capturer
+- FTK Imager
+- dd
+- Redline --> analyze dump files
+- Volatility Framework
+
+## Page File
+- Pagefile.sys
+- serves as a swap
+- `C:\pagefile.sys`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management`
+- DiskExplorer
+- FTK Forensic Toolkit
