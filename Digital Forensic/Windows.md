@@ -93,3 +93,34 @@
 - DiskExplorer
 - FTK Forensic Toolkit
 - WinHex --> Open Disk
+
+## Hibernate File
+- snapshot of RAM data created when system hibernates
+- hiberfil.sys
+- Hex Editor
+- AccessData FTK Imager
+- MoonSols Windows Memory Toolkit
+
+## MemProcsFS
+- `MemProcsFS.exe -device <path of memory dump file> -forensic 1`
+
+## USB Removable Storage Devices
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`
+
+## Start Up
+- Autoruns
+- Autorunsc
+
+## UserAssist Keys
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count`
+- ROT13 encryption
+
+## MRU Lists
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU`
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU`
+- `HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TypedURLs`
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts`
+
+## Connect to other system
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU`
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2`
