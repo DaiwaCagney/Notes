@@ -124,3 +124,56 @@
 ## Connect to other system
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU`
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2`
+
+## Webcam and Microphone
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam`
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone`
+- `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam`
+- `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone`
+
+## Google Chrome
+- `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default` --> history, downloads, cache
+- `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies`
+- ChromeHistoryView
+- ChromeCacheView
+- ChromeCookiesView
+- `ipconfig/displaydns` --> DNS cache
+
+## Prefetch Files
+- WinPrefetchView
+- Windows Prefetch Parser
+
+## Image
+- Exiv2
+- IrfanView
+- ExifTool
+- Exif Pilot
+- Exif Library
+
+## Metadata
+- Metadata++
+
+## Metadata in PDF
+- Adobe Acrobat
+- ExifTool
+
+## ShellBags
+- ShellBagsView
+- TZWorks Windows ShellBag Parser
+- FTK Forensic Toolkit
+
+## LNK Files
+- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent`
+
+## Jump List
+- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations`
+- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations`
+- JumpListsView
+
+## Event Logs
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog` --> Configuration
+- `wevtutil`
+- `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00<x>\Services\EventLog\<log name>`
+- secpol.msc
+- Microsoft Log Parser
+- `C:\Windows\System32\winevt\Logs`
