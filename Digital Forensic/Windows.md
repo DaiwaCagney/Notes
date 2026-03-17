@@ -7,11 +7,12 @@
 ## Collect Logged-on Users
 - `net sessions` --> connection for remote systems
 - `net use` --> mapped drives
-- `psloggedon.exe` --> not built-in
-- `logonsessions.exe` --> not built-in
+- `psloggedon.exe`
+- `logonsessions.exe` -->
 
 ## Collect Open Files
 - `net file` --> files accessed
+- `NetworkOpenedFiles.exe`
 
 ## Collect Network Information
 - `nbtstat -c` --> show contents of NetBIOS name cache, which system connected to recently
