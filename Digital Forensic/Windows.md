@@ -8,7 +8,7 @@
 - `net sessions` --> connection for remote systems
 - `net use` --> mapped drives
 - `psloggedon.exe`
-- `logonsessions.exe` -->
+- `logonsessions.exe`
 
 ## Collect Open Files
 - `net file` --> files accessed
@@ -24,13 +24,13 @@
 
 ## Collect Network Status
 - `ipconfig /all` --> display network configuration of NICs on the system
-- `promqry` --> not built-in, check promiscuous mode
+- `promqry` --> check promiscuous mode
 
 ## Process Information
 - `tasklist`
-- `Pslist` --> not built-in
-- `handle` --> not built-in
-- `listdlls` --> not built-in
+- `Pslist`
+- `handle`
+- `listdlls`
 
 ## Exam Process Memory
 - Process Explorer
@@ -62,7 +62,7 @@
 
 ## Detect Externally Connected Devices
 - DriveLetterView --> From nirsoft
-- `devcon listclass usb 1394` --> not built-in
+- `devcon listclass usb 1394`
 
 ## User Account
 - `‪C:\Windows\System32\config\SAM`
