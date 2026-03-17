@@ -19,6 +19,7 @@
 - `nbtstat -a <IP>` --> asking remote machine to list its NetBIOS Name Table
 
 ## Collect Network Connections
+- `netstat -ano`
 - `netstat -naob` --> established network connection
 - `netstat -r` --> IP routing table
 
