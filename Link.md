@@ -64,26 +64,35 @@
 - https://www.codelivly.com/
 - https://feifei.tw/security-getting-started/
 
-## TI
-- https://search.censys.io/
-- https://www.virustotal.com/gui/home/upload
+## SandBox
+- https://www.virustotal.com/
 - https://hybrid-analysis.com/
+- https://metadefender.com/
+- https://www.joesandbox.com/
 - https://cuckoo.cert.ee/
-- https://www.joesandbox.com/#windows
-- https://www.filescan.io/scan
-- https://analyze.intezer.com/scan?tab=file
-- https://www.abuseipdb.com/
+- https://www.filescan.io/
 - https://app.any.run/
-- https://www.criminalip.io/
+- https://analyze.intezer.com/
+
+## TI
+- https://www.abuseipdb.com/
+- https://threatfox.abuse.ch/browse/
+- https://exchange.xforce.ibmcloud.com/
 - https://talosintelligence.com/
+- https://www.criminalip.io/
+- https://cybergordon.com/
+- https://www.urlvoid.com/
+- https://search.censys.io/
 - https://www.shodan.io/
+- https://check.spamhaus.org/
+- https://phishtank.org/
+- https://www.exploit-db.com/
 
 ## TI News
 - https://www.bleepingcomputer.com/
 - https://thehackernews.com/
 - https://www.hkcert.org/
 - https://www.ithome.com.tw/security
-- https://www.cybersechub.hk/tc/home/dailyNews
 - https://www.securityweek.com/
 - https://www.darkreading.com/
 - https://cybersecuritynews.com/
@@ -91,8 +100,11 @@
 - https://www.helpnetsecurity.com/
 - https://www.infosecurity-magazine.com/
 - https://hackread.com/
-- https://cyware.com/cyber-security-news-articles
 - https://krebsonsecurity.com/category/latest-warnings/
+
+## Email
+- https://toolbox.googleapps.com/apps/messageheader/
+- https://mxtoolbox.com/
 
 ## Bug Bounty
 - https://www.bugcrowd.com/
