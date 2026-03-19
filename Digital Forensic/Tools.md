@@ -42,6 +42,7 @@
 - Forensic Registry EDitor (fred)
 - Registry Viewer
 - Regshot
+- Hex Workshop
 
 ## Network:
 - Wireshark
