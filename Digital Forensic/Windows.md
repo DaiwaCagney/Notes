@@ -95,6 +95,7 @@
 - DiskExplorer
 - FTK Forensic Toolkit
 - WinHex --> Open Disk
+- Browser InPrivate Data
 
 ## Hibernate File
 - snapshot of RAM data created when system hibernates
