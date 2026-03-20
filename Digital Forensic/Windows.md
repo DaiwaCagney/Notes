@@ -141,6 +141,7 @@
 - ChromeCacheView
 - ChromeCookiesView
 - `ipconfig/displaydns` --> DNS cache
+- SysTools SQLite Viewer
 
 ## Prefetch Files
 - WinPrefetchView
