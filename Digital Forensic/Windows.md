@@ -181,6 +181,7 @@
 - secpol.msc
 - Microsoft Log Parser
 - `C:\Windows\System32\winevt\Logs`
+- Event Log Explorer
 
 ## Using of Strings in Linux
 - `strings Windows_RAM.mem | grep -i "^[a-z]:\\\\" | sort | uniq`
