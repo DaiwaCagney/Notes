@@ -53,3 +53,16 @@ ffind -f ntfs "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001
 tsk_recover -i raw -e "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" "C:\Users\Administrator\Desktop\Retrieved Files by SleuthKit" --> recover files
 fls -m 63 "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd" --> gather the temporal data (-m argument displays files in a time-machine format so that a timeline can be created with mactime(1). 63 represents that the the file system starts in sector 63)
 ```
+
+```
+img_stat disk.flag.img
+mmls disk.flag.img
+fsstat -o <offset> disk.flag.img
+fsstat -o 2048 disk.flag.img
+fls -o <offset> disk.flag.img
+fls -o 360448 disk.flag.img
+fls -o <offset> disk.flag.img <inode>
+fls -o 360448 disk.flag.img 1995
+tsk_recover [-e] -o <offset> [-d <inode>] disk.flag.img <output_dir>
+tsk_recover -e -o 360448 -d 3981 disk.flag.img ./my_folder_recovery
+```
