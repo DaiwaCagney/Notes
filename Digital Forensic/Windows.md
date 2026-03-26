@@ -144,7 +144,7 @@
 
 ## Google Chrome SQLite3 Database Files
 - FTK Imager tool --> Export the file
-- Users\<User>\AppData\Local\Google\Chrome\User Data\Default\History
+- Users\<User>\AppData\Local\Google\Chrome\User Data\Default\
 - SysTools SQLite Viewer
 
 ## Prefetch Files
