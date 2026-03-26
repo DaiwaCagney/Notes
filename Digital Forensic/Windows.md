@@ -141,6 +141,10 @@
 - ChromeCacheView
 - ChromeCookiesView
 - `ipconfig/displaydns` --> DNS cache
+
+## Google Chrome SQLite3 Database Files
+- FTK Imager tool --> Export the file
+- Users\<User>\AppData\Local\Google\Chrome\User Data\Default\History
 - SysTools SQLite Viewer
 
 ## Prefetch Files
