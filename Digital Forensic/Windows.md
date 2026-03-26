@@ -188,3 +188,7 @@
 - `strings Windows_RAM.mem | egrep "^https?://" | sort | uniq`
 - `strings Windows_RAM.mem | egrep "172.20.20.10"`
 - `strings Windows_RAM.mem | egrep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`
+
+## Capture and Examine Windows registry files on Live system
+- AccessData FTK Imager --> capture
+- Hex Workshop --> view the content
