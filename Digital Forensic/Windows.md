@@ -144,9 +144,9 @@
 
 ## Browser SQLite3 Database Files
 - FTK Imager tool --> Export the file
-- Users\Username\AppData\Local\Google\Chrome\User Data\Default\
-- Users\Username\AppData\Roaming\Mozilla\Firefox\Profiles\XXXXXXXX.default
-- Users\Username\AppData\Local\Microsoft\Edge\User Data\Default
+- `Users\Username\AppData\Local\Google\Chrome\User Data\Default\`
+- `Users\Username\AppData\Roaming\Mozilla\Firefox\Profiles\XXXXXXXX.default`
+- `Users\Username\AppData\Local\Microsoft\Edge\User Data\Default`
 - SysTools SQLite Viewer
 
 ## Prefetch Files
@@ -198,3 +198,8 @@
 ## Capture and Examine Windows registry files on Live system
 - AccessData FTK Imager --> capture
 - Hex Workshop --> view the content
+
+## Extract and Rebuild Cached Web Pages of Google Chrome
+- AccessData FTK Imager --> capture
+- `Users\Username\AppData\Local\Google\Chrome\User Data\Default\Cache`
+- Browser History Examiner
