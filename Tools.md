@@ -52,6 +52,8 @@
 
 ## Anonymize:
 - Whonix
+- Proxychains
+- Proxychains-ng
 
 ## Reconnaissance:
 - Crt.sh
