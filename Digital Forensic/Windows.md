@@ -187,3 +187,4 @@
 - `strings Windows_RAM.mem | grep -i "^[a-z]:\\\\" | sort | uniq`
 - `strings Windows_RAM.mem | egrep "^https?://" | sort | uniq`
 - `strings Windows_RAM.mem | egrep "172.20.20.10"`
+- `strings Windows_RAM.mem | egrep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`
