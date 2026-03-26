@@ -60,3 +60,7 @@
 ## System Information
 - `cat /proc/cpuinfo`
 - `cat /proc/self/mounts` --> mount points and mounted external devices
+
+## User Account
+- `cat /etc/passwd`
+- `cut -d: -f1 /etc/passwd`
