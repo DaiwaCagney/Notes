@@ -142,9 +142,11 @@
 - ChromeCookiesView
 - `ipconfig/displaydns` --> DNS cache
 
-## Google Chrome SQLite3 Database Files
+## Browser SQLite3 Database Files
 - FTK Imager tool --> Export the file
-- Users\<User>\AppData\Local\Google\Chrome\User Data\Default\
+- Users\Username\AppData\Local\Google\Chrome\User Data\Default\
+- Users\Username\AppData\Roaming\Mozilla\Firefox\Profiles\XXXXXXXX.default
+- Users\Username\AppData\Local\Microsoft\Edge\User Data\Default
 - SysTools SQLite Viewer
 
 ## Prefetch Files
