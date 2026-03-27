@@ -91,4 +91,23 @@
 - `xxd image.png | head`
 - `xxd document.pdf | head`
 - `file document.pdf`
-- `string document.pdf`
+- `strings document.pdf`
+- `strings -t d Evidence.dd | grep -iE "kitty"`
+
+## Find Writable Files
+- `find / -writable -type f 2>/dev/null | grep "/var/log"`
+
+## Cron Jobs
+- `sudo systemctl status cron` --> check Cron service running
+- `grep CRON /var/log/syslog` --> view Cron logs
+- `crontab -l`
+- `sudo crontab -u [username] -l`
+
+## Hash
+- `md5sum filename`
+
+## Volatility
+- `python3 vol.py -f Linux.mem linux.lsof`
+- `python3 vol.py -f Linux.mem linux.mount`
+- `python3 vol.py -f Linux.mem linux.bash`
+- `python3 vol.py -f Linux.mem linux.lsmod`
