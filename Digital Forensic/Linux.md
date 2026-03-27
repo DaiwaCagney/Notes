@@ -67,6 +67,7 @@
 
 ## Logged-in Users and Login History
 - `w` --> logged-in users
+- `last`
 - `last -f /var/log/wtmp` --> login history, system reboot time, system status
 - `cat /var/log/auth.log`
 - `grep sudo /var/log/auth.log` --> execution of sudo command
