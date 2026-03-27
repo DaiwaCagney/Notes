@@ -71,3 +71,7 @@
 - `last -f /var/log/wtmp` --> login history, system reboot time, system status
 - `cat /var/log/auth.log`
 - `grep sudo /var/log/auth.log` --> execution of sudo command
+
+## System Log
+- `cat /var/log/syslog`
+- `cat /var/log/kern.log`
