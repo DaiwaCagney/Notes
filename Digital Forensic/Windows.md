@@ -203,3 +203,7 @@
 - AccessData FTK Imager --> capture
 - `Users\Username\AppData\Local\Google\Chrome\User Data\Default\Cache`
 - Browser History Examiner
+
+## Extract Information about Loaded Processes on a Computer
+- Process Explorer
+- Check DLL and Handle using View
