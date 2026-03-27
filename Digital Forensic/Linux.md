@@ -75,3 +75,20 @@
 ## System Log
 - `cat /var/log/syslog`
 - `cat /var/log/kern.log`
+
+## Command History
+- `history`
+- `history -c` -->  clear history
+
+## Hidden Files
+- `ls -al`
+
+## Rootkit
+- `rkhunter --check --rwo`
+- `chkrootkit`
+
+## File Signature
+- `xxd image.png | head`
+- `xxd document.pdf | head`
+- `file document.pdf`
+- `string document.pdf`
