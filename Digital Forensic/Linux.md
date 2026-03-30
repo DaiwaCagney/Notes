@@ -27,10 +27,6 @@
 - `nmap -sT localhost` --> TCP
 - `nmap -sU localhost` --> UDP
 
-## Process associated with Port
-- `netstat -tulpn`
-- `lsof -i -P -n | grep LISTEN`
-
 ## Open Files and Mounted File System
 - `lsof | more`
 - `mount`
@@ -42,7 +38,13 @@
 
 ## Running Processes
 - `ps -aux`
-- `ps auxww`
+- `ps -auxww`
+
+## Process associated with Port
+- `netstat -tulpn`
+- `lsof -i -P -n | grep LISTEN`
+- `ss -l -p -n | grep <PID>`
+- `/proc`
 
 ## Services
 - `systemctl list-units --type=service -all`
@@ -80,6 +82,7 @@
 ## Command History
 - `history`
 - `history -c` -->  clear history
+- `gedit .bash_history`
 
 ## Hidden Files
 - `ls -al`
@@ -103,6 +106,8 @@
 - `grep CRON /var/log/syslog` --> view Cron logs
 - `crontab -l`
 - `sudo crontab -u [username] -l`
+- `/var/spool/cron`
+- `/etc/cron.daily`
 
 ## Hash
 - `md5sum filename`
@@ -115,3 +120,14 @@
 - `python3 vol.py -f Linux.mem linux.pslist`
 - `python3 vol.py -f Linux.mem linux.psscan`
 - `python3 vol.py -f Linux.mem linux.malfind`
+
+## Audit Log
+- `apt install -y auditd`
+- `aureport`
+- `ausearch -ui <user id> --interpret`
+
+## arp
+- `arp`
+
+## Clipboard
+- `xclip -o`
