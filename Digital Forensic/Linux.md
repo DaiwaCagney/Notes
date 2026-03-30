@@ -111,3 +111,6 @@
 - `python3 vol.py -f Linux.mem linux.mount`
 - `python3 vol.py -f Linux.mem linux.bash`
 - `python3 vol.py -f Linux.mem linux.lsmod`
+- `python3 vol.py -f Linux.mem linux.pslist`
+- `python3 vol.py -f Linux.mem linux.psscan`
+- `python3 vol.py -f Linux.mem linux.malfind`
