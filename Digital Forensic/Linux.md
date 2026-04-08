@@ -32,6 +32,9 @@
 - `mount`
 - `df`
 
+## Kernel Version
+- `uname -r`
+
 ## Loaded Kernel Modules
 - `lsmod`
 - `modinfo <kernel_module>`
