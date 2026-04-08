@@ -6,6 +6,7 @@
 ## Network Based Intrusion Detection System:
 - Snort
 - Zeek
+- OSSEC
 
 ## TI:
 - SploitScan
