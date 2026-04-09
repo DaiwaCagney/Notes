@@ -21,6 +21,16 @@
 
 `dns.a != 192.168.1.1 --> dns.a && !(dns.a == 192.168.1.1)`
 
+`ip.addr==192.168.1.100 && tcp.port==23`
+
+`ip.addr==192.168.1.100 or ip.addr==192.168.1.101`
+
+`ip.dst==192.168.1.100 && ip.src==192.168.1.101`
+
+`ip.dst==192.168.1.100 && frame.pkt_len > 400`
+
+`ip.dst==192.168.1.100 && icmp && frame.number > 15`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
