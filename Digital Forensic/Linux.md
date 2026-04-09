@@ -134,3 +134,9 @@
 
 ## Clipboard
 - `xclip -o`
+
+## SSH
+- `grep "Failed password" /var/log/auth.log`
+- `egrep "Failed|Failure" /var/log/auth.log`
+- `journalctl -u ssh` --> SSH Key
+- `lastlog` --> recent logged-in users
