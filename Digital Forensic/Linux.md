@@ -140,3 +140,6 @@
 - `egrep "Failed|Failure" /var/log/auth.log`
 - `journalctl -u ssh` --> SSH Key
 - `lastlog` --> recent logged-in users
+
+## tcpdump
+- `tcpdump -i eth0`
