@@ -43,6 +43,10 @@
 ## Http Flood:
 `tcp.stream eq 1`
 
+## FTP Password Cracking:
+`ftp.response.code==530` --> failed login
+`ftp.response.code==230` --> successful login
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
