@@ -34,6 +34,7 @@
 - https://linux.vbird.org/
 - https://linuxjourney.com/
 - https://www.youtube.com/watch?v=sWbUDq4S6Y8
+- https://jay75chauhan.medium.com/%EF%B8%8Fsecure-linux-server-1bbbaaa465d6
 
 ## Windows:
 - https://www.ultimatewindowssecurity.com/securitylog/book/default.aspx
