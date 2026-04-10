@@ -57,6 +57,16 @@ Malformed packets --> Analyze --> Expert Information
 ## SMTP HELO Flood:
 `tcp.stream eq 2`
 
+## Wi-Fi Jamming (de-authentication and disassociation packets):
+`wlan type data or wlan type mgt and (subtype deauth or subtype disassoc)`
+
+`(wlan.fc.type eq 0) && (wlam.fc.type_subtype eq 12)`
+
+`wlan.fc.type_subtype==0x00a || wlan.fc.type_subtype==0x00c`
+
+## Detect Sniffer:
+`nmap --script=sniffer-detect <ip>`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
