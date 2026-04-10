@@ -31,6 +31,9 @@
 
 `ip.dst==192.168.1.100 && icmp && frame.number > 15`
 
+## SYN-FIN Flood:
+`tcp.flags==0x003`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
