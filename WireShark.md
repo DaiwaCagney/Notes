@@ -37,6 +37,9 @@
 ## ICMP Flood:
 `icmp.type==8`
 
+## UDP Flood:
+`(ip.proto==17)&&(udp.dstport==80)`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
