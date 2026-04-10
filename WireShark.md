@@ -34,6 +34,9 @@
 ## SYN-FIN Flood:
 `tcp.flags==0x003`
 
+## ICMP Flood:
+`icmp.type==8`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
