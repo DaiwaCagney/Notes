@@ -45,6 +45,7 @@
 
 ## FTP Password Cracking:
 `ftp.response.code==530` --> failed login
+
 `ftp.response.code==230` --> successful login
 
 ## Notes:
