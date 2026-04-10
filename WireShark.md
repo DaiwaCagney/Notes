@@ -48,6 +48,9 @@
 
 `ftp.response.code==230` --> successful login
 
+## MAC Flooding:
+Malformed packets --> Analyze --> Expert Information
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
