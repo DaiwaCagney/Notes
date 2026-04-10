@@ -51,6 +51,9 @@
 ## MAC Flooding:
 Malformed packets --> Analyze --> Expert Information
 
+## ARP Poisoning:
+`arp.duplicate-address-detected`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
