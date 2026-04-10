@@ -54,6 +54,9 @@ Malformed packets --> Analyze --> Expert Information
 ## ARP Poisoning:
 `arp.duplicate-address-detected`
 
+## SMTP HELO Flood:
+`tcp.stream eq 2`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
