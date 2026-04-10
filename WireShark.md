@@ -40,6 +40,9 @@
 ## UDP Flood:
 `(ip.proto==17)&&(udp.dstport==80)`
 
+## Http Flood:
+`tcp.stream eq 1`
+
 ## Notes:
 By default, Wireshark disables DNS lookups
 
