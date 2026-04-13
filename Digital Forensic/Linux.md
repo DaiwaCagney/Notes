@@ -13,6 +13,7 @@
 ## Uptime
 - `uptime`
 - `top`
+- `w`
 
 ## Network
 - `ip addr show`
