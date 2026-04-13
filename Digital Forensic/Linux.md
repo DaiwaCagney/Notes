@@ -70,6 +70,7 @@
 ## User Account
 - `cat /etc/passwd`
 - `cut -d: -f1 /etc/passwd`
+- `id <user>`
 
 ## Logged-in Users and Login History
 - `w` --> logged-in users
@@ -128,7 +129,7 @@
 ## Audit Log
 - `apt install -y auditd`
 - `aureport`
-- `ausearch -ui <user id> --interpret`
+- `ausearch -ui <user id> --interpret` --> track all the user events
 
 ## arp
 - `arp`
