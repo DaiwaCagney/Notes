@@ -145,3 +145,7 @@
 
 ## tcpdump
 - `tcpdump -i eth0`
+
+## PhotoRec
+- `apt install testdisk`
+- `photorec Linux.mem`
