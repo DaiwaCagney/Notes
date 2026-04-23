@@ -36,6 +36,9 @@
 ## DNS:
 `tcp.port == 53`
 
+## SYN Flood:
+Statistics --> I/O graph
+
 ## SYN-FIN Flood:
 `tcp.flags==0x003`
 
