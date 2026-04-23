@@ -142,6 +142,7 @@
 - `egrep "Failed|Failure" /var/log/auth.log`
 - `journalctl -u ssh` --> SSH Key
 - `lastlog` --> recent logged-in users
+- `grep "Failed password" /var/log/auth.log | awk '{print $11}' | uniq -c | sort -nr`
 
 ## tcpdump
 - `tcpdump -i eth0`
