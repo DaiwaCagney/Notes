@@ -39,6 +39,8 @@
 ## SYN Flood:
 Statistics --> I/O graph
 
+Statistics --> Protocol Hierarchy
+
 ## SYN-FIN Flood:
 `tcp.flags==0x003`
 
