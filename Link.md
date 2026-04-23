@@ -64,6 +64,7 @@
 - https://www.guru99.com/
 - https://www.codelivly.com/
 - https://feifei.tw/security-getting-started/
+- https://github.com/codecrafters-io/build-your-own-x
 
 ## SandBox
 - https://www.virustotal.com/
