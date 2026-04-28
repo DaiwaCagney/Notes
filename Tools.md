@@ -29,6 +29,9 @@
 - WhatWeb
 - Retire JS
 
+## Port Scanner:
+- Masscan
+
 ## Antivirus:
 - KVRT
 - ClamAV # Linux
@@ -130,4 +133,4 @@
 - Gobuster --> Directory Brute-force
 - Kiterunner
 - mitmweb
-mitmproxy2swagger
+- mitmproxy2swagger
