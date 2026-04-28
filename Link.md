@@ -66,6 +66,9 @@
 - https://feifei.tw/security-getting-started/
 - https://github.com/codecrafters-io/build-your-own-x
 
+## DNS
+- https://www.whatsmydns.net/
+
 ## SandBox
 - https://www.virustotal.com/
 - https://hybrid-analysis.com/
