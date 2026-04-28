@@ -150,3 +150,7 @@
 ## PhotoRec
 - `apt install testdisk`
 - `photorec Linux.mem`
+
+## Mount Evidence Volume
+- `lsblk` --> check successfully attached volume
+- `file -s /dev/xvdf1` --> check file system format
