@@ -23,7 +23,7 @@
 
 ## Collect Network Connections
 - `netstat -ano`
-- `netstat -naob` --> established network connection
+- `netstat -naob` --> display the executables involved
 - `netstat -r` --> IP routing table
 
 ## Collect Network Status
