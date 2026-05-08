@@ -19,6 +19,7 @@
 ## Collect Network Information
 - `nbtstat -c` --> show contents of NetBIOS name cache, which system connected to recently
 - `nbtstat -a <IP>` --> asking remote machine to list its NetBIOS Name Table
+- `net view` --> list computers in local network (use SMBv1)
 
 ## Collect Network Connections
 - `netstat -ano`
