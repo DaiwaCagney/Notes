@@ -3,6 +3,7 @@
 ## Collect System Time
 - `date /t & time /t`
 - `net statistics workstation` --> retrieve system uptime
+- `GetSystemTime` --> Windows API function
 
 ## Collect Logged-on Users
 - `net sessions` --> connection for remote systems
