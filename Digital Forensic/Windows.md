@@ -10,6 +10,7 @@
 - `net use` --> mapped drives
 - `psloggedon.exe`
 - `logonsessions.exe`
+- `logonsessions.exe -p` --> list processes running in logged-on sessions
 
 ## Collect Open Files
 - `net file` --> files accessed
