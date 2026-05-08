@@ -28,7 +28,7 @@
 
 ## Collect Network Status
 - `ipconfig /all` --> display network configuration of NICs on the system
-- `promqry` --> check promiscuous mode
+- `promqry.exe` --> check promiscuous mode
 
 ## Process Information
 - `tasklist`
