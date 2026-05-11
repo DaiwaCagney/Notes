@@ -14,7 +14,7 @@
 
 ## Collect Open Files
 - `net file` --> files accessed
-- `NetworkOpenedFiles.exe`
+- NetworkOpenedFiles
 
 ## Collect Network Information
 - `nbtstat -c` --> show contents of NetBIOS name cache, which system connected to recently
@@ -42,13 +42,16 @@
 
 ## Exam Process Memory
 - Process Explorer
-- `procdump` --> monitor applications for CPU spikes
+- `procdump.exe` --> monitor applications for CPU spikes
 
 ## Print Spool Files
 - buffer for print job
 - `.SPL` and `.SHD`
 - `C:\Windows\System32\spool\PRINTERS`
-- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Printers` --> location of spool folder
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Printers` --> DefaultSpoolDirectory registry value --> location of spool folder
+- Free Hex Editor Neo
+- wxHex Editor
+- System deletes .spl, .shd, and .emf files after task completion
 
 ## Clipboard
 - Free Clipboard Viewer
@@ -56,7 +59,7 @@
 
 ## Service & Driver
 - MSInfo32
-- `tasklist`
+- `tasklist` --> gather service-related information
 - `wmic service list brief | more`
 
 ## Command History
