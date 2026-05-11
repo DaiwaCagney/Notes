@@ -32,7 +32,7 @@
 
 ## Process Information
 - `tasklist`
-- `tasklist /v`
+- `tasklist /svc`
 - Task Manager
 - `Pslist`
 - `handle`
