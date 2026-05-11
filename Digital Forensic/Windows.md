@@ -34,9 +34,11 @@
 - `tasklist`
 - `tasklist /svc`
 - Task Manager
-- `Pslist`
-- `handle`
-- `listdlls64.exe`
+- `pslist.exe`
+- `pslist.exe -x` --> displays processes, memory information, and threads
+- `handle.exe`
+- `listdlls.exe`
+- `netstat -o` --> process to port mapping
 
 ## Exam Process Memory
 - Process Explorer
