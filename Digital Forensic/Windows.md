@@ -32,9 +32,11 @@
 
 ## Process Information
 - `tasklist`
+- `tasklist /v`
+- Task Manager
 - `Pslist`
 - `handle`
-- `listdlls`
+- `listdlls64.exe`
 
 ## Exam Process Memory
 - Process Explorer
