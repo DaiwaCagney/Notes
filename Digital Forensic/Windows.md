@@ -46,7 +46,8 @@
 
 ## Print Spool Files
 - buffer for print job
-- `.SPL` and `.SHD`
+- .SPL --> spool file, contents
+- .SHD --> shadow file, detailed data on a print job (such as the username and filename)
 - `C:\Windows\System32\spool\PRINTERS`
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Printers` --> DefaultSpoolDirectory registry value --> location of spool folder
 - Free Hex Editor Neo
@@ -84,9 +85,53 @@
 - `devcon.exe listclass <class> <port>`
 - `devcon.exe listclass usb 1394`
 
+## Slack Space
+- EnScripts in the Encase tool
+
+## Hidden Partition
+- Partition Find and Mount
+- Partition Logic
+
 ## User Account
 - `‪C:\Windows\System32\config\SAM`
+- `HKEY_LOCAL_MACHINE\SAM`
 - Artifast
+
+## System Resource Usage Monitor (SRUM)
+- `‪C:\Windows\System32\SRU\SRUDB.dat`
+- Velociraptor
+- Magnet AXIOM Examine
+- SRUM DUMP
+
+## Windows Thumbnail Cache
+- `C:\Users\[User Profile]\AppData\Local\Microsoft\Windows\Explorer`
+- `thumbcache_***.db`, where *** refers to pixel dimensions
+- Thumbcache Viewer --> thumbnails of deleted files
+- Thumbs Viewer
+
+## Installed Applications
+- `wmic product get name,version, installlocation`
+- `wmic /output:c:\software_inventory.htm product get name, version, installlocation /format:htable`
+- `wmic product get name,version,installloaction /format:csv > c:\software_inventory.csv`
+
+## System Updates
+- `wmic qfe list`
+
+## Domain Information
+- `Get-ADDomainController`
+- `Get-ADDomainController -Discover -Domain "Domain Name”`
+- `Get-AdDomainController –Discover`
+- `NET ACCOUNTS` --> Displays password settings
+- `net users` --> view or manage users in the local or domain
+- `net group`
+
+## Compressed Files
+- MailXaminer
+- zipdump
+- Cellebrite Physical Analyzer
+
+## Sticky Notes
+- `C:\Users\<Username>\AppData\Local\Packages\Microsoft.MicrosoftStickyNotes_8we kyb3d8bbwe\LocalState\plum.sqlite`
 
 ## Crash Dump
 - DumpChk
