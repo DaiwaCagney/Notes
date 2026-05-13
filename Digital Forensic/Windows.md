@@ -81,7 +81,8 @@
 
 ## Detect Externally Connected Devices
 - DriveLetterView --> From nirsoft
-- `devcon listclass usb 1394`
+- `devcon.exe listclass <class> <port>`
+- `devcon.exe listclass usb 1394`
 
 ## User Account
 - `‪C:\Windows\System32\config\SAM`
