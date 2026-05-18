@@ -34,6 +34,10 @@ volatility -f {image.vmem} --profile={profile} handles -p {PID} -t file
 volatility -f {image.vmem} --profile={profile} handles -p {PID} -t key
 ```
 
+```
+volatility -f {image.vmem} --profile={profile} malfind -p {PID} --> identify hidden processes in the user mode memory
+```
+
 ## The Sleuth Kit (TSK):
 ```
 mmls "E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_002.dd" --> view partition tables
