@@ -152,8 +152,9 @@
 - Volatility Framework
 
 ## Page File
+- serves as a swap, temporarily storing data that cannot fit in the physical RAM
+- stores information about inactive processes, recently opened files, stores information about inactive processes, recently opened files
 - Pagefile.sys
-- serves as a swap
 - `C:\pagefile.sys`
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management`
 - DiskExplorer
