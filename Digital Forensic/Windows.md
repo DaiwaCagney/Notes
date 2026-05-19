@@ -178,6 +178,15 @@
 - `leechagent.exe -remoteinstall <remote machine>` --> install the LeechAgent service on the suspected machine remotely
 - `memprocfs.exe -device <memory acquisition device> -remote <protocol>://<authentication>:<hostname> -remotefs -mount <drivename>` --> extract the remote machine’s memory as text files
 
+## Windows Registry
+- Non-volatile:
+  - HKEY_LOCAL_MACHINE --> Contains a vast array of configuration information for the system, including hardware and software settings
+  - HKEY_USERS --> Contains all actively loaded user profiles for that system
+- Volatile:
+  - HKEY_CLASSES_ROOT --> Contains configuration information related to the applications used for opening various files on the system
+  - HKEY_CURRENT_USER --> Contains active loaded user profile for the currently logged-on user
+  - HKEY_CURRENT_CONFIG --> Contains the hardware profile used by the system at startup
+
 ## USB Removable Storage Devices
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`
 
