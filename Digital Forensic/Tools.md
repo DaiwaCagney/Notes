@@ -30,6 +30,8 @@
 
 ## Memory Forensics:
 - Volatility Framework
+- Velociraptor
+- WinDbg
 
 ## Hash Calculations:
 - HashCalc
