@@ -196,14 +196,31 @@
 - `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Windows` --> last shutdown time
 - DCode
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation` --> time zone settings, ActiveTimeBias
+- `SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{GUID}` --> connected wireless Service Set IDentifiers (SSIDs)
 - RegRipper
+
+## Start Up
+- msconfig
+- Autoruns
+- Autorunsc
+
+## Volume Shadow Copy Services
+- Volume Shadow-Copy Service (VSS) examination EnScript
+- `vssadmin list shadows`
+- `vssadmin list writers`
+- `vssadmin list volumes`
+- `vssadmin list providers`
+
+## User Login
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
+- These keys are ignored if the system is started in the safe mode
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` --> Last Login
 
 ## USB Removable Storage Devices
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`
-
-## Start Up
-- Autoruns
-- Autorunsc
 
 ## UserAssist Keys
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count`
