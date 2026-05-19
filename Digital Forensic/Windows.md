@@ -219,8 +219,35 @@
 - These keys are ignored if the system is started in the safe mode
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` --> Last Login
 
+## Security ID
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList`
+
+## User Activity
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify`
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Classes\exefile\shell\open\command`
+- `HKEY_CLASSES_ROOT\exefile\shell\open\command`
+
+## Registry Settings
+- ClearPageFileAtShutdown --> `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management`
+- DisableLastAccess --> `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem`
+- `fsutil behavior query disablelastaccess`
+
+## Registry Last Write Time
+- RegScanner
+
 ## USB Removable Storage Devices
+- Plug and Play (PnP) Manager --> enable a computer to recognize when a device is added to the system
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`
+- USBDeview
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses`
+
+## Identifying Malicious HID USB Devices
+- is a device class definition that contains a generic USB driver to support HIDs (Human Interface Device) in Windows machines
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags`
+- 12-digit device ID --> vendor ID, product ID, revision number
+
+## Mounted Devices
+- `HKEY_LOCAL_MACHINE\System\MountedDevices`
 
 ## UserAssist Keys
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count`
