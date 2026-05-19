@@ -165,12 +165,18 @@
 ## Hibernate File
 - snapshot of RAM data created when system hibernates
 - hiberfil.sys
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power` --> check if users had enabled the hibernate option
 - Hex Editor
 - AccessData FTK Imager
 - MoonSols Windows Memory Toolkit
+- Magnet AXIOM
+- Volatility Framework
+- Hibernation Recon
 
 ## MemProcsFS
 - `MemProcsFS.exe -device <path of memory dump file> -forensic 1`
+- `leechagent.exe -remoteinstall <remote machine>` --> install the LeechAgent service on the suspected machine remotely
+- `memprocfs.exe -device <memory acquisition device> -remote <protocol>://<authentication>:<hostname> -remotefs -mount <drivename>` --> extract the remote machine’s memory as text files
 
 ## USB Removable Storage Devices
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`
@@ -259,6 +265,7 @@
 - `strings Windows_RAM.mem | egrep "^https?://" | sort | uniq`
 - `strings Windows_RAM.mem | egrep "172.20.20.10"`
 - `strings Windows_RAM.mem | egrep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`
+- `strings <file_name> | egrep '([[:alnum:]_.-]{1,64}+@[[:alnum:]_.-]{2,255}+?\.[[:alpha:].]{2,4})'`
 
 ## Capture and Examine Windows registry files on Live system
 - AccessData FTK Imager --> capture
