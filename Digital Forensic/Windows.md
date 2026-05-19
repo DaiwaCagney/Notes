@@ -68,6 +68,7 @@
 
 ## Locally Shared Resources
 - `net share`
+- `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanServer\Shares`
 
 ## File Systems
 - `dir /o:d` --> time and date of OS installation (in system32)
@@ -186,6 +187,16 @@
   - HKEY_CLASSES_ROOT --> Contains configuration information related to the applications used for opening various files on the system
   - HKEY_CURRENT_USER --> Contains active loaded user profile for the currently logged-on user
   - HKEY_CURRENT_CONFIG --> Contains the hardware profile used by the system at startup
+- `C:\Windows\System32\config`
+- Hex Workshop
+- Last Write Time
+- Information about the system is stored in CurrentControlSet
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ActiveComputerName` --> Computer Name
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` --> Information related to ProductName, CurrentBuildNumber, RegisteredOwner, etc
+- `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Windows` --> last shutdown time
+- DCode
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation` --> time zone settings, ActiveTimeBias
+- RegRipper
 
 ## USB Removable Storage Devices
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR`
