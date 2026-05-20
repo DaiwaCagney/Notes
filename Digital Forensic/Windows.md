@@ -217,7 +217,15 @@
 - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
 - `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce`
 - These keys are ignored if the system is started in the safe mode
-- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` --> Last Login
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` --> Last Login, The Shell value will be executed when any user logs on; this value is normally set to explorer.exe
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\`
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad\`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\`
+- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries\`
+- `HKEY_CURRENT_USER\Control Panel\Desktop` --> scrnsave.exe
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders`
 
 ## Security ID
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList`
@@ -249,19 +257,31 @@
 ## Mounted Devices
 - `HKEY_LOCAL_MACHINE\System\MountedDevices`
 
+## Tracking User Activity
+- NTUSER.DAT
+- When a user performs a particular action, the registry key’s LastWrite time is updated
+- HKEY_CURRENT_USER hive
+
 ## UserAssist Keys
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{GUID}\Count`
+- Each GUID records values pertaining to specific objects accessed by the user in the system such as shortcut files, control panel applets, and programs
 - ROT13 encryption
 
 ## MRU Lists
-- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU`
-- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU`
-- `HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TypedURLs`
-- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts`
+- Most Recently Used (MRU) lists include information on recently visited web pages and opened documents maintained by Windows OS in Windows registry
+- `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs` --> find MRU list registry key
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU` --> Entries are added to this key when a user clicks the Start button, chooses Run, and types a command or name of a file
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU` --> files opened via Open and SaveAs dialogs within the Windows shell
+- `HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TypedURLs` --> maintains an MRU list of URLs typed by user into the address bar
+- `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts` --> extensions of files opened on the system
+- `Computer\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths` --> last 25 paths typed into the path bar in File Explorer
 
 ## Connect to other system
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU`
 - `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2`
+
+## Restore Point Registry Settings
+- `HKEY_LOCAL_MACHINE\Software\Micro soft\WindowsNT\CurrentVersion\SystemRestore`
 
 ## Webcam and Microphone
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam`
