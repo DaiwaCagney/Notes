@@ -45,6 +45,7 @@
 - Registry Viewer
 - Regshot
 - Hex Workshop
+- Magnet AXIOM
 
 ## Network:
 - Wireshark
