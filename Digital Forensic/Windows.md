@@ -286,11 +286,20 @@
 ## Restore Point Registry Settings
 - `HKEY_LOCAL_MACHINE\Software\Micro soft\WindowsNT\CurrentVersion\SystemRestore`
 
+## Amcache and Shimcache
+- `C:\Windows\appcompat\Programs\Amcache.hve`
+- track external storage devices, portable programs, and anti-forensic programs
+- `C:\Windows\System32\config\SYSTEM` --> Shimcache
+- identify the historical data for executables run in the system
+- ArtiFast
+
 ## Webcam and Microphone
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam`
 - `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone`
 - `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam`
 - `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone`
+- `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\NonPackaged\` --> list of non-Microsoft applications using the webcam
+- `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone\NonPackaged\`
 
 ## Google Chrome
 - `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default` --> history, downloads, cache
