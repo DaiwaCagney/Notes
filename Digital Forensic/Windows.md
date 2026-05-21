@@ -301,9 +301,15 @@
 - `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\webcam\NonPackaged\` --> list of non-Microsoft applications using the webcam
 - `HKEY_USERS\<UserName>\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone\NonPackaged\`
 
+## Electron framework
+- LevelDB Viewer in Magnet AXIOM --> view the application’s IndexedDB folders and levelDB files
+- Magnet AXIOM Cyber
+- ccl_chrome_indexeddb
+
 ## Google Chrome
 - `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default` --> history, downloads, cache
 - `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies`
+- `C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default\Preferences`
 - ChromeHistoryView
 - ChromeCacheView
 - ChromeCookiesView
@@ -315,6 +321,7 @@
 - `Users\Username\AppData\Roaming\Mozilla\Firefox\Profiles\XXXXXXXX.default`
 - `Users\Username\AppData\Local\Microsoft\Edge\User Data\Default`
 - SysTools SQLite Viewer
+- SQLite Forensic Explorer
 
 ## Prefetch Files
 - WinPrefetchView
