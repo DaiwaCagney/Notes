@@ -327,6 +327,10 @@
 - SysTools SQLite Viewer
 - SQLite Forensic Explorer
 
+## System Restore Points
+- Rp.log
+- System restore points are created when applications and unsigned drivers are installedor when auto update installation and restore operations are performed
+
 ## Prefetch Files
 - WinPrefetchView
 - Windows Prefetch Parser
