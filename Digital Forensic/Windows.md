@@ -310,6 +310,9 @@
 - `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default` --> history, downloads, cache
 - `C:\Users\<UserName>\AppData\Local\Google\Chrome\User Data\Default\Network\Cookies`
 - `C:\Users\<username>\AppData\Local\Google\Chrome\User Data\Default\Preferences`
+- `C:\Users\<USERNAME>\Local\Google\Chrome\User Data\Default\Network Action Predictor`
+- transition values --> how a URL was accessed --> convert the transition number into hex and perform bitwise AND operation with CORE_MASK (0XFF)
+- Web Data --> account logged
 - ChromeHistoryView
 - ChromeCacheView
 - ChromeCookiesView
