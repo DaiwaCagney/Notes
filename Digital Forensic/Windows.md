@@ -351,10 +351,22 @@
 ## Metadata
 - MAC times (modified, accessed, and created)
 - Metadata++
+- MetaDetective
+- MetadataExtractor
+- mat2
+- ExtractMetadata.com (https://www.extractmetadata.com)
+- Metadata2Go.com (https://www.metadata2go.com)
 
 ## Metadata in PDF
 - Adobe Acrobat
 - ExifTool
+
+## Zone.Identifier
+- `Get-Item -path C:\Users\Administrator\Downloads\ProcessMonitor.zip -stream *`
+- `Get-Item -path C:\Users\Administrator\Downloads\ProcessMonitor.zip -stream * | Select-Object -Property Filename, Stream, Length `
+- `Get-Content -path C:\Users\Administrator\Downloads\ProcessMonitor.zip -stream Zone.Identifier`
+- NetAnalysis®
+- HstEx®
 
 ## ShellBags
 - ShellBagsView
