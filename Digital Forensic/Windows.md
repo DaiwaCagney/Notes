@@ -329,9 +329,15 @@
 
 ## System Restore Points
 - Rp.log
+- change.log
 - System restore points are created when applications and unsigned drivers are installedor when auto update installation and restore operations are performed
+- view the date when the application was installed or removed
+- usually in the "System Volume Information" folder
 
 ## Prefetch Files
+- When a user installs, runs, and deletes an application, traces of that application can be found in the Prefetch directory
+- `C:\Windows\Prefetch`
+- `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00x\Control\Sessio nManager\MemoryManagement\PrefetchParameters`
 - WinPrefetchView
 - Windows Prefetch Parser
 
@@ -343,6 +349,7 @@
 - Exif Library
 
 ## Metadata
+- MAC times (modified, accessed, and created)
 - Metadata++
 
 ## Metadata in PDF
