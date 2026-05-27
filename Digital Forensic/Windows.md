@@ -369,12 +369,19 @@
 - HstEx®
 
 ## ShellBags
+- set of registry keys that store configuration settings for Windows Explorer such as the size, view mode (icons, list, details, etc.), and position of the window, last time a folder was viewed
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\Shell\BagMRU`
+- `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\Shell\Bags`
+- `HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU`
+- `HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bagsoo98i8u`
 - ShellBagsView
 - TZWorks Windows ShellBag Parser
 - FTK Forensic Toolkit
 
 ## LNK Files
+- Windows shortcut file
 - `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent`
+- Belkasoft X
 
 ## Jump List
 - `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations`
