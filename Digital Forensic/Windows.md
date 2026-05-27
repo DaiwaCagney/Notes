@@ -40,9 +40,21 @@
 - `listdlls.exe`
 - `netstat -o` --> process to port mapping
 
+## Process Memory
+- ProcDump
+- Userdump.exe
+- adplus.vbs
+- Task Manager
+- WinDbg --> analyze dump files
+- WinHex --> analyze dump files
+
 ## Exam Process Memory
 - Process Explorer
 - `procdump.exe` --> monitor applications for CPU spikes
+
+## Extract Information about Loaded Processes on a Computer
+- Process Explorer
+- Check DLL and Handle using View
 
 ## Print Spool Files
 - buffer for print job
@@ -137,20 +149,19 @@
 ## Crash Dump
 - DumpChk
 
-## Process Memory
-- ProcDump
-- Userdump.exe
-- adplus.vbs
-- Task Manager
-- WinDbg --> analyze dump files
-- WinHex --> analyze dump files
-
 ## Memory Forensics
 - Belkasoft RAM Capturer
 - FTK Imager
 - dd
 - Redline --> analyze dump files
 - Volatility Framework
+
+## Using of Strings in Linux
+- `strings Windows_RAM.mem | grep -i "^[a-z]:\\\\" | sort | uniq`
+- `strings Windows_RAM.mem | egrep "^https?://" | sort | uniq`
+- `strings Windows_RAM.mem | egrep "172.20.20.10"`
+- `strings Windows_RAM.mem | egrep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`
+- `strings <file_name> | egrep '([[:alnum:]_.-]{1,64}+@[[:alnum:]_.-]{2,255}+?\.[[:alpha:].]{2,4})'`
 
 ## Page File
 - serves as a swap, temporarily storing data that cannot fit in the physical RAM
@@ -198,6 +209,10 @@
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation` --> time zone settings, ActiveTimeBias
 - `SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles\{GUID}` --> connected wireless Service Set IDentifiers (SSIDs)
 - RegRipper
+
+## Capture and Examine Windows registry files on Live system
+- AccessData FTK Imager --> capture
+- Hex Workshop --> view the content
 
 ## Start Up
 - msconfig
@@ -319,6 +334,11 @@
 - ChromeCookiesView
 - `ipconfig/displaydns` --> DNS cache
 
+## Extract and Rebuild Cached Web Pages of Google Chrome
+- AccessData FTK Imager --> capture
+- `Users\Username\AppData\Local\Google\Chrome\User Data\Default\Cache`
+- Browser History Examiner
+
 ## Browser SQLite3 Database Files
 - FTK Imager tool --> Export the file
 - `Users\Username\AppData\Local\Google\Chrome\User Data\Default\`
@@ -384,9 +404,12 @@
 - Belkasoft X
 
 ## Jump List
-- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations`
-- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations`
+- Jump Lists are a taskbar feature of Windows 11 that provide users with a graphical interface for recently accessed applications, files, and performed actions
+- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\AutomaticDestinations` --> when a user accesses any program pinned to the taskbar
+- `C:\Users\<UserName>\AppData\Roaming\Microsoft\Windows\Recent\CustomDestinations` --> when a user pins a file or application to the taskbar
 - JumpListsView
+- Belkasoft Evidence Center
+- Link File & Jump List Parser
 
 ## Event Logs
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog` --> Configuration
@@ -396,23 +419,3 @@
 - Microsoft Log Parser
 - `C:\Windows\System32\winevt\Logs`
 - Event Log Explorer
-
-## Using of Strings in Linux
-- `strings Windows_RAM.mem | grep -i "^[a-z]:\\\\" | sort | uniq`
-- `strings Windows_RAM.mem | egrep "^https?://" | sort | uniq`
-- `strings Windows_RAM.mem | egrep "172.20.20.10"`
-- `strings Windows_RAM.mem | egrep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`
-- `strings <file_name> | egrep '([[:alnum:]_.-]{1,64}+@[[:alnum:]_.-]{2,255}+?\.[[:alpha:].]{2,4})'`
-
-## Capture and Examine Windows registry files on Live system
-- AccessData FTK Imager --> capture
-- Hex Workshop --> view the content
-
-## Extract and Rebuild Cached Web Pages of Google Chrome
-- AccessData FTK Imager --> capture
-- `Users\Username\AppData\Local\Google\Chrome\User Data\Default\Cache`
-- Browser History Examiner
-
-## Extract Information about Loaded Processes on a Computer
-- Process Explorer
-- Check DLL and Handle using View
