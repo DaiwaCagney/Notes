@@ -18,7 +18,9 @@
 ## Network
 - `ip addr show`
 - `netstat`
+- `netstat -i` --> list of network interfaces
 - `ifconfig`
+- `ifconfig <interface> -promisc` --> disable promiscuous mode
 
 ## Routing Table
 - `netstat -rn`
@@ -30,19 +32,24 @@
 
 ## Open Files and Mounted File System
 - `lsof | more`
-- `mount`
-- `df`
+- `lsof -u <user_name>` --> list the open files for the user currently logged into the system
+- `mount` --> retrieve detailed information on all file systems that are mounted
+- `df` --> determine the amount of disk space used and free disk space on the mounted file systems on a Linux system
+
+## Reading ELF Files
+- `readelf`
+- `readelf --file-header /sbin/mount.fuse`
 
 ## Kernel Version
 - `uname -r`
 
 ## Loaded Kernel Modules
-- `lsmod`
-- `modinfo <kernel_module>`
+- `lsmod` --> reads the contents of /proc/modules
+- `modinfo <kernel_module>` --> If a particular kernel module is not specified, the command will search in the directory /lib/modules/kernel-version
 
 ## Running Processes
 - `ps -aux`
-- `ps -auxww`
+- `ps -auxww` --> obtain information on running processes for all user accounts
 
 ## Process associated with Port
 - `netstat -tulpn`
@@ -71,6 +78,7 @@
 - `cat /etc/passwd`
 - `cut -d: -f1 /etc/passwd`
 - `id <user>`
+- `ausearch -ui <user id> --interpret` --> track all the user events
 
 ## Logged-in Users and Login History
 - `w` --> logged-in users
