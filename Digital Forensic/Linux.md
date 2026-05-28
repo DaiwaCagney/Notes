@@ -40,9 +40,6 @@
 - `readelf`
 - `readelf --file-header /sbin/mount.fuse`
 
-## Kernel Version
-- `uname -r`
-
 ## Loaded Kernel Modules
 - `lsmod` --> reads the contents of /proc/modules
 - `modinfo <kernel_module>` --> If a particular kernel module is not specified, the command will search in the directory /lib/modules/kernel-version
@@ -59,7 +56,7 @@
 
 ## Services
 - `systemctl list-units --type=service -all`
-- `systemctl --type=service -state=<state>`
+- `systemctl --type=service -state=<state>` --> dead, failed, restart, enabled, disabled, running
 - `systemctl --type=service -state=<state1>,<state2>`
 - `systemctl --type=service -state=<state> | grep <service_type>`
 
@@ -71,8 +68,13 @@
 - `dmesg`
 
 ## System Information
-- `cat /proc/cpuinfo`
+- `cat /proc/cpuinfo` --> details about the CPU on a machine
 - `cat /proc/self/mounts` --> mount points and mounted external devices
+
+## Kernel Version
+- `uname -r`
+- `cat /proc/version`
+- `hostnamectl | grep Kernel`
 
 ## User Account
 - `cat /etc/passwd`
