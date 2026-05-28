@@ -414,8 +414,31 @@
 ## Event Logs
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog` --> Configuration
 - `wevtutil`
-- `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet00<x>\Services\EventLog\<log name>`
+- `wevtutil el` --> display a list of available event logs in the system
+- `wevtutil gl <log name>` --> list configuration information about a specific event log
+- `HKLM\System\ControlSet00x\Services\EventLog\<log name>`
 - secpol.msc
+- Any modifications to the system audit policy are recorded in Event ID 4719(S) entries
 - Microsoft Log Parser
-- `C:\Windows\System32\winevt\Logs`
+- the stop signal was sent to a particular service --> Event ID 7035
+- service has been stopped --> Event ID 7036
+- the start control signal was sent --> Event ID 7035
+- service has started --> Event ID 7035
+- logevent.exe
+- `C:\Windows\System32\winevt\Logs` --> System.evtx, Security.evtx, and Application.evtx
 - Event Log Explorer
+- check for event ID 4663 where Task Category is Removable Storage
+- `C:\Windows\System32\winevt\Logs\OAlerts.evtx` --> Microsoft Office Alert Logs
+- successful login event ID 4624 and failed login event ID 4625
+- When a registry value is modified, Audit Registry event 4657 is generated
+
+## Windows Forensics Tools 
+- OSForensics
+- Cellebrite DIGITAL COLLECTOR
+- Oxygen Forensic® Detective
+- X-Ways Forensics
+- REGISTRY RECON
+- OpenText EnCase Forensic
+
+## Get-FileHash
+- `Get-FileHash 'E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd' -Algorithm MD5 | Format-list`
