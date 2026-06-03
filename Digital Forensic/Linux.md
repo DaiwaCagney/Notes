@@ -92,6 +92,7 @@
 
 ## System Log
 - `cat /var/log/syslog`
+- `/var/log/messages`
 - `cat /var/log/kern.log`
 
 ## Command History
@@ -111,18 +112,27 @@
 - `xxd document.pdf | head`
 - `file document.pdf`
 - `strings document.pdf`
+- `strings -t d <image_filename> | grep -iE “search_string”`
 - `strings -t d Evidence.dd | grep -iE "kitty"`
 
 ## Find Writable Files
+- `find / -writable –type f 2>/dev/null | grep “<search_directory>”`
 - `find / -writable -type f 2>/dev/null | grep "/var/log"`
 
 ## Cron Jobs
 - `sudo systemctl status cron` --> check Cron service running
+- `sudo service cron start` --> start the Cron service
 - `grep CRON /var/log/syslog` --> view Cron logs
-- `crontab -l`
+- `crontab -l` --> list all Cron jobs
+- `cat /etc/crontab` --> display the root user’s Cron jobs
 - `sudo crontab -u [username] -l`
-- `/var/spool/cron`
+- `/etc/cron.d/`
+- `/var/spool/cron/`
+- `/etc/cron.hourly/`
 - `/etc/cron.daily`
+- `/etc/cron.weekly/`
+- `/etc/cron.monthly/`
+- `<Minute> <Hour> <Day> <Month> <Week> <script or command for schedule>`
 
 ## Hash
 - `md5sum filename`
