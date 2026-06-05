@@ -51,6 +51,11 @@
 - Wireshark
 - Tcpdump
 - Fiddler
+- Security Onion
+- Logz.io
+- Suricata
+- Nagios
+- Graylog
 
 ## Browser:
 - Browser History Capturer
