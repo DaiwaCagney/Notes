@@ -59,3 +59,10 @@ Error:
 
 ## Command
 /opt/splunk/bin/splunk restart
+
+## Detect Ransomware
+```
+sourcetype="xmlwineventlog:microsoft-windows-sysmon/operational" EventDescription="File Create Time"
+| streamstats time_window=1m count(EventDescription) AS "new_files"
+| search new_files>10
+```
