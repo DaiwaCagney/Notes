@@ -56,6 +56,19 @@
 - Suricata
 - Nagios
 - Graylog
+- NetFlow Analyzer
+- PRTG Network Monitor
+- NetFlow Traffic Analyzer
+- Nagios Network Analyzer
+- ntopng
+- Auvik
+- Dshell --> analyze PCAP file
+- NetworkMiner
+- Arkime
+- Capsa Portable Network Analyzer
+- Free Network Analyzer
+- Vehere Network Forensics
+- CapLoader
 
 ## Browser:
 - Browser History Capturer
@@ -113,6 +126,15 @@
 
 ## Log Viewer:
 - Kiwi Log Viewer
+
+## SIEM
+- Splunk Enterprise Security
+- IBM Security QRadar
+- LogRhythm
+- Datadog Cloud SIEM
+- Elastic
+- Graylog
+- ManageEngine Log360
 
 ## Digital Forensics Tool Testing Images:
 - https://dftt.sourceforge.net/
