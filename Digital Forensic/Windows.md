@@ -442,3 +442,7 @@
 
 ## Get-FileHash
 - `Get-FileHash 'E:\CHFI-Tools\Evidence Files\Forensic Images\Windows_Evidence_001.dd' -Algorithm MD5 | Format-list`
+
+## Wireless Network Report
+- `netsh wlan show wlanreport`
+- `C:\ProgramData\Microsoft\Windows\WlanReport\wlan-report-latest.html`
