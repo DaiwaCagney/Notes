@@ -92,6 +92,7 @@
 - https://check.spamhaus.org/
 - https://phishtank.org/
 - https://www.exploit-db.com/
+- https://scanner.pcrisk.com/
 
 ## TI News
 - https://www.bleepingcomputer.com/
