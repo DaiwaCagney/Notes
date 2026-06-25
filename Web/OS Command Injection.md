@@ -14,6 +14,11 @@
 
 `ip=127.0.0.1|cat+/etc/passwd`
 
+```
+`command1`, $(command2)
+```
+
+
 Both Windows and Unix-based systems
 ```
 &
@@ -28,8 +33,4 @@ Unix-based systems
 Newline (0x0a or \n)
 `injected command`
 $(injected command)
-```
-
-```
-`command1`, $(command2)
 ```
