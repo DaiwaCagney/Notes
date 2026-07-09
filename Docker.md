@@ -39,6 +39,7 @@
 - `oc apply -f debug-ubi.yaml`
 - `oc rsh debug-ubi`
 - `oc delete pod debug-ubi`
+- `oc delete -f debug-ubi.yaml`
 
 ## Debug Pod
 ```
