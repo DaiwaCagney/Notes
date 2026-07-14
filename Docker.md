@@ -33,6 +33,7 @@
 - `oc project <namespace>`
 - `oc -n <namespace> get istag`
 - `oc get pods -n <namespace>`
+- `oc get pod <pod> -n <namespace> -o wide`
 - `oc get dc -n <namespace>`
 - `oc rollout history dc/<deployment config> -n <namespace>`
 - `oc scale dc/<deployment config> --replicas=0`
