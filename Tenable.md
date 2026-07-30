@@ -1,5 +1,9 @@
 # Tenable
 
+## Tenable Manager
+- `systemctl start nessusd`
+- `systemctl stop nessusd`
+
 ## Agent - Ubuntu
 - `systemctl stop nessusagent`
 - `systemctl start nessusagent`
