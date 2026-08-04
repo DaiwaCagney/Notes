@@ -41,6 +41,7 @@
 - `oc rsh debug-ubi`
 - `oc delete pod debug-ubi`
 - `oc delete -f debug-ubi.yaml`
+- `oc describe ds <DaemonSets> -n <namespace>`
 
 ## Debug Pod
 ```
