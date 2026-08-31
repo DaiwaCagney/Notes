@@ -8,6 +8,7 @@
 - `docker tag test-image:latest <registry URL>/<namespace>/test-image:latest`
 - `docker push <registry URL>/<namespace>/test-image:latest`
 - `docker pull docker.io/sonarqube:25.1.0.102122-community`
+- `docker history --no-trunc sha256:<sha256> > layer.txt`
 
 ## Docker Set Insecure Registry
 ```
@@ -42,6 +43,8 @@
 - `oc delete pod debug-ubi`
 - `oc delete -f debug-ubi.yaml`
 - `oc describe ds <DaemonSets> -n <namespace>`
+- `oc describe image sha256:<sha256>`
+- `oc tag <image>@sha256:<sha256> <image>:<new_tag> -n <namespace>`
 
 ## Debug Pod
 ```
