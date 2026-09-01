@@ -9,6 +9,7 @@
 - `docker push <registry URL>/<namespace>/test-image:latest`
 - `docker pull docker.io/sonarqube:25.1.0.102122-community`
 - `docker history --no-trunc sha256:<sha256> > layer.txt`
+- `docker run --rm node:24.16 cat /etc/debian_version`
 
 ## Docker Set Insecure Registry
 ```
