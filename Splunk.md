@@ -41,6 +41,8 @@ Error:
 ## Command
 /opt/splunk/bin/splunk restart
 
+/opt/splunk/bin/splunk btool props list "source::<source>" --debug
+
 ## Detect Ransomware
 ```
 sourcetype="xmlwineventlog:microsoft-windows-sysmon/operational" EventDescription="File Create Time"
