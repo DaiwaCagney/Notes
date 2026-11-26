@@ -10,6 +10,15 @@
 - `docker pull docker.io/sonarqube:25.1.0.102122-community`
 - `docker history --no-trunc sha256:<sha256> > layer.txt`
 - `docker run --rm node:24.16 cat /etc/debian_version`
+- `docker run --rm --entrypoint sh <IMAGE_NAME> -c "cat /etc/os-release"`
+
+```
+$cid = docker create <IMAGE_NAME>
+docker cp "${cid}:/etc/os-release" - | tar -xOf -
+docker cp "${cid}:/var/lib/dpkg" - | tar -tf -
+docker cp "${cid}:/var/lib/rpm" - | tar -tf -
+docker rm $cid | Out-Null
+```
 
 ## Docker Set Insecure Registry
 ```
@@ -46,6 +55,8 @@
 - `oc describe ds <DaemonSets> -n <namespace>`
 - `oc describe image sha256:<sha256>`
 - `oc tag <image>@sha256:<sha256> <image>:<new_tag> -n <namespace>`
+- `oc exec -n <namespace> <pod> -- ls -lh /var/lib/dpkg`
+- `oc cp -n <namespace> "<pod>:/var/lib/dpkg" .\logs`
 
 ## Debug Pod
 ```
